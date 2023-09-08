@@ -1,3 +1,5 @@
+// Display thirsty, OK and full on OLED Display
+
 #include <Arduino.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -59,9 +61,9 @@ void loop() {
 
   int sensorValue = analogRead(A0);
   Serial.println(sensorValue);
-    if (sensorValue > 550){
+    if (sensorValue > 480){     //550 before
          blinkdry();
-        }else if (sensorValue <350)
+        }else if (sensorValue <400) //350 before
         {
           blinkfull();
         }  else {     
