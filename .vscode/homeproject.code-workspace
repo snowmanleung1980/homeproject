@@ -3,6 +3,10 @@
 		{
 			"name": "8266",
 			"path": "../PlatformIO/Projects/8266"
+		},
+		{
+			"name": "GPS",
+			"path": "../PlatformIO/Projects/GPS"
 		}
 	],
 	"settings": {}
