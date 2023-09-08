@@ -13,7 +13,7 @@
 #define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-
+/*
 void blinkdry(){
 
   for(int i = 0; i< 5; i++){
@@ -45,22 +45,27 @@ void blinkfull(){
   display.display(); 
   delay(1000);
 }
+*/
 
 void setup() {
  Serial.begin(115200);
  
-
+/*
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { 
     Serial.println(F("SSD1306 allocation failed"));
     for(;;);
   }
   display.clearDisplay();
+  */
 }
 
 void loop() {
 
   int sensorValue = analogRead(A0);
   Serial.println(sensorValue);
+
+  delay(1000);
+    /*
     if (sensorValue > 480){     //550 before
          blinkdry();
         }else if (sensorValue <400) //350 before
@@ -79,7 +84,6 @@ void loop() {
 
 
 
-/*
   display.clearDisplay();
   display.setTextSize(3);
   display.setTextColor(WHITE);

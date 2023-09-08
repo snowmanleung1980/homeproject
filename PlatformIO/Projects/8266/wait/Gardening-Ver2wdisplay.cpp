@@ -1,5 +1,5 @@
-// MQTT, Gardening-02, No display
-// Tested
+// Try to MQTT back the value
+//Not test Yet
 
 
 #include <Arduino.h>
@@ -24,7 +24,7 @@ const char* sub_topic = "esp32p";
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-/*
+
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 32 // OLED display height, in pixels
 #define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
@@ -62,7 +62,7 @@ void blinkfull(){
   display.display(); 
   delay(1000);
 }
-*/
+
 
 void setup_wifi() {
   WiFi.mode(WIFI_STA);
@@ -73,9 +73,9 @@ void setup_wifi() {
   Serial.println(ssid);
 
   while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
+    delay(500);
     Serial.println("Connecting to WiFi...");
-   
+    void dispConnecting();
   }
   Serial.println("WiFi connected");
   Serial.println("IP address: ");
@@ -90,15 +90,16 @@ void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
     // Attempt to connect
-    if (client.connect(mqtt_topic)) {
+    if (client.connect("ESP32")) {
       Serial.println("connected");
+      // Subscribe
+      client.subscribe("esp32/output");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
       Serial.println(" try again in 5 seconds");
       // Wait 5 seconds before retrying
       delay(5000);
-      client.setServer(mqtt_server, 1883);
     }
   }
 }
@@ -109,13 +110,12 @@ void publishData(){
 
   String ssid = WiFi.SSID();
   int rssi = WiFi.RSSI();
-  const char id[] = "Gardening-02";
+  const char id[] = "esp01";
 
 
   doc["ID"] = id;
   doc["ssid"] = ssid;
   doc["rssi"] = rssi;
-  doc["water-Level"] =analogRead(A0);
 
   char output[100];
   serializeJson(doc, output);
@@ -128,13 +128,12 @@ void publishData(){
 void setup() {
  Serial.begin(115200);
  
-/*
+
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { 
     Serial.println(F("SSD1306 allocation failed"));
     for(;;);
   }
   display.clearDisplay();
-*/
 
 setup_wifi();
 
@@ -171,11 +170,7 @@ void loop() {
     client.loop();
 
   int sensorValue = analogRead(A0);
-  
   Serial.println(sensorValue);
-
-  delay(1000);
-  /*
     if (sensorValue > 480){     //550 before
          blinkdry();
         }else if (sensorValue <400) //350 before
@@ -193,7 +188,7 @@ void loop() {
         }
 
 
-*/
+
 
   publishData();
 
