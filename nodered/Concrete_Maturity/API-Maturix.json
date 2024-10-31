@@ -1,0 +1,706 @@
+[
+    {
+        "id": "9e2b52777e4c95b1",
+        "type": "tab",
+        "label": "API-Maturix",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "945f1fefe6731a1f",
+        "type": "inject",
+        "z": "9e2b52777e4c95b1",
+        "name": "Trigger",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 146,
+        "y": 560,
+        "wires": [
+            [
+                "5cef2e0275f19113"
+            ]
+        ]
+    },
+    {
+        "id": "5cef2e0275f19113",
+        "type": "function",
+        "z": "9e2b52777e4c95b1",
+        "name": "Set JSON Payload",
+        "func": "msg.payload = {\n    \"token\": \"41cbff42-be8f-452f-94d0-a81034f08773\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 560,
+        "wires": [
+            [
+                "1dcbbcd62230f5de"
+            ]
+        ]
+    },
+    {
+        "id": "function_node",
+        "type": "function",
+        "z": "9e2b52777e4c95b1",
+        "name": "Extract all Data",
+        "func": "var data = msg.payload.data;\nvar result = data.map(item => {\n    return {\n        timestamp: item.timestamp,\n        temperature: item.temperature\n    };\n});\nmsg.payload = result;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 680,
+        "wires": [
+            [
+                "cb2f10d548f9dd4b"
+            ]
+        ]
+    },
+    {
+        "id": "debug_node",
+        "type": "debug",
+        "z": "9e2b52777e4c95b1",
+        "name": "Extracted Data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1500,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "1ad0ddbe7d558e5d",
+        "type": "inject",
+        "z": "9e2b52777e4c95b1",
+        "name": "Trigger",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 146,
+        "y": 280,
+        "wires": [
+            [
+                "a7b35ec22b709494"
+            ]
+        ]
+    },
+    {
+        "id": "a7b35ec22b709494",
+        "type": "function",
+        "z": "9e2b52777e4c95b1",
+        "name": "Set JSON Payload",
+        "func": "msg.payload = {\n    \"token\": \"41cbff42-be8f-452f-94d0-a81034f08773\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 280,
+        "wires": [
+            [
+                "3f39b8809aac9027"
+            ]
+        ]
+    },
+    {
+        "id": "3f39b8809aac9027",
+        "type": "http request",
+        "z": "9e2b52777e4c95b1",
+        "name": "API Check Project",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.maturix.com/v1/cast?projectId=888507e8-0d42-5d8e-b18e-b1e980cc6333",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 670,
+        "y": 280,
+        "wires": [
+            [
+                "debug_node"
+            ]
+        ]
+    },
+    {
+        "id": "01d566760c9ab7c9",
+        "type": "function",
+        "z": "9e2b52777e4c95b1",
+        "name": "last data",
+        "func": "var data = msg.payload.data;\nif (data && data.length > 0) {\n    var latestItem = data[data.length - 1];\n    msg.payload = {\n        timestamp: latestItem.timestamp,\n        temperature: latestItem.temperature\n    };\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 720,
+        "wires": [
+            [
+                "debug_node"
+            ]
+        ]
+    },
+    {
+        "id": "bf31055871fb235d",
+        "type": "inject",
+        "z": "9e2b52777e4c95b1",
+        "name": "Trigger",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 146,
+        "y": 700,
+        "wires": [
+            [
+                "1a4ebdb7b6a9a06f"
+            ]
+        ]
+    },
+    {
+        "id": "1a4ebdb7b6a9a06f",
+        "type": "function",
+        "z": "9e2b52777e4c95b1",
+        "name": "Set JSON Payload",
+        "func": "msg.payload = {\n    \"token\": \"41cbff42-be8f-452f-94d0-a81034f08773\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 700,
+        "wires": [
+            [
+                "120e3580fe6ae2da"
+            ]
+        ]
+    },
+    {
+        "id": "120e3580fe6ae2da",
+        "type": "http request",
+        "z": "9e2b52777e4c95b1",
+        "name": "4UT0MH",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.maturix.com/v1/data/e2687eb9-c7e3-5326-8b9e-6436b6b134da",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 640,
+        "y": 700,
+        "wires": [
+            [
+                "function_node",
+                "01d566760c9ab7c9"
+            ]
+        ]
+    },
+    {
+        "id": "818f4d1b4a9eba3f",
+        "type": "inject",
+        "z": "9e2b52777e4c95b1",
+        "name": "Trigger",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 146,
+        "y": 820,
+        "wires": [
+            [
+                "f7e15ac6d97b204b"
+            ]
+        ]
+    },
+    {
+        "id": "f7e15ac6d97b204b",
+        "type": "function",
+        "z": "9e2b52777e4c95b1",
+        "name": "Set JSON Payload",
+        "func": "msg.payload = {\n    \"token\": \"41cbff42-be8f-452f-94d0-a81034f08773\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 820,
+        "wires": [
+            [
+                "2e87a06425ef7491"
+            ]
+        ]
+    },
+    {
+        "id": "2e87a06425ef7491",
+        "type": "http request",
+        "z": "9e2b52777e4c95b1",
+        "name": "0S9S66",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.maturix.com/v1/data/c5cc828f-aa13-5355-b3d0-069a3d3c691f",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 640,
+        "y": 820,
+        "wires": [
+            [
+                "function_node",
+                "01d566760c9ab7c9"
+            ]
+        ]
+    },
+    {
+        "id": "1dcbbcd62230f5de",
+        "type": "http request",
+        "z": "9e2b52777e4c95b1",
+        "name": "HLEEAA",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.maturix.com/v1/data/db59df19-6bc4-5efd-b93c-659fc1c0d8a6",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 640,
+        "y": 560,
+        "wires": [
+            [
+                "function_node",
+                "01d566760c9ab7c9"
+            ]
+        ]
+    },
+    {
+        "id": "0d5cff57e18db4d5",
+        "type": "inject",
+        "z": "9e2b52777e4c95b1",
+        "name": "Trigger",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 146,
+        "y": 1460,
+        "wires": [
+            [
+                "73e52c77f432c08b"
+            ]
+        ]
+    },
+    {
+        "id": "73e52c77f432c08b",
+        "type": "function",
+        "z": "9e2b52777e4c95b1",
+        "name": "Set JSON Payload",
+        "func": "msg.payload = {\n    \"token\": \"7f1c197a-2a06-4f62-b656-0fc1bc6368d3\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 1460,
+        "wires": [
+            [
+                "4dbbd533b623a0ba",
+                "aa13465babd5fed5"
+            ]
+        ]
+    },
+    {
+        "id": "4dbbd533b623a0ba",
+        "type": "http request",
+        "z": "9e2b52777e4c95b1",
+        "name": "0S9S66",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.maturix.com//v1/data/59c16c4c-8a93-5545-a30b-89efb50433b8",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 640,
+        "y": 1420,
+        "wires": [
+            [
+                "5c0b7f8a949937f5"
+            ]
+        ]
+    },
+    {
+        "id": "5c0b7f8a949937f5",
+        "type": "function",
+        "z": "9e2b52777e4c95b1",
+        "name": "Extract all Data",
+        "func": "var data = msg.payload.data;\nvar result = data.map(item => {\n    return {\n        timestamp: item.timestamp,\n        temperature: item.temperature\n    };\n});\nmsg.payload = result;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 1420,
+        "wires": [
+            [
+                "cb2f10d548f9dd4b"
+            ]
+        ]
+    },
+    {
+        "id": "cb2f10d548f9dd4b",
+        "type": "debug",
+        "z": "9e2b52777e4c95b1",
+        "name": "All Data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1480,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "454b0dd8da84410f",
+        "type": "comment",
+        "z": "9e2b52777e4c95b1",
+        "name": "China State data",
+        "info": "",
+        "x": 160,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "3a0bbdd226b8b1c8",
+        "type": "inject",
+        "z": "9e2b52777e4c95b1",
+        "name": "Trigger",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 1000,
+        "wires": [
+            [
+                "75f8215d8ee7f0da"
+            ]
+        ]
+    },
+    {
+        "id": "75f8215d8ee7f0da",
+        "type": "function",
+        "z": "9e2b52777e4c95b1",
+        "name": "Set JSON Payload",
+        "func": "msg.payload = {\n    \"token\": \"41cbff42-be8f-452f-94d0-a81034f08773\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 414,
+        "y": 1000,
+        "wires": [
+            [
+                "2ee08c71cfc831e0"
+            ]
+        ]
+    },
+    {
+        "id": "ccbf08c118d73cb4",
+        "type": "inject",
+        "z": "9e2b52777e4c95b1",
+        "name": "Trigger",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 1140,
+        "wires": [
+            [
+                "d970d395062f503f"
+            ]
+        ]
+    },
+    {
+        "id": "d970d395062f503f",
+        "type": "function",
+        "z": "9e2b52777e4c95b1",
+        "name": "Set JSON Payload",
+        "func": "msg.payload = {\n    \"token\": \"41cbff42-be8f-452f-94d0-a81034f08773\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 414,
+        "y": 1140,
+        "wires": [
+            [
+                "95c61c97e8043d94"
+            ]
+        ]
+    },
+    {
+        "id": "95c61c97e8043d94",
+        "type": "http request",
+        "z": "9e2b52777e4c95b1",
+        "name": "4UT0MH",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.maturix.com/v1/monitoring/e2687eb9-c7e3-5326-8b9e-6436b6b134da",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 644,
+        "y": 1140,
+        "wires": [
+            [
+                "05da66f4ea41eb2a"
+            ]
+        ]
+    },
+    {
+        "id": "566575a9739eec42",
+        "type": "inject",
+        "z": "9e2b52777e4c95b1",
+        "name": "Trigger",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 1260,
+        "wires": [
+            [
+                "8b6c38fdeb7a3e1c"
+            ]
+        ]
+    },
+    {
+        "id": "8b6c38fdeb7a3e1c",
+        "type": "function",
+        "z": "9e2b52777e4c95b1",
+        "name": "Set JSON Payload",
+        "func": "msg.payload = {\n    \"token\": \"41cbff42-be8f-452f-94d0-a81034f08773\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 414,
+        "y": 1260,
+        "wires": [
+            [
+                "99dd8745e232ee67"
+            ]
+        ]
+    },
+    {
+        "id": "99dd8745e232ee67",
+        "type": "http request",
+        "z": "9e2b52777e4c95b1",
+        "name": "0S9S66",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.maturix.com/v1/monitoring/c5cc828f-aa13-5355-b3d0-069a3d3c691f",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 644,
+        "y": 1260,
+        "wires": [
+            [
+                "05da66f4ea41eb2a"
+            ]
+        ]
+    },
+    {
+        "id": "2ee08c71cfc831e0",
+        "type": "http request",
+        "z": "9e2b52777e4c95b1",
+        "name": "HLEEAA",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.maturix.com/v1/monitoring/db59df19-6bc4-5efd-b93c-659fc1c0d8a6",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 644,
+        "y": 1000,
+        "wires": [
+            [
+                "05da66f4ea41eb2a"
+            ]
+        ]
+    },
+    {
+        "id": "708a2696d85089c7",
+        "type": "comment",
+        "z": "9e2b52777e4c95b1",
+        "name": "China State monitoring",
+        "info": "",
+        "x": 180,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "05da66f4ea41eb2a",
+        "type": "function",
+        "z": "9e2b52777e4c95b1",
+        "name": "Extract",
+        "func": "// Extracting the timestamp and temperature\nvar timestamp = msg.payload.latestdata.timestamp;\nvar temperature = msg.payload.latestdata.temperature;\n\n// Creating a new message with the extracted data\nmsg.payload = {\n    timestamp: timestamp,\n    temperature: temperature\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 1140,
+        "wires": [
+            [
+                "debug_node"
+            ]
+        ]
+    },
+    {
+        "id": "208e3eb3acd035f6",
+        "type": "comment",
+        "z": "9e2b52777e4c95b1",
+        "name": "TLA Trial",
+        "info": "",
+        "x": 140,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "aa13465babd5fed5",
+        "type": "http request",
+        "z": "9e2b52777e4c95b1",
+        "name": "0S9S66",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.maturix.com//v1/monitoring/59c16c4c-8a93-5545-a30b-89efb50433b8",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 640,
+        "y": 1500,
+        "wires": [
+            [
+                "05da66f4ea41eb2a"
+            ]
+        ]
+    },
+    {
+        "id": "c94b14bc97674f84",
+        "type": "comment",
+        "z": "9e2b52777e4c95b1",
+        "name": "data",
+        "info": "",
+        "x": 630,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "356fe3cbd195e1bf",
+        "type": "comment",
+        "z": "9e2b52777e4c95b1",
+        "name": "monitoring",
+        "info": "",
+        "x": 640,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "b35284ea2d1cce97",
+        "type": "comment",
+        "z": "9e2b52777e4c95b1",
+        "name": "China State",
+        "info": "",
+        "x": 150,
+        "y": 220,
+        "wires": []
+    }
+]

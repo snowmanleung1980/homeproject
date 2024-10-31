@@ -1,0 +1,725 @@
+[
+    {
+        "id": "8feaf45e2d04640c",
+        "type": "tab",
+        "label": "Reading",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "49a9fba1c6c8fdb6",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "function 11",
+        "func": "// Assume msg.payload is where the Modbus data is stored.\nvar co2Raw = msg.payload; // Adjust indexing based on actual payload structure.\nflow.set(\"co2Raw\", co2Raw);\n\n\n// Retrieve drift and correction factors from global context\nvar co2DriftFactor = global.get(\"calibrationData.co2DriftFactor\") || 0; // Default to 0 if undefined\nvar co2CorrectionFactor = global.get(\"calibrationData.co2CorrectionFactor\") || 1; // Default to 1 if undefined\n\n// Calculate the CO2 value adjusted for drift.\nvar co2MValue = co2Raw - co2DriftFactor;\n\n// Apply correction factor to the adjusted CO2 value.\nvar co2CorrectedValue = co2MValue * co2CorrectionFactor;\n\nvar co2CorrectedValue = parseFloat(co2MValue.toFixed(0));\n\nflow.set(\"co2CorrectedValue\", co2CorrectedValue);\n\n// Store the calculated values in msg.payload for further use.\nmsg.payload = {\n   // CO2Raw: co2Raw,\n   // CO2MValue: co2MValue,\n    CO2CorrectedValue: co2CorrectedValue,\n   // CO2DriftFactor: co2DriftFactor,\n   // CO2CorrectionFactor: co2CorrectionFactor,\n};\n\n// Return the updated message object.\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 360,
+        "wires": [
+            [
+                "dabaab72396b1c81"
+            ]
+        ]
+    },
+    {
+        "id": "dabaab72396b1c81",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f078e593c2640307",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1234",
+        "payloadType": "num",
+        "x": 310,
+        "y": 340,
+        "wires": [
+            [
+                "49a9fba1c6c8fdb6"
+            ]
+        ]
+    },
+    {
+        "id": "dd189c2ab121c18d",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1000",
+        "payloadType": "num",
+        "x": 310,
+        "y": 380,
+        "wires": [
+            [
+                "49a9fba1c6c8fdb6"
+            ]
+        ]
+    },
+    {
+        "id": "b48f8a6b6381251c",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "calibrationData",
+        "payloadType": "global",
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "29615c4cd9ac788d"
+            ]
+        ]
+    },
+    {
+        "id": "29615c4cd9ac788d",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "a09a88822367a594",
+        "type": "comment",
+        "z": "8feaf45e2d04640c",
+        "name": "Check Cal Value",
+        "info": "",
+        "x": 140,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "512a2dcb54c4633c",
+        "type": "comment",
+        "z": "8feaf45e2d04640c",
+        "name": "CO2 Example",
+        "info": "",
+        "x": 150,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f1202bf491323b62",
+        "type": "delay",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 690,
+        "y": 460,
+        "wires": [
+            [
+                "7cb36f06b0fada6f"
+            ]
+        ]
+    },
+    {
+        "id": "01a0a9ae62fd2796",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 460,
+        "wires": [
+            [
+                "fa3dc33e5dad7257"
+            ]
+        ]
+    },
+    {
+        "id": "fa3dc33e5dad7257",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Counter start",
+        "func": "flow.set(\"counter\", 0); // Initialize counter\nreturn {payload: \"start\"};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 460,
+        "wires": [
+            [
+                "f1202bf491323b62"
+            ]
+        ]
+    },
+    {
+        "id": "7cb36f06b0fada6f",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Counter",
+        "func": "let count = flow.get(\"counter\") || 0;\ncount += 1;\nflow.set(\"counter\", count);\n\nif (count < 101) {\n    return msg; // send message to delay node again\n} else {\n    return null; // stop sending messages\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 460,
+        "wires": [
+            [
+                "f1202bf491323b62",
+                "58e7e36b41c6c206",
+                "4ab0aa61ead27202",
+                "1f7e0b1737250d26"
+            ]
+        ]
+    },
+    {
+        "id": "1f7e0b1737250d26",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "400-1800",
+        "func": "// Generate a random number between 400 and 1500\nconst min = 400;\nconst max = 1800;\nconst randomValue = (Math.random() * (max - min + 1) + min);\n\n// Set the payload to the random number\nmsg.payload = randomValue;\n\n// Return the message object\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e9cc2361da0bcfd",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "eb474ec4939d52c7",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Check co2AvgValue",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "co2AvgValue",
+        "payloadType": "flow",
+        "x": 270,
+        "y": 620,
+        "wires": [
+            [
+                "1e9cc2361da0bcfd"
+            ]
+        ]
+    },
+    {
+        "id": "start",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "start",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 540,
+        "wires": [
+            [
+                "read"
+            ]
+        ]
+    },
+    {
+        "id": "read",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Read and Store to array",
+        "func": "flow.set(\"co2AvgValue\", null);\nlet co2Array = flow.get('co2Array') || [];\nco2Array.push(flow.get('co2CorrectedValue'));\nflow.set('co2Array', co2Array);\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 540,
+        "wires": [
+            [
+                "1e9cc2361da0bcfd"
+            ]
+        ]
+    },
+    {
+        "id": "end",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "End",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "end",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 580,
+        "wires": [
+            [
+                "average"
+            ]
+        ]
+    },
+    {
+        "id": "average",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Calculate Average",
+        "func": "let co2Array = flow.get('co2Array') || [];\nvar sum = co2Array.reduce((a, b) => a + b, 0);\nvar avg = (sum / co2Array.length) || 0;\n\nflow.set(\"co2AvgValue\", avg);\nmsg.payload = avg;\nflow.set('co2Array', []);\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 600,
+        "wires": [
+            [
+                "1e9cc2361da0bcfd"
+            ]
+        ]
+    },
+    {
+        "id": "ad2810799664bc7c",
+        "type": "comment",
+        "z": "8feaf45e2d04640c",
+        "name": "Ouput a series data",
+        "info": "",
+        "x": 130,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "58e7e36b41c6c206",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "2 Random Number",
+        "func": "// Extract min and max values for A and B from the incoming payload\nconst minA = 0;\nconst maxA = 50;\nconst minB = 0;\nconst maxB = 20;\n\n// Function to generate a random number within a given range\nfunction generateRandom(min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\n// Generate random numbers for A and B\nconst randomA = generateRandom(minA, maxA);\nconst randomB = generateRandom(minB, maxB);\n\n// Calculate the difference A - B\nconst difference = randomA - randomB;\n\n// Prepare output message\nmsg.payload = \n   // randomA: randomA,\n   // randomB: randomB,\n    difference\n;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ab0aa61ead27202",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "0-100",
+        "func": "// Generate a random number between 400 and 1500\nconst min = 0;\nconst max = 100;\nconst randomValue = (Math.random() * (max - min + 1) + min);\n\n// Set the payload to the random number\nmsg.payload = randomValue;\n\n// Return the message object\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 400,
+        "wires": [
+            [
+                "66a088de92e066fd"
+            ]
+        ]
+    },
+    {
+        "id": "66a088de92e066fd",
+        "type": "range",
+        "z": "8feaf45e2d04640c",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "1000",
+        "maxout": "1024",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "",
+        "x": 1250,
+        "y": 400,
+        "wires": [
+            [
+                "d9593d3d7f8ba17e",
+                "49a9fba1c6c8fdb6"
+            ]
+        ]
+    },
+    {
+        "id": "d9593d3d7f8ba17e",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 9",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1440,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e7b30c7434a06f03",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Cal co2NewCorrectionFactor",
+        "func": "// Retrieve the calibration data from global context\nconst co2CorrectionFactor = global.get(\"calibrationData.co2CorrectionFactor\");\n\n// Retrieve the average CO2 value from flow context\nconst co2AvgValue = flow.get(\"co2AvgValue\");\n\n// Check if both values are available\nif (co2CorrectionFactor === undefined || co2AvgValue === undefined) {\n    node.error(\"Required data is missing\");\n    return null; // Stop execution if data is missing\n}\n\n// Perform the calculation\nlet co2NewCorrectionFactor;\nif (co2AvgValue !== 0) { // Ensure not dividing by zero\n    co2NewCorrectionFactor = co2CorrectionFactor * (1000 / co2AvgValue);\n} else {\n    node.error(\"Average CO2 value is zero, division by zero is not allowed\");\n    return null; // Stop execution to avoid division by zero\n}\n\n// Assign the result to msg.payload\nmsg.payload = co2NewCorrectionFactor;\nflow.set(\"co2NewCorrectionFactor\", co2NewCorrectionFactor);\n\n// Return the message object to the next node\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 1000,
+        "wires": [
+            [
+                "108846d765b6b407"
+            ]
+        ]
+    },
+    {
+        "id": "b532091d31a3538f",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 360,
+        "y": 1000,
+        "wires": [
+            [
+                "e7b30c7434a06f03"
+            ]
+        ]
+    },
+    {
+        "id": "108846d765b6b407",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "e29131ad64309bb5",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Check co2Raw",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "co2Raw",
+        "payloadType": "flow",
+        "x": 280,
+        "y": 660,
+        "wires": [
+            [
+                "1e9cc2361da0bcfd"
+            ]
+        ]
+    },
+    {
+        "id": "78c8ba7489b9e317",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Update co2NewCorrectionFactor",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2CorrectionFactor",
+        "payload": "co2NewCorrectionFactor",
+        "payloadType": "flow",
+        "x": 290,
+        "y": 1060,
+        "wires": [
+            [
+                "108846d765b6b407",
+                "8b07ec7295a3089b"
+            ]
+        ]
+    },
+    {
+        "id": "8b07ec7295a3089b",
+        "type": "link out",
+        "z": "8feaf45e2d04640c",
+        "name": "Go to Cal factor",
+        "mode": "link",
+        "links": [
+            "df5c35ccc0d96b04"
+        ],
+        "x": 705,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "bcf0074a68d1cb83",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Update co2DriftFactor",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2DriftFactor",
+        "payload": "co2AvgValue",
+        "payloadType": "flow",
+        "x": 260,
+        "y": 1120,
+        "wires": [
+            [
+                "108846d765b6b407",
+                "8b07ec7295a3089b"
+            ]
+        ]
+    },
+    {
+        "id": "68eff474918e80de",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 780,
+        "wires": [
+            [
+                "e8ab41e571b36a50"
+            ]
+        ]
+    },
+    {
+        "id": "e8ab41e571b36a50",
+        "type": "trigger",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "date",
+        "op2type": "date",
+        "duration": "10",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 2,
+        "x": 390,
+        "y": 780,
+        "wires": [
+            [
+                "read"
+            ],
+            [
+                "average"
+            ]
+        ]
+    }
+]

@@ -1,0 +1,620 @@
+[
+    {
+        "id": "1a34ba8f348f7273",
+        "type": "tab",
+        "label": "220V relay",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d278dc5c76605f9f",
+        "type": "group",
+        "z": "1a34ba8f348f7273",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "7167135fe2b600af",
+            "8203ca2dba57bdcb",
+            "44ebc9b7e96f6162",
+            "5b73eba0fcff5f79"
+        ],
+        "x": 94,
+        "y": 119,
+        "w": 452,
+        "h": 142
+    },
+    {
+        "id": "3b6c654a44039483",
+        "type": "group",
+        "z": "1a34ba8f348f7273",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "faf87918b5d22a01",
+            "43fd0e0045066dec"
+        ],
+        "x": 94,
+        "y": 279,
+        "w": 452,
+        "h": 82
+    },
+    {
+        "id": "5f5d832f2ed9784a",
+        "type": "group",
+        "z": "1a34ba8f348f7273",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "6978cd32f8ce26fa",
+            "e10e23c408fe1efb",
+            "a7a41ddc9098a987",
+            "07d4f7e68d62a8e9",
+            "7bac38150b76c871"
+        ],
+        "x": 94,
+        "y": 379,
+        "w": 832,
+        "h": 142
+    },
+    {
+        "id": "e19c77f174d05102",
+        "type": "group",
+        "z": "1a34ba8f348f7273",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "1771d38cf9fc44dd",
+            "3dbe1e8b94aea435",
+            "7a0f8e15259e961d",
+            "a4be4fc81db4ca1e",
+            "2f31e0f00dc57531"
+        ],
+        "x": 94,
+        "y": 559,
+        "w": 832,
+        "h": 142
+    },
+    {
+        "id": "f0d940660d573676",
+        "type": "debug",
+        "z": "1a34ba8f348f7273",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "7167135fe2b600af",
+        "type": "modbus-write",
+        "z": "1a34ba8f348f7273",
+        "g": "d278dc5c76605f9f",
+        "name": "ID1 address 1",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "1",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 440,
+        "y": 220,
+        "wires": [
+            [
+                "f0d940660d573676"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "faf87918b5d22a01",
+        "type": "modbus-getter",
+        "z": "1a34ba8f348f7273",
+        "g": "3b6c654a44039483",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "logIOActivities": false,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "2",
+        "server": "bb5d62ae67f43b22",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 440,
+        "y": 320,
+        "wires": [
+            [
+                "f0d940660d573676"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "43fd0e0045066dec",
+        "type": "inject",
+        "z": "1a34ba8f348f7273",
+        "g": "3b6c654a44039483",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 320,
+        "wires": [
+            [
+                "faf87918b5d22a01"
+            ]
+        ]
+    },
+    {
+        "id": "8203ca2dba57bdcb",
+        "type": "inject",
+        "z": "1a34ba8f348f7273",
+        "g": "d278dc5c76605f9f",
+        "name": "0",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "44ebc9b7e96f6162",
+                "7167135fe2b600af"
+            ]
+        ]
+    },
+    {
+        "id": "44ebc9b7e96f6162",
+        "type": "modbus-write",
+        "z": "1a34ba8f348f7273",
+        "g": "d278dc5c76605f9f",
+        "name": "ID1 address 0",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "f0d940660d573676"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5b73eba0fcff5f79",
+        "type": "inject",
+        "z": "1a34ba8f348f7273",
+        "g": "d278dc5c76605f9f",
+        "name": "1",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 190,
+        "y": 200,
+        "wires": [
+            [
+                "44ebc9b7e96f6162",
+                "7167135fe2b600af"
+            ]
+        ]
+    },
+    {
+        "id": "48ed219347bd253a",
+        "type": "inject",
+        "z": "1a34ba8f348f7273",
+        "name": "Set Coils",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 800,
+        "wires": [
+            [
+                "dfafea5c24ddc409"
+            ]
+        ]
+    },
+    {
+        "id": "dfafea5c24ddc409",
+        "type": "function",
+        "z": "1a34ba8f348f7273",
+        "name": "Format Modbus Payload",
+        "func": "msg.payload = [true, true, true, false, true, false, true, false, true, false];\nmsg.address = 0;\nmsg.quantity = 2;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 800,
+        "wires": [
+            [
+                "1c6ba1c3cacae48f"
+            ]
+        ]
+    },
+    {
+        "id": "1c6ba1c3cacae48f",
+        "type": "modbus-write",
+        "z": "1a34ba8f348f7273",
+        "name": "Write Multiple Coils",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 910,
+        "y": 800,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6978cd32f8ce26fa",
+        "type": "inject",
+        "z": "1a34ba8f348f7273",
+        "g": "5f5d832f2ed9784a",
+        "name": "ID1: ON",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 420,
+        "wires": [
+            [
+                "e10e23c408fe1efb"
+            ]
+        ]
+    },
+    {
+        "id": "e10e23c408fe1efb",
+        "type": "function",
+        "z": "1a34ba8f348f7273",
+        "g": "5f5d832f2ed9784a",
+        "name": "Format Payload ON",
+        "func": "msg.payload = [true, true]; // Set both relays to ON\nmsg.address = 0; // Starting address\nmsg.quantity = 2; // Number of coils\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 460,
+        "y": 420,
+        "wires": [
+            [
+                "a7a41ddc9098a987"
+            ]
+        ]
+    },
+    {
+        "id": "a7a41ddc9098a987",
+        "type": "modbus-write",
+        "z": "1a34ba8f348f7273",
+        "g": "5f5d832f2ed9784a",
+        "name": "Write Multiple Coils",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "MCoils",
+        "adr": "0",
+        "quantity": "2",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 810,
+        "y": 440,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "07d4f7e68d62a8e9",
+        "type": "inject",
+        "z": "1a34ba8f348f7273",
+        "g": "5f5d832f2ed9784a",
+        "name": "ID1: OFF",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 480,
+        "wires": [
+            [
+                "7bac38150b76c871"
+            ]
+        ]
+    },
+    {
+        "id": "7bac38150b76c871",
+        "type": "function",
+        "z": "1a34ba8f348f7273",
+        "g": "5f5d832f2ed9784a",
+        "name": "Format Payload OFF",
+        "func": "msg.payload = [false, false]; // Set both relays to OFF\nmsg.address = 0; // Starting address\nmsg.quantity = 2; // Number of coils\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 460,
+        "y": 480,
+        "wires": [
+            [
+                "a7a41ddc9098a987"
+            ]
+        ]
+    },
+    {
+        "id": "1771d38cf9fc44dd",
+        "type": "inject",
+        "z": "1a34ba8f348f7273",
+        "g": "e19c77f174d05102",
+        "name": "ID2: ON",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 600,
+        "wires": [
+            [
+                "3dbe1e8b94aea435"
+            ]
+        ]
+    },
+    {
+        "id": "3dbe1e8b94aea435",
+        "type": "function",
+        "z": "1a34ba8f348f7273",
+        "g": "e19c77f174d05102",
+        "name": "Format Payload ON",
+        "func": "msg.payload = [true, true]; // Set both relays to ON\nmsg.address = 0; // Starting address\nmsg.quantity = 2; // Number of coils\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 450,
+        "y": 600,
+        "wires": [
+            [
+                "7a0f8e15259e961d"
+            ]
+        ]
+    },
+    {
+        "id": "7a0f8e15259e961d",
+        "type": "modbus-write",
+        "z": "1a34ba8f348f7273",
+        "g": "e19c77f174d05102",
+        "name": "Write Multiple Coils",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "2",
+        "dataType": "MCoils",
+        "adr": "0",
+        "quantity": "2",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 810,
+        "y": 620,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a4be4fc81db4ca1e",
+        "type": "inject",
+        "z": "1a34ba8f348f7273",
+        "g": "e19c77f174d05102",
+        "name": "ID2: OFF",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 660,
+        "wires": [
+            [
+                "2f31e0f00dc57531"
+            ]
+        ]
+    },
+    {
+        "id": "2f31e0f00dc57531",
+        "type": "function",
+        "z": "1a34ba8f348f7273",
+        "g": "e19c77f174d05102",
+        "name": "Format Payload OFF",
+        "func": "msg.payload = [false, false]; // Set both relays to OFF\nmsg.address = 0; // Starting address\nmsg.quantity = 2; // Number of coils\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 450,
+        "y": 660,
+        "wires": [
+            [
+                "7a0f8e15259e961d"
+            ]
+        ]
+    },
+    {
+        "id": "bb5d62ae67f43b22",
+        "type": "modbus-client",
+        "name": "USBto485",
+        "clienttype": "simpleser",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "COM7",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": false,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true,
+        "showWarnings": true,
+        "showLogs": true
+    }
+]

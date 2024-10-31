@@ -1,0 +1,869 @@
+[
+    {
+        "id": "fc9da1d89d861f4d",
+        "type": "tab",
+        "label": "Calibration",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f6g7h8i9.0abcd",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Load Calibration",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 530,
+        "y": 160,
+        "wires": [
+            [
+                "8c6e5d4f3b2a1098"
+            ]
+        ]
+    },
+    {
+        "id": "0c5a4317eeb1bded",
+        "type": "debug",
+        "z": "fc9da1d89d861f4d",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1460,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "259ff94e33e55494",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF CO2 1.2",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2CorrectionFactor",
+        "payload": "1.2",
+        "payloadType": "num",
+        "x": 550,
+        "y": 240,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "7367be9cc689f9aa",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF Temp 0.9",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "tempCorrectionFactor",
+        "payload": "0.9",
+        "payloadType": "num",
+        "x": 550,
+        "y": 340,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "20a8bcdb758782e1",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF RH 1.2",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "rhCorrectionFactor",
+        "payload": "1.2",
+        "payloadType": "num",
+        "x": 560,
+        "y": 440,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "fc4c8c6f06ea8ccc",
+        "type": "function",
+        "z": "fc9da1d89d861f4d",
+        "name": "Update JSON",
+        "func": "let calibrationData = global.get('calibrationData') || {};\ncalibrationData[msg.topic] = msg.payload;\nglobal.set('calibrationData', calibrationData);\n\nreturn { payload: calibrationData };",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 520,
+        "wires": [
+            [
+                "9d95920b7555fa86",
+                "0c5a4317eeb1bded"
+            ]
+        ]
+    },
+    {
+        "id": "9d95920b7555fa86",
+        "type": "file",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "filename": "/home/rpi/calibration/calibration.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1320,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "caa1d3c6aa0c113f",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF CO2 0.8",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2CorrectionFactor",
+        "payload": "0.8",
+        "payloadType": "num",
+        "x": 550,
+        "y": 280,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "d8fe1d4df4600f4e",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF Temp 1.1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "tempCorrectionFactor",
+        "payload": "1.1",
+        "payloadType": "num",
+        "x": 550,
+        "y": 380,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "b3bfa16836ddea27",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF RH 0.95",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "rhCorrectionFactor",
+        "payload": "0.95",
+        "payloadType": "num",
+        "x": 550,
+        "y": 480,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "8c6e5d4f3b2a1098",
+        "type": "file in",
+        "z": "fc9da1d89d861f4d",
+        "name": "Read Calibration File",
+        "filename": "/home/rpi/calibration/calibration.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 810,
+        "y": 160,
+        "wires": [
+            [
+                "9d8c7b6a5e4f3012"
+            ]
+        ]
+    },
+    {
+        "id": "9d8c7b6a5e4f3012",
+        "type": "json",
+        "z": "fc9da1d89d861f4d",
+        "name": "Parse JSON",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1030,
+        "y": 160,
+        "wires": [
+            [
+                "1f2e3d4c5b6a7890"
+            ]
+        ]
+    },
+    {
+        "id": "1f2e3d4c5b6a7890",
+        "type": "function",
+        "z": "fc9da1d89d861f4d",
+        "name": "Restore Calibration",
+        "func": "global.set('calibrationData', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1250,
+        "y": 160,
+        "wires": [
+            [
+                "0c5a4317eeb1bded"
+            ]
+        ]
+    },
+    {
+        "id": "7da3e46d7409a028",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Calibration Correction Factor",
+        "info": "co2CorrectionFactor\ntempCorrectionFactor\nrhCorrectionFactor",
+        "x": 900,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "159a44013f82951e",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift CO2 121",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2DriftFactor",
+        "payload": "121",
+        "payloadType": "num",
+        "x": 550,
+        "y": 560,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "2364accb7eaf4f93",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift CO2 0",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2DriftFactor",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 540,
+        "y": 600,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "1bbfda10b014118c",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift Temp 1.1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "tempDriftFactor",
+        "payload": "1.1",
+        "payloadType": "num",
+        "x": 550,
+        "y": 660,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "76945fe06817b4e7",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift Temp 1.1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "tempDriftFactor",
+        "payload": "0.2",
+        "payloadType": "num",
+        "x": 550,
+        "y": 700,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "1396c9448403ffd1",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift RH -5",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "rhDriftFactor",
+        "payload": "-5",
+        "payloadType": "num",
+        "x": 560,
+        "y": 760,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "803fe8508043a1ad",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift RH 11",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "rhDriftFactor",
+        "payload": "11",
+        "payloadType": "num",
+        "x": 560,
+        "y": 800,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "bf40017db5d5558f",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "calibrationData",
+        "payloadType": "global",
+        "x": 520,
+        "y": 960,
+        "wires": [
+            [
+                "fb4bce3a2428d817"
+            ]
+        ]
+    },
+    {
+        "id": "fb4bce3a2428d817",
+        "type": "debug",
+        "z": "fc9da1d89d861f4d",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "0d5d45a2a06c56b4",
+        "type": "function",
+        "z": "fc9da1d89d861f4d",
+        "name": "Default Calibration Value",
+        "func": "let calibrationData = {\n    \"co2CorrectionFactor\": 1,\n    \"tempCorrectionFactor\": 1,\n    \"rhCorrectionFactor\": 1,\n    \"co2DriftFactor\": 0,\n    \"tempDriftFactor\": 0,\n    \"rhDriftFactor\": 0\n};\n\nglobal.set(\"calibrationData\", calibrationData);\n\nreturn { payload: calibrationData };",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 860,
+        "wires": [
+            [
+                "9d95920b7555fa86"
+            ]
+        ]
+    },
+    {
+        "id": "c3fb5a28c770766f",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 560,
+        "y": 860,
+        "wires": [
+            [
+                "0d5d45a2a06c56b4"
+            ]
+        ]
+    },
+    {
+        "id": "bf1e4c294a2d8937",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Reset the Cal Value",
+        "info": "",
+        "x": 310,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "522af21f058ab476",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Check Cal Value",
+        "info": "",
+        "x": 300,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "8bb8d53f3be9edf2",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "restore Cal Value when Boot",
+        "info": "",
+        "x": 280,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "87bd706a.aec93",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Create an HTTP Endpoint",
+        "info": "The `HTTP In` and `HTTP Response` pair of nodes are the starting point for all HTTP endpoints you create.\n\nAny flow that starts with an `HTTP In` node must have a path to an `HTTP Response` node otherwise requests will eventually timeout.\n\nThe `HTTP Response` node uses the `payload` property of messages it receives as the body of the response. Other properties can be used to further customize the response - they are covered in other recipes.\n\nThe `Template` node provides a convenient way to embed a body of content into a flow. It may be desirable to maintain such static content outside of the flow.\n\nSee Node-RED cookbook [item](https://cookbook.nodered.org/http/create-an-http-endpoint) for details.",
+        "x": 510,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "7f10afe.b1faa5",
+        "type": "http in",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "url": "/get-calibration",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 550,
+        "y": 1120,
+        "wires": [
+            [
+                "1b8bb810a2c9c69c"
+            ]
+        ]
+    },
+    {
+        "id": "d5ce67fc.e6e608",
+        "type": "http response",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 990,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "5a89ce70.db6d5",
+        "type": "http request",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:1880/get-calibration",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 670,
+        "y": 1260,
+        "wires": [
+            [
+                "18b48ed8.1072e1"
+            ]
+        ]
+    },
+    {
+        "id": "31f7aabb.3fbe06",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 520,
+        "y": 1260,
+        "wires": [
+            [
+                "5a89ce70.db6d5"
+            ]
+        ]
+    },
+    {
+        "id": "18b48ed8.1072e1",
+        "type": "debug",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "3c61c12c.5abaae",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Send HTTP request: http://localhost:1880/get-calibration",
+        "info": "`http request` node can be used to make an **HTTP GET** request.\n\nSee Node-RED cookbook [item](https://cookbook.nodered.org/http/simple-get-request) for details.",
+        "x": 610,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "83e766b1.154438",
+        "type": "http request",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 670,
+        "y": 1480,
+        "wires": [
+            [
+                "188bc18.5487a3f"
+            ]
+        ]
+    },
+    {
+        "id": "89c4d7a7.f8d798",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "url",
+                "v": "http://localhost:1880/hello",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 520,
+        "y": 1480,
+        "wires": [
+            [
+                "83e766b1.154438"
+            ]
+        ]
+    },
+    {
+        "id": "188bc18.5487a3f",
+        "type": "debug",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "a65364a3.c72a58",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Set URL in HTTP request node setting panel",
+        "info": "`http request` node can be used to make an **HTTP GET** request.\n\nSee Node-RED cookbook [item](https://cookbook.nodered.org/http/simple-get-request) for details.",
+        "x": 770,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "47396a8e.6804f4",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Set URL via url property of input message of HTTP request node",
+        "info": "Target URL of `http request` node can be specified via `url` property of input message.\n\nSee Node-RED cookbook [item](https://cookbook.nodered.org/http/set-request-url) for details.",
+        "x": 830,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "1b8bb810a2c9c69c",
+        "type": "function",
+        "z": "fc9da1d89d861f4d",
+        "name": "function 10",
+        "func": "let calibrationData = global.get(\"calibrationData\") || \"No calibration data set.\";\nmsg.payload = calibrationData;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 1120,
+        "wires": [
+            [
+                "d5ce67fc.e6e608"
+            ]
+        ]
+    },
+    {
+        "id": "df5c35ccc0d96b04",
+        "type": "link in",
+        "z": "fc9da1d89d861f4d",
+        "name": "to update cal file",
+        "links": [
+            "8b07ec7295a3089b"
+        ],
+        "x": 865,
+        "y": 340,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    }
+]

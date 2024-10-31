@@ -1,0 +1,549 @@
+[
+    {
+        "id": "e601b94df7aae738",
+        "type": "tab",
+        "label": "Renew-UI",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0c5fde92e9694da5",
+        "type": "modbus-client",
+        "name": "",
+        "clienttype": "serial",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyAMA3",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "61c8620de6d6e86b",
+        "type": "serial-port",
+        "name": "Display",
+        "serialport": "/dev/ttyS0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "3918123fd48af60d",
+        "type": "serial-port",
+        "name": "PM",
+        "serialport": "/dev/ttyAMA2",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "0x42 0x4D",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "100",
+        "bin": "bin",
+        "out": "interbyte",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "1543734153b196bb",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 660,
+        "wires": [
+            [
+                "338c4ea7439535b3"
+            ]
+        ]
+    },
+    {
+        "id": "dbb5a35a5f57e4b2",
+        "type": "modbus-response",
+        "z": "e601b94df7aae738",
+        "name": "",
+        "registerShowMax": 20,
+        "x": 530,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "338c4ea7439535b3",
+        "type": "modbus-getter",
+        "z": "e601b94df7aae738",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "logIOActivities": false,
+        "unitid": "254",
+        "dataType": "HoldingRegister",
+        "adr": "11",
+        "quantity": "1",
+        "server": "0c5fde92e9694da5",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 320,
+        "y": 660,
+        "wires": [
+            [
+                "dbb5a35a5f57e4b2",
+                "4473a2424d3e96c4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8dc2f91b9d3bffba",
+        "type": "serial out",
+        "z": "e601b94df7aae738",
+        "name": "",
+        "serial": "61c8620de6d6e86b",
+        "x": 900,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "3",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "name": "Encode and Append Hex",
+        "func": "    var headBuf = new Buffer(\"co2.val=\", 'utf8');\n    var textBuf = Buffer.from(msg.payload, 'utf8');\n    var postFixBuf = new Buffer(\"FFFFFF\", 'hex');\n \n\n    // Concatenate the buffers\nmsg.payload = Buffer.concat([headBuf,textBuf, postFixBuf]);\n    return msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 660,
+        "wires": [
+            [
+                "6b23f42cd8dcdfc6"
+            ]
+        ]
+    },
+    {
+        "id": "4",
+        "type": "debug",
+        "z": "e601b94df7aae738",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "d330d0daeded5519",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1200",
+        "payloadType": "str",
+        "x": 570,
+        "y": 520,
+        "wires": [
+            [
+                "3"
+            ]
+        ]
+    },
+    {
+        "id": "0a44c8247d13c038",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "3400",
+        "payloadType": "str",
+        "x": 570,
+        "y": 560,
+        "wires": [
+            [
+                "3"
+            ]
+        ]
+    },
+    {
+        "id": "4473a2424d3e96c4",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "name": "Condition array to string",
+        "func": "// Check if payload is an array and convert it to string\nif (Array.isArray(msg.payload)) {\n    msg.payload = msg.payload.join(\", \"); // Join array elements with a comma and space\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 660,
+        "wires": [
+            [
+                "3"
+            ]
+        ]
+    },
+    {
+        "id": "f92e7148e57d03ab",
+        "type": "serial in",
+        "z": "e601b94df7aae738",
+        "name": "",
+        "serial": "3918123fd48af60d",
+        "x": 150,
+        "y": 900,
+        "wires": [
+            [
+                "453ae5cfc21bd9b4",
+                "c7feeebbfd129548"
+            ]
+        ]
+    },
+    {
+        "id": "453ae5cfc21bd9b4",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "d": true,
+        "name": "function 1",
+        "func": "// Function to convert two bytes into a 16-bit integer\nfunction bytesToInt(highByte, lowByte) {\n    return (highByte << 8) | lowByte;\n}\n\n// Buffer to hold the incoming serial data\nlet buffer = Buffer.from(msg.payload);\n\n// Check if buffer length is as expected\nif (buffer.length !== 32) {\n    node.error(\"Unexpected buffer length: \" + buffer.length);\n    return null;  // Stops further processing\n}\n\n// Object to hold our processed data\nlet dataPoints = {};\n\n// Process each data point\nfor (let i = 0; i < 12; i++) {\n    let index = 8 + (i * 2);  // Calculate the starting index for each data point\n    if (index + 1 < buffer.length) {\n        let highByte = buffer[index];\n        let lowByte = buffer[index + 1];\n        dataPoints['data' + (i + 1)] = bytesToInt(highByte, lowByte);\n    }\n}\n\n// Set the processed data points to the output payload\nmsg.payload = dataPoints;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c7feeebbfd129548",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "name": "function 2",
+        "func": "function bytesToInt(highByte, lowByte) {\n    return (highByte << 8) | lowByte;\n}\n\nlet buffer = Buffer.from(msg.payload);\nif (buffer.length !== 32) {\n    node.error(\"Unexpected buffer length: \" + buffer.length);\n    return null;  // Stops further processing\n}\n\nlet outputs = Array(12).fill(null);  // Create an array with 12 null elements for 12 outputs\n\nfor (let i = 0; i < 12; i++) {\n    let index = 8 + (i * 2);\n    if (index + 1 < buffer.length) {\n        let highByte = buffer[index];\n        let lowByte = buffer[index + 1];\n        let dataPoint = bytesToInt(highByte, lowByte);\n        outputs[i] = { payload: dataPoint };\n    }\n}\n\nreturn outputs;  // Outputs an array where each element corresponds to a separate output port",
+        "outputs": 12,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 900,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [
+                "54516b1a4b208283"
+            ],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "0dbe3058c9d42173",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "name": "Encode and Append Hex",
+        "func": "    var headBuf = new Buffer(\"pm10.val=\", 'utf8');\n    var textBuf = Buffer.from(msg.payload, 'utf8');\n    var postFixBuf = new Buffer(\"FFFFFF\", 'hex');\n \n\n    // Concatenate the buffers\nmsg.payload = Buffer.concat([headBuf,textBuf, postFixBuf]);\n    return msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 900,
+        "wires": [
+            [
+                "80d2829f33794d35"
+            ]
+        ]
+    },
+    {
+        "id": "e2ecd6543dfc165c",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "d": true,
+        "name": "Convert to String",
+        "func": "// Check if payload is a number and convert it to string\nif (typeof msg.payload === \"number\") {\n    msg.payload = msg.payload.toString(); // Convert the number to a string\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 840,
+        "wires": [
+            [
+                "0dbe3058c9d42173"
+            ]
+        ]
+    },
+    {
+        "id": "05fff06095ec976f",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 1140,
+        "wires": [
+            [
+                "9061447e6e547f5d"
+            ]
+        ]
+    },
+    {
+        "id": "942fa8bc0afd9568",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "name": "Encode and Append Hex",
+        "func": "    var headBuf = new Buffer(\"date.txt=\", 'utf8');\n    var textBuf = Buffer.from(msg.payload, 'utf8');\n    var postFixBuf = new Buffer(\"FFFFFF\", 'hex');\n \n\n    // Concatenate the buffers\nmsg.payload = Buffer.concat([headBuf,textBuf, postFixBuf]);\n    return msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 1140,
+        "wires": [
+            [
+                "e8c88b229a9c17aa"
+            ]
+        ]
+    },
+    {
+        "id": "9061447e6e547f5d",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "name": "Generate Date&Time",
+        "func": "// Create a new Date object\nlet now = new Date();\n\n// Format the date and time as \"YYYY-MM-DD hh:mm:ss\"\nlet formattedDate = now.getFullYear() + \"-\" +\n    (\"0\" + (now.getMonth() + 1)).slice(-2) + \"-\" +\n    (\"0\" + now.getDate()).slice(-2) + \" \" +\n    (\"0\" + now.getHours()).slice(-2) + \":\" +\n    (\"0\" + now.getMinutes()).slice(-2) + \":\" +\n    (\"0\" + now.getSeconds()).slice(-2);\n\n// Encapsulate the formatted date and time in quotation marks\nmsg.payload = '\"' + formattedDate + '\"';\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 1140,
+        "wires": [
+            [
+                "942fa8bc0afd9568"
+            ]
+        ]
+    },
+    {
+        "id": "11fe8b041257de27",
+        "type": "comment",
+        "z": "e601b94df7aae738",
+        "name": "CO2 Sensor",
+        "info": "",
+        "x": 130,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "0fe12cf03935e77f",
+        "type": "comment",
+        "z": "e601b94df7aae738",
+        "name": "PM10 Sensor",
+        "info": "",
+        "x": 130,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "edbe7727a611e2e7",
+        "type": "comment",
+        "z": "e601b94df7aae738",
+        "name": "Date & Time",
+        "info": "",
+        "x": 150,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "6b23f42cd8dcdfc6",
+        "type": "link out",
+        "z": "e601b94df7aae738",
+        "name": "co2ToHMI",
+        "mode": "link",
+        "links": [
+            "a473dfb238bb2cab"
+        ],
+        "x": 1035,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "a473dfb238bb2cab",
+        "type": "link in",
+        "z": "e601b94df7aae738",
+        "name": "send to HMI",
+        "links": [
+            "6b23f42cd8dcdfc6",
+            "80d2829f33794d35",
+            "e8c88b229a9c17aa"
+        ],
+        "x": 745,
+        "y": 380,
+        "wires": [
+            [
+                "8dc2f91b9d3bffba",
+                "4"
+            ]
+        ]
+    },
+    {
+        "id": "80d2829f33794d35",
+        "type": "link out",
+        "z": "e601b94df7aae738",
+        "name": "pmToHMI",
+        "mode": "link",
+        "links": [
+            "a473dfb238bb2cab"
+        ],
+        "x": 1055,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "e8c88b229a9c17aa",
+        "type": "link out",
+        "z": "e601b94df7aae738",
+        "name": "DateToHMI",
+        "mode": "link",
+        "links": [
+            "a473dfb238bb2cab"
+        ],
+        "x": 1035,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "54516b1a4b208283",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "name": "Convert to String &/10",
+        "func": "// Check if payload is a number and convert it to string\nif (typeof msg.payload === \"number\") {\n    msg.payload = msg.payload /10;\n    msg.payload = msg.payload.toString(); // Convert the number to a string\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 900,
+        "wires": [
+            [
+                "0dbe3058c9d42173"
+            ]
+        ]
+    }
+]

@@ -1,0 +1,2039 @@
+[
+    {
+        "id": "7fd2d48e237933bf",
+        "type": "tab",
+        "label": "Lab C",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "032a4c3d13408528",
+        "type": "inject",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1780,
+        "wires": [
+            [
+                "d0f497fd3c4038be"
+            ]
+        ]
+    },
+    {
+        "id": "d0f497fd3c4038be",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "Off",
+        "func": "msg.payload = 0\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1780,
+        "wires": [
+            [
+                "d3948974bf595232"
+            ]
+        ]
+    },
+    {
+        "id": "522c56371fc6bdf8",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "On",
+        "func": "msg.payload = 1\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1680,
+        "wires": [
+            [
+                "d3948974bf595232"
+            ]
+        ]
+    },
+    {
+        "id": "a096a6bbfee04bf2",
+        "type": "inject",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1680,
+        "wires": [
+            [
+                "522c56371fc6bdf8"
+            ]
+        ]
+    },
+    {
+        "id": "91c88d3b210e4a0c",
+        "type": "inject",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1920,
+        "wires": [
+            [
+                "0872c7eb02d623db"
+            ]
+        ]
+    },
+    {
+        "id": "0872c7eb02d623db",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "Temp",
+        "func": "msg.payload = 444\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1920,
+        "wires": [
+            [
+                "9e3c608e06f32e74"
+            ]
+        ]
+    },
+    {
+        "id": "7a0d9238b5764277",
+        "type": "comment",
+        "z": "7fd2d48e237933bf",
+        "name": "On/Off",
+        "info": "",
+        "x": 130,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "8edc2bf118fb7f2a",
+        "type": "comment",
+        "z": "7fd2d48e237933bf",
+        "name": "Set Temp",
+        "info": "",
+        "x": 140,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "2bfec8d8ad740fbb",
+        "type": "comment",
+        "z": "7fd2d48e237933bf",
+        "name": "Set Time",
+        "info": "",
+        "x": 140,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "babd9cf294044ef1",
+        "type": "inject",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 2060,
+        "wires": [
+            [
+                "9d5bbb7887c3f98f"
+            ]
+        ]
+    },
+    {
+        "id": "9d5bbb7887c3f98f",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "9997",
+        "func": "msg.payload = 9997\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 2060,
+        "wires": [
+            [
+                "9fed2fb19c37b46f"
+            ]
+        ]
+    },
+    {
+        "id": "416e23d8a84c98e2",
+        "type": "inject",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 2100,
+        "wires": [
+            [
+                "fed442ab4c6980e8"
+            ]
+        ]
+    },
+    {
+        "id": "fed442ab4c6980e8",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "9998",
+        "func": "msg.payload = 9998\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 2100,
+        "wires": [
+            [
+                "9fed2fb19c37b46f"
+            ]
+        ]
+    },
+    {
+        "id": "34ea217f67ed2282",
+        "type": "file",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "filename": "C:\\Users\\svc_3rshkrpa03\\Desktop\\Maturity\\id11rTemp.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 850,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4fae6a3ff67ea66c",
+        "type": "file",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "filename": "C:\\Users\\svc_3rshkrpa03\\Desktop\\Maturity\\id11sTemp.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 850,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9dd3a7c6c76fb1f7",
+        "type": "inject",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "01 00 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1550,
+        "y": 640,
+        "wires": [
+            [
+                "6b8785cfa9030c1b"
+            ]
+        ]
+    },
+    {
+        "id": "f9e5a55d9e52ad72",
+        "type": "debug",
+        "z": "7fd2d48e237933bf",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "8883a1612d7c427c",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "x10",
+        "func": "// Function node code\n// Assumes that msg.payload contains a number or a string that can be converted to a number\n\n// Check if payload is a number or can be converted to a number\nif (!isNaN(msg.payload)) {\n    // Multiply the payload by 10\n    msg.payload = Number(msg.payload) * 10;\n} else {\n    // If payload is not a number, return an error message\n    node.error(\"Payload is not a number\", msg);\n    return null; // Stop the flow, no message will be sent to the next node\n}\n\n// Pass the message to the next connected node in the flow\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1880,
+        "wires": [
+            [
+                "9e3c608e06f32e74"
+            ]
+        ]
+    },
+    {
+        "id": "594b20d1ace9182b",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "function 4",
+        "func": "// Create a new JavaScript Date object\nconst now = new Date();\n\n// Get the UTC time in milliseconds\nconst utcTime = now.getTime();\n\n// UTC offset for UTC+8 in milliseconds (8 hours * 60 minutes * 60 seconds * 1000 milliseconds)\nconst utcOffset = 8 * 60 * 60 * 1000;\n\n// Adjust the time for UTC+8\nconst utcPlus8Time = new Date(utcTime + utcOffset);\n\n// Format the date and time in a desired format\n// For example, YYYY-MM-DD HH:mm:ss\n// Note: toISOString always returns a timestamp in UTC time,\n// so we need to manually format the date to get the YYYY-MM-DD HH:mm:ss format\nconst pad = (num) => num.toString().padStart(2, '0');\nconst formattedDate = `${utcPlus8Time.getUTCFullYear()}-${pad(utcPlus8Time.getUTCMonth() + 1)}-${pad(utcPlus8Time.getUTCDate())} ${pad(utcPlus8Time.getUTCHours())}:${pad(utcPlus8Time.getUTCMinutes())}:${pad(utcPlus8Time.getUTCSeconds())}`;\n\n// Assuming the Modbus payload is an object and you want to add the date/time as a property\n// Clone the original payload to avoid any side-effects\nconst newPayload = Object.assign({}, msg.payload);\n\n// Add the timestamp to the payload\nnewPayload.timestamp = formattedDate;\n\n// Set the new payload to the outgoing message\nmsg.payload = newPayload;\n\n// Return the message object to be passed to the next node\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 320,
+        "wires": [
+            [
+                "4fae6a3ff67ea66c"
+            ]
+        ]
+    },
+    {
+        "id": "db2c7d518147d39c",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "function 5",
+        "func": "// Create a new JavaScript Date object\nconst now = new Date();\n\n// Get the UTC time in milliseconds\nconst utcTime = now.getTime();\n\n// UTC offset for UTC+8 in milliseconds (8 hours * 60 minutes * 60 seconds * 1000 milliseconds)\nconst utcOffset = 8 * 60 * 60 * 1000;\n\n// Adjust the time for UTC+8\nconst utcPlus8Time = new Date(utcTime + utcOffset);\n\n// Format the date and time in a desired format\n// For example, YYYY-MM-DD HH:mm:ss\nconst pad = (num) => num.toString().padStart(2, '0');\nconst formattedDate = `${utcPlus8Time.getUTCFullYear()}-${pad(utcPlus8Time.getUTCMonth() + 1)}-${pad(utcPlus8Time.getUTCDate())} ${pad(utcPlus8Time.getUTCHours())}:${pad(utcPlus8Time.getUTCMinutes())}:${pad(utcPlus8Time.getUTCSeconds())}`;\n\n// Assuming the Modbus payload is an object and you want to add the date/time as a property\n// Clone the original payload to avoid any side-effects\nconst newPayload = Object.assign({}, msg.payload);\n\n// Remove the key \"0\" from the payload if it exists\n// delete newPayload[\"0\"];\n\n// Add the timestamp to the payload\nnewPayload.timestamp = formattedDate;\n\n// Set the new payload to the outgoing message\nmsg.payload = newPayload;\n\n// Return the message object to be passed to the next node\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 240,
+        "wires": [
+            [
+                "34ea217f67ed2282"
+            ]
+        ]
+    },
+    {
+        "id": "b236bc370b9cd63b",
+        "type": "inject",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1200,
+        "wires": [
+            [
+                "7aa02ccc17b91e45"
+            ]
+        ]
+    },
+    {
+        "id": "7aa02ccc17b91e45",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "Off",
+        "func": "msg.payload = 0\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1200,
+        "wires": [
+            [
+                "2937268c9bc72767"
+            ]
+        ]
+    },
+    {
+        "id": "9954be045f83490b",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "On",
+        "func": "msg.payload = 1\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1100,
+        "wires": [
+            [
+                "2937268c9bc72767"
+            ]
+        ]
+    },
+    {
+        "id": "2c1ba3bbec721d40",
+        "type": "inject",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1100,
+        "wires": [
+            [
+                "9954be045f83490b"
+            ]
+        ]
+    },
+    {
+        "id": "daac0e8eef80a7ec",
+        "type": "inject",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1340,
+        "wires": [
+            [
+                "8b82c0f73bd39f58"
+            ]
+        ]
+    },
+    {
+        "id": "8b82c0f73bd39f58",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "Temp",
+        "func": "msg.payload = 444\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1340,
+        "wires": [
+            [
+                "26a14bd54b233ddf"
+            ]
+        ]
+    },
+    {
+        "id": "5db11f8174eb66f0",
+        "type": "comment",
+        "z": "7fd2d48e237933bf",
+        "name": "On/Off",
+        "info": "",
+        "x": 130,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "6b21a4e8c41da2dd",
+        "type": "comment",
+        "z": "7fd2d48e237933bf",
+        "name": "Set Temp",
+        "info": "",
+        "x": 140,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "6925c341b412cb40",
+        "type": "comment",
+        "z": "7fd2d48e237933bf",
+        "name": "Set Time",
+        "info": "",
+        "x": 140,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "d1f84f3353f1c16a",
+        "type": "inject",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1480,
+        "wires": [
+            [
+                "fcc9d68267718601"
+            ]
+        ]
+    },
+    {
+        "id": "fcc9d68267718601",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "9997",
+        "func": "msg.payload = 9997\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1480,
+        "wires": [
+            [
+                "3ddff8a9379753dc"
+            ]
+        ]
+    },
+    {
+        "id": "fcd9a8a02b39f9a3",
+        "type": "inject",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1520,
+        "wires": [
+            [
+                "2d00bbb2a581c67b"
+            ]
+        ]
+    },
+    {
+        "id": "2d00bbb2a581c67b",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "9998",
+        "func": "msg.payload = 9998\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1520,
+        "wires": [
+            [
+                "3ddff8a9379753dc"
+            ]
+        ]
+    },
+    {
+        "id": "86671acbd4a1d9a8",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "x10",
+        "func": "// Function node code\n// Assumes that msg.payload contains a number or a string that can be converted to a number\n\n// Check if payload is a number or can be converted to a number\nif (!isNaN(msg.payload)) {\n    // Multiply the payload by 10\n    msg.payload = Number(msg.payload) * 10;\n} else {\n    // If payload is not a number, return an error message\n    node.error(\"Payload is not a number\", msg);\n    return null; // Stop the flow, no message will be sent to the next node\n}\n\n// Pass the message to the next connected node in the flow\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1300,
+        "wires": [
+            [
+                "26a14bd54b233ddf"
+            ]
+        ]
+    },
+    {
+        "id": "9ff8cd4704b73196",
+        "type": "file",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "filename": "C:\\Users\\svc_3rshkrpa03\\Desktop\\Maturity\\id10rTemp.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 840,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1d629a17976aca99",
+        "type": "file",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "filename": "C:\\Users\\svc_3rshkrpa03\\Desktop\\Maturity\\id10sTemp.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 850,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f9f41145c87b6329",
+        "type": "debug",
+        "z": "7fd2d48e237933bf",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "fe65dacc71fffbf4",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "function 6",
+        "func": "// Create a new JavaScript Date object\nconst now = new Date();\n\n// Get the UTC time in milliseconds\nconst utcTime = now.getTime();\n\n// UTC offset for UTC+8 in milliseconds (8 hours * 60 minutes * 60 seconds * 1000 milliseconds)\nconst utcOffset = 8 * 60 * 60 * 1000;\n\n// Adjust the time for UTC+8\nconst utcPlus8Time = new Date(utcTime + utcOffset);\n\n// Format the date and time in a desired format\n// For example, YYYY-MM-DD HH:mm:ss\n// Note: toISOString always returns a timestamp in UTC time,\n// so we need to manually format the date to get the YYYY-MM-DD HH:mm:ss format\nconst pad = (num) => num.toString().padStart(2, '0');\nconst formattedDate = `${utcPlus8Time.getUTCFullYear()}-${pad(utcPlus8Time.getUTCMonth() + 1)}-${pad(utcPlus8Time.getUTCDate())} ${pad(utcPlus8Time.getUTCHours())}:${pad(utcPlus8Time.getUTCMinutes())}:${pad(utcPlus8Time.getUTCSeconds())}`;\n\n// Assuming the Modbus payload is an object and you want to add the date/time as a property\n// Clone the original payload to avoid any side-effects\nconst newPayload = Object.assign({}, msg.payload);\n\n// Add the timestamp to the payload\nnewPayload.timestamp = formattedDate;\n\n// Set the new payload to the outgoing message\nmsg.payload = newPayload;\n\n// Return the message object to be passed to the next node\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 180,
+        "wires": [
+            [
+                "1d629a17976aca99"
+            ]
+        ]
+    },
+    {
+        "id": "ac5f11261b96b6db",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "function 7",
+        "func": "// Create a new JavaScript Date object\nconst now = new Date();\n\n// Get the UTC time in milliseconds\nconst utcTime = now.getTime();\n\n// UTC offset for UTC+8 in milliseconds (8 hours * 60 minutes * 60 seconds * 1000 milliseconds)\nconst utcOffset = 8 * 60 * 60 * 1000;\n\n// Adjust the time for UTC+8\nconst utcPlus8Time = new Date(utcTime + utcOffset);\n\n// Format the date and time in a desired format\n// For example, YYYY-MM-DD HH:mm:ss\nconst pad = (num) => num.toString().padStart(2, '0');\nconst formattedDate = `${utcPlus8Time.getUTCFullYear()}-${pad(utcPlus8Time.getUTCMonth() + 1)}-${pad(utcPlus8Time.getUTCDate())} ${pad(utcPlus8Time.getUTCHours())}:${pad(utcPlus8Time.getUTCMinutes())}:${pad(utcPlus8Time.getUTCSeconds())}`;\n\n// Assuming the Modbus payload is an object and you want to add the date/time as a property\n// Clone the original payload to avoid any side-effects\nconst newPayload = Object.assign({}, msg.payload);\n\n// Remove the key \"0\" from the payload if it exists\n// delete newPayload[\"0\"];\n\n// Add the timestamp to the payload\nnewPayload.timestamp = formattedDate;\n\n// Set the new payload to the outgoing message\nmsg.payload = newPayload;\n\n// Return the message object to be passed to the next node\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 100,
+        "wires": [
+            [
+                "9ff8cd4704b73196"
+            ]
+        ]
+    },
+    {
+        "id": "6b8785cfa9030c1b",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "function 8",
+        "func": "// Function node code\n// Calculate yesterday's date\nlet yesterday = new Date();\nyesterday.setDate(yesterday.getDate() - 1);\n\n// Format the date as YYYYMMDD\nlet folderName = yesterday.toISOString().split('T')[0].replace(/-/g, '');\n\n// Set up the base directory\nlet baseDir = `C:\\\\Users\\\\svc_3rshkrpa03\\\\Desktop\\\\Maturity`;\n\n// Function to format the file names based on identifier\nfunction formatFileName(identifier, folderName) {\n    return `LabC${identifier}${folderName}.txt`;\n}\n\n// Set the payload to include the paths needed for all files\nmsg.payload = {\n    dateFolder: `${baseDir}\\\\${folderName}`,\n    files: {\n        id10r: {\n            sourceFile: `${baseDir}\\\\id10rTemp.txt`,\n            destFile: formatFileName('id10r', folderName)\n        },\n        id10s: {\n            sourceFile: `${baseDir}\\\\id10sTemp.txt`,\n            destFile: formatFileName('id10s', folderName)\n        },\n        id11r: {\n            sourceFile: `${baseDir}\\\\id11rTemp.txt`,\n            destFile: formatFileName('id11r', folderName)\n        },\n        id11s: {\n            sourceFile: `${baseDir}\\\\id11sTemp.txt`,\n            destFile: formatFileName('id11s', folderName)\n        },\n        log: {\n            sourceFile: `${baseDir}\\\\Log.txt`,\n            destFile: formatFileName('log', folderName)\n        }\n    }\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1720,
+        "y": 640,
+        "wires": [
+            [
+                "b01075fba49acf32"
+            ]
+        ]
+    },
+    {
+        "id": "fd7d3b64fbb05647",
+        "type": "file",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "filename": "C:\\Users\\svc_3rshkrpa03\\Desktop\\Maturity\\Log.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1610,
+        "y": 1360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "28cb56a9dae89cd0",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "function 9",
+        "func": "// Function node code\nlet date = new Date();\n// Adjust for UTC+8\nlet utcPlus8Timestamp = new Date(date.getTime() + (8 * 60 * 60 * 1000));\n// Format the date\nlet dateString = utcPlus8Timestamp.toISOString().replace('T', ' ').slice(0, -5); // Remove milliseconds\n\n// Check if payload is an object and stringify if necessary\nlet payloadString = (typeof msg.payload === 'object') ? JSON.stringify(msg.payload) : msg.payload;\n\n// Append the timestamp to the payload\nmsg.payload = dateString + \" \" + payloadString;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 1360,
+        "wires": [
+            [
+                "fd7d3b64fbb05647"
+            ]
+        ]
+    },
+    {
+        "id": "a1b80a73b23c6010",
+        "type": "modbus-response",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "registerShowMax": 20,
+        "x": 1310,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "280dc20fbab6c2d4",
+        "type": "modbus-read",
+        "z": "7fd2d48e237933bf",
+        "name": "ID11 Check Real TimeTemp",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": false,
+        "unitid": "11",
+        "dataType": "HoldingRegister",
+        "adr": "18504",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "m",
+        "delayOnStart": true,
+        "startDelayTime": "2",
+        "server": "bb5d62ae67f43b22",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 200,
+        "y": 260,
+        "wires": [
+            [
+                "f9e5a55d9e52ad72",
+                "db2c7d518147d39c",
+                "84fedb581d74d939"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "465f50f1b5d834d9",
+        "type": "modbus-read",
+        "z": "7fd2d48e237933bf",
+        "name": "ID11 Check Set Temp",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "11",
+        "dataType": "HoldingRegister",
+        "adr": "18505",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "m",
+        "delayOnStart": true,
+        "startDelayTime": "3",
+        "server": "bb5d62ae67f43b22",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 180,
+        "y": 320,
+        "wires": [
+            [
+                "f9e5a55d9e52ad72",
+                "594b20d1ace9182b",
+                "5155f321617b2e8c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c3cbe2e305dde990",
+        "type": "modbus-read",
+        "z": "7fd2d48e237933bf",
+        "name": "ID10 Check Real TimeTemp",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": false,
+        "unitid": "10",
+        "dataType": "HoldingRegister",
+        "adr": "18504",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "m",
+        "delayOnStart": true,
+        "startDelayTime": "",
+        "server": "bb5d62ae67f43b22",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 200,
+        "y": 120,
+        "wires": [
+            [
+                "f9f41145c87b6329",
+                "ac5f11261b96b6db",
+                "1718f44827ce3b10"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "48e836dc497f32de",
+        "type": "modbus-read",
+        "z": "7fd2d48e237933bf",
+        "name": "ID10 Check Set Temp",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "10",
+        "dataType": "HoldingRegister",
+        "adr": "18505",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "m",
+        "delayOnStart": true,
+        "startDelayTime": "1",
+        "server": "bb5d62ae67f43b22",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 180,
+        "y": 180,
+        "wires": [
+            [
+                "f9f41145c87b6329",
+                "fe65dacc71fffbf4",
+                "8edad5a2107b18f0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d3948974bf595232",
+        "type": "modbus-write",
+        "z": "7fd2d48e237933bf",
+        "name": "ID: 5 On/Off ",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "11",
+        "dataType": "Coil",
+        "adr": "10010",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 530,
+        "y": 1700,
+        "wires": [
+            [
+                "28cb56a9dae89cd0"
+            ],
+            [
+                "a1b80a73b23c6010"
+            ]
+        ]
+    },
+    {
+        "id": "9e3c608e06f32e74",
+        "type": "modbus-write",
+        "z": "7fd2d48e237933bf",
+        "name": "ID: 5 Set Temp FC6",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "11",
+        "dataType": "HoldingRegister",
+        "adr": "3000",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 550,
+        "y": 1920,
+        "wires": [
+            [
+                "28cb56a9dae89cd0"
+            ],
+            [
+                "a1b80a73b23c6010"
+            ]
+        ]
+    },
+    {
+        "id": "9fed2fb19c37b46f",
+        "type": "modbus-write",
+        "z": "7fd2d48e237933bf",
+        "name": "ID: 5 Set Time FC6",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "11",
+        "dataType": "HoldingRegister",
+        "adr": "3050",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 550,
+        "y": 2080,
+        "wires": [
+            [
+                "28cb56a9dae89cd0"
+            ],
+            [
+                "a1b80a73b23c6010"
+            ]
+        ]
+    },
+    {
+        "id": "2937268c9bc72767",
+        "type": "modbus-write",
+        "z": "7fd2d48e237933bf",
+        "name": "ID: 4 On/Off ",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "10",
+        "dataType": "Coil",
+        "adr": "10010",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 530,
+        "y": 1120,
+        "wires": [
+            [
+                "28cb56a9dae89cd0"
+            ],
+            [
+                "a1b80a73b23c6010"
+            ]
+        ]
+    },
+    {
+        "id": "26a14bd54b233ddf",
+        "type": "modbus-write",
+        "z": "7fd2d48e237933bf",
+        "name": "ID: 4 Set Temp FC6",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "10",
+        "dataType": "HoldingRegister",
+        "adr": "3000",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 550,
+        "y": 1340,
+        "wires": [
+            [
+                "28cb56a9dae89cd0"
+            ],
+            [
+                "a1b80a73b23c6010"
+            ]
+        ]
+    },
+    {
+        "id": "3ddff8a9379753dc",
+        "type": "modbus-write",
+        "z": "7fd2d48e237933bf",
+        "name": "ID: 4 Set TimeFC6",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "10",
+        "dataType": "HoldingRegister",
+        "adr": "3050",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 550,
+        "y": 1460,
+        "wires": [
+            [
+                "28cb56a9dae89cd0"
+            ],
+            [
+                "a1b80a73b23c6010"
+            ]
+        ]
+    },
+    {
+        "id": "d8a8e0709f13c1bb",
+        "type": "fs-ops-move",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "sourcePath": "",
+        "sourcePathType": "str",
+        "sourceFilename": "payload.files.id10r.sourceFile",
+        "sourceFilenameType": "msg",
+        "destPath": "payload.dateFolder",
+        "destPathType": "msg",
+        "destFilename": "payload.files.id10r.destFile",
+        "destFilenameType": "msg",
+        "link": false,
+        "x": 2140,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "66d9b11210a3f192",
+        "type": "fs-ops-move",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "sourcePath": "",
+        "sourcePathType": "str",
+        "sourceFilename": "payload.files.id11r.sourceFile",
+        "sourceFilenameType": "msg",
+        "destPath": "payload.dateFolder",
+        "destPathType": "msg",
+        "destFilename": "payload.files.id11r.destFile",
+        "destFilenameType": "msg",
+        "link": false,
+        "x": 2140,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a74fa8f41773f64f",
+        "type": "fs-ops-move",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "sourcePath": "",
+        "sourcePathType": "str",
+        "sourceFilename": "payload.files.id10s.sourceFile",
+        "sourceFilenameType": "msg",
+        "destPath": "payload.dateFolder",
+        "destPathType": "msg",
+        "destFilename": "payload.files.id10s.destFile",
+        "destFilenameType": "msg",
+        "link": false,
+        "x": 2140,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "082b4f284d35d6b2",
+        "type": "fs-ops-move",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "sourcePath": "",
+        "sourcePathType": "str",
+        "sourceFilename": "payload.files.id11s.sourceFile",
+        "sourceFilenameType": "msg",
+        "destPath": "payload.dateFolder",
+        "destPathType": "msg",
+        "destFilename": "payload.files.id11s.destFile",
+        "destFilenameType": "msg",
+        "link": false,
+        "x": 2140,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0886244c9e223330",
+        "type": "fs-ops-move",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "sourcePath": "",
+        "sourcePathType": "str",
+        "sourceFilename": "payload.files.log.sourceFile",
+        "sourceFilenameType": "msg",
+        "destPath": "payload.dateFolder",
+        "destPathType": "msg",
+        "destFilename": "payload.files.log.destFile",
+        "destFilenameType": "msg",
+        "link": false,
+        "x": 2140,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b01075fba49acf32",
+        "type": "fs-ops-mkdir",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "path": "",
+        "pathType": "str",
+        "dirname": "msg.payload.dateFolder",
+        "dirnameType": "msg",
+        "recursive": false,
+        "mode": "777",
+        "fullpath": "directory",
+        "fullpathType": "msg",
+        "x": 1940,
+        "y": 640,
+        "wires": [
+            [
+                "d8a8e0709f13c1bb",
+                "a74fa8f41773f64f",
+                "082b4f284d35d6b2",
+                "66d9b11210a3f192",
+                "0886244c9e223330"
+            ]
+        ]
+    },
+    {
+        "id": "f2f9251701f98649",
+        "type": "ui_button",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "group": "77a65dde1f365a69",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "ID: 5 On",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 1640,
+        "wires": [
+            [
+                "d3948974bf595232"
+            ]
+        ]
+    },
+    {
+        "id": "aa675c5e4edb0981",
+        "type": "ui_button",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "group": "77a65dde1f365a69",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "ID: 5 Off",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 1740,
+        "wires": [
+            [
+                "d3948974bf595232"
+            ]
+        ]
+    },
+    {
+        "id": "e7294cc3d03a6f9f",
+        "type": "ui_button",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "group": "841201d34c934188",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "ID: 4 On",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 1060,
+        "wires": [
+            [
+                "2937268c9bc72767"
+            ]
+        ]
+    },
+    {
+        "id": "b9c03ae90e3f57fa",
+        "type": "ui_button",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "group": "841201d34c934188",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "ID: 4 Off",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 1160,
+        "wires": [
+            [
+                "2937268c9bc72767"
+            ]
+        ]
+    },
+    {
+        "id": "86458ce833af3a64",
+        "type": "ui_text_input",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "label": "SetTemp ID: 5",
+        "tooltip": "",
+        "group": "77a65dde1f365a69",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": "1000",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 160,
+        "y": 1880,
+        "wires": [
+            [
+                "8883a1612d7c427c"
+            ]
+        ]
+    },
+    {
+        "id": "3ded84245c664d81",
+        "type": "ui_text_input",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "label": "SetTime ID: 5",
+        "tooltip": "",
+        "group": "77a65dde1f365a69",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": "1000",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 160,
+        "y": 2020,
+        "wires": [
+            [
+                "9fed2fb19c37b46f"
+            ]
+        ]
+    },
+    {
+        "id": "ea142afee2620a3e",
+        "type": "ui_text_input",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "label": "SetTemp ID: 4",
+        "tooltip": "",
+        "group": "841201d34c934188",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": "500",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 160,
+        "y": 1300,
+        "wires": [
+            [
+                "86671acbd4a1d9a8"
+            ]
+        ]
+    },
+    {
+        "id": "3c359c10de30668f",
+        "type": "ui_text_input",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "label": "SetTime ID: 4",
+        "tooltip": "",
+        "group": "841201d34c934188",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": "1000",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 150,
+        "y": 1440,
+        "wires": [
+            [
+                "3ddff8a9379753dc"
+            ]
+        ]
+    },
+    {
+        "id": "faa8993111547d80",
+        "type": "ui_text",
+        "z": "7fd2d48e237933bf",
+        "group": "841201d34c934188",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Real Temp ID: 4",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 700,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "d40d6f7a3f4b2882",
+        "type": "ui_text",
+        "z": "7fd2d48e237933bf",
+        "group": "77a65dde1f365a69",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Real Temp ID: 5",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 700,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "d746e608b8f85904",
+        "type": "ui_text",
+        "z": "7fd2d48e237933bf",
+        "group": "77a65dde1f365a69",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Set Temp ID: 5",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 700,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "0fff2092c4ae7337",
+        "type": "ui_text",
+        "z": "7fd2d48e237933bf",
+        "group": "841201d34c934188",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Set Temp ID: 4",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 700,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "84fedb581d74d939",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "/10",
+        "func": "// Function node code\n// Assumes that msg.payload contains a number or a string that can be converted to a number\n\n// Check if payload is a number or can be converted to a number\nif (!isNaN(msg.payload)) {\n    // Multiply the payload by 10\n    msg.payload = Number(msg.payload) / 10;\n} else {\n    // If payload is not a number, return an error message\n    node.error(\"Payload is not a number\", msg);\n    return null; // Stop the flow, no message will be sent to the next node\n}\n\n// Pass the message to the next connected node in the flow\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 380,
+        "wires": [
+            [
+                "d40d6f7a3f4b2882"
+            ]
+        ]
+    },
+    {
+        "id": "1718f44827ce3b10",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "/10",
+        "func": "// Function node code\n// Assumes that msg.payload contains a number or a string that can be converted to a number\n\n// Check if payload is a number or can be converted to a number\nif (!isNaN(msg.payload)) {\n    // Multiply the payload by 10\n    msg.payload = Number(msg.payload) / 10;\n} else {\n    // If payload is not a number, return an error message\n    node.error(\"Payload is not a number\", msg);\n    return null; // Stop the flow, no message will be sent to the next node\n}\n\n// Pass the message to the next connected node in the flow\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 20,
+        "wires": [
+            [
+                "faa8993111547d80"
+            ]
+        ]
+    },
+    {
+        "id": "8edad5a2107b18f0",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "/10",
+        "func": "// Function node code\n// Assumes that msg.payload contains a number or a string that can be converted to a number\n\n// Check if payload is a number or can be converted to a number\nif (!isNaN(msg.payload)) {\n    // Multiply the payload by 10\n    msg.payload = Number(msg.payload) / 10;\n} else {\n    // If payload is not a number, return an error message\n    node.error(\"Payload is not a number\", msg);\n    return null; // Stop the flow, no message will be sent to the next node\n}\n\n// Pass the message to the next connected node in the flow\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 60,
+        "wires": [
+            [
+                "0fff2092c4ae7337"
+            ]
+        ]
+    },
+    {
+        "id": "5155f321617b2e8c",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "/10",
+        "func": "// Function node code\n// Assumes that msg.payload contains a number or a string that can be converted to a number\n\n// Check if payload is a number or can be converted to a number\nif (!isNaN(msg.payload)) {\n    // Multiply the payload by 10\n    msg.payload = Number(msg.payload) / 10;\n} else {\n    // If payload is not a number, return an error message\n    node.error(\"Payload is not a number\", msg);\n    return null; // Stop the flow, no message will be sent to the next node\n}\n\n// Pass the message to the next connected node in the flow\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 420,
+        "wires": [
+            [
+                "d746e608b8f85904"
+            ]
+        ]
+    },
+    {
+        "id": "3e7a05410959c86c",
+        "type": "modbus-read",
+        "z": "7fd2d48e237933bf",
+        "name": "ID10 Check Real Time",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": false,
+        "unitid": "10",
+        "dataType": "HoldingRegister",
+        "adr": "2000",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "m",
+        "delayOnStart": true,
+        "startDelayTime": "5",
+        "server": "bb5d62ae67f43b22",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 180,
+        "y": 480,
+        "wires": [
+            [
+                "3e9f735d15ab78cd"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e370df8b409cc1c8",
+        "type": "modbus-read",
+        "z": "7fd2d48e237933bf",
+        "name": "ID11 Check Real Time",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": false,
+        "unitid": "11",
+        "dataType": "HoldingRegister",
+        "adr": "2000",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "m",
+        "delayOnStart": true,
+        "startDelayTime": "6",
+        "server": "bb5d62ae67f43b22",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 180,
+        "y": 540,
+        "wires": [
+            [
+                "6dd02cfe50021474"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "bfa88425afaaf22f",
+        "type": "ui_text",
+        "z": "7fd2d48e237933bf",
+        "group": "841201d34c934188",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Set Time ID: 4",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 700,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "4c5e2dd3a57b34bb",
+        "type": "ui_text",
+        "z": "7fd2d48e237933bf",
+        "group": "77a65dde1f365a69",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Set Time ID: 5",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 700,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "6dd02cfe50021474",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "None",
+        "func": "// Function node code\n// Assumes that msg.payload contains a number or a string that can be converted to a number\n\n// Check if payload is a number or can be converted to a number\nif (!isNaN(msg.payload)) {\n    // Multiply the payload by 10\n    msg.payload = Number(msg.payload);\n} else {\n    // If payload is not a number, return an error message\n    node.error(\"Payload is not a number\", msg);\n    return null; // Stop the flow, no message will be sent to the next node\n}\n\n// Pass the message to the next connected node in the flow\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 540,
+        "wires": [
+            [
+                "4c5e2dd3a57b34bb"
+            ]
+        ]
+    },
+    {
+        "id": "3e9f735d15ab78cd",
+        "type": "function",
+        "z": "7fd2d48e237933bf",
+        "name": "None",
+        "func": "// Function node code\n// Assumes that msg.payload contains a number or a string that can be converted to a number\n\n// Check if payload is a number or can be converted to a number\nif (!isNaN(msg.payload)) {\n    // Multiply the payload by 10\n    msg.payload = Number(msg.payload);\n} else {\n    // If payload is not a number, return an error message\n    node.error(\"Payload is not a number\", msg);\n    return null; // Stop the flow, no message will be sent to the next node\n}\n\n// Pass the message to the next connected node in the flow\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 480,
+        "wires": [
+            [
+                "bfa88425afaaf22f"
+            ]
+        ]
+    },
+    {
+        "id": "a0668839e1483ec0",
+        "type": "file in",
+        "z": "7fd2d48e237933bf",
+        "name": "Read CSV",
+        "filename": "C:\\Users\\svc_3rshkrpa03\\Desktop\\time\\time-2.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "allProps": false,
+        "x": 270,
+        "y": 720,
+        "wires": [
+            [
+                "1d91ada7ce2f9674"
+            ]
+        ]
+    },
+    {
+        "id": "1d91ada7ce2f9674",
+        "type": "csv",
+        "z": "7fd2d48e237933bf",
+        "name": "Parse CSV",
+        "sep": ";",
+        "hdrin": false,
+        "temp": "",
+        "skip": 0,
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 450,
+        "y": 720,
+        "wires": [
+            [
+                "e69bdfa864f2a7a5"
+            ]
+        ]
+    },
+    {
+        "id": "e69bdfa864f2a7a5",
+        "type": "split",
+        "z": "7fd2d48e237933bf",
+        "name": "Split Rows",
+        "splt": "",
+        "spltType": "str",
+        "arraySplt": "1",
+        "arraySpltType": "len",
+        "stream": true,
+        "addname": "",
+        "x": 630,
+        "y": 720,
+        "wires": [
+            [
+                "9bf0f0373698bf8a"
+            ]
+        ]
+    },
+    {
+        "id": "8282b2c0a3d11db7",
+        "type": "debug",
+        "z": "7fd2d48e237933bf",
+        "name": "Debug Output",
+        "active": true,
+        "x": 1040,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "d9089975993f8d55",
+        "type": "inject",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 720,
+        "wires": [
+            [
+                "a0668839e1483ec0"
+            ]
+        ]
+    },
+    {
+        "id": "9bf0f0373698bf8a",
+        "type": "delay",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "hour",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 810,
+        "y": 720,
+        "wires": [
+            [
+                "8282b2c0a3d11db7",
+                "86671acbd4a1d9a8",
+                "afd1c5223bb4c3b5"
+            ]
+        ]
+    },
+    {
+        "id": "afd1c5223bb4c3b5",
+        "type": "delay",
+        "z": "7fd2d48e237933bf",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 810,
+        "y": 960,
+        "wires": [
+            [
+                "8883a1612d7c427c"
+            ]
+        ]
+    },
+    {
+        "id": "bb5d62ae67f43b22",
+        "type": "modbus-client",
+        "name": "USBto485",
+        "clienttype": "simpleser",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "COM7",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": false,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "77a65dde1f365a69",
+        "type": "ui_group",
+        "name": "ID: 5",
+        "tab": "ff0b39a18c14b4d9",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "841201d34c934188",
+        "type": "ui_group",
+        "name": "ID: 4",
+        "tab": "ff0b39a18c14b4d9",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ff0b39a18c14b4d9",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

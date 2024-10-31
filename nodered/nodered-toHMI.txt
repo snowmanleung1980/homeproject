@@ -1,0 +1,127 @@
+[
+    {
+        "id": "6636d9a8afad4fb6",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8dc2f91b9d3bffba",
+        "type": "serial out",
+        "z": "6636d9a8afad4fb6",
+        "name": "",
+        "serial": "3918123fd48af60d",
+        "x": 870,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "3",
+        "type": "function",
+        "z": "6636d9a8afad4fb6",
+        "name": "Encode and Append Hex",
+        "func": "    var headBuf = new Buffer(\"n0.val=\", 'utf8');\n    var textBuf = Buffer.from(msg.payload, 'utf8');\n    var postFixBuf = new Buffer(\"FFFFFF\", 'hex');\n \n\n    // Concatenate the buffers\nmsg.payload = Buffer.concat([headBuf,textBuf, postFixBuf]);\n    return msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 340,
+        "wires": [
+            [
+                "4",
+                "8dc2f91b9d3bffba"
+            ]
+        ]
+    },
+    {
+        "id": "4",
+        "type": "debug",
+        "z": "6636d9a8afad4fb6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "d330d0daeded5519",
+        "type": "inject",
+        "z": "6636d9a8afad4fb6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1200",
+        "payloadType": "str",
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "3"
+            ]
+        ]
+    },
+    {
+        "id": "0a44c8247d13c038",
+        "type": "inject",
+        "z": "6636d9a8afad4fb6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "3400",
+        "payloadType": "str",
+        "x": 270,
+        "y": 380,
+        "wires": [
+            [
+                "3"
+            ]
+        ]
+    },
+    {
+        "id": "3918123fd48af60d",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "COM3",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    }
+]

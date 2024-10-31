@@ -1,0 +1,3973 @@
+[
+    {
+        "id": "d1d73a0f44810f30",
+        "type": "tab",
+        "label": "Lab C",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fc9da1d89d861f4d",
+        "type": "tab",
+        "label": "Calibration",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8feaf45e2d04640c",
+        "type": "tab",
+        "label": "Reading",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2be737f5567913bb",
+        "type": "tab",
+        "label": "Renew-UI",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bb5d62ae67f43b22",
+        "type": "modbus-client",
+        "name": "USBto485",
+        "clienttype": "simpleser",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "COM4",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": false,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "ff0b39a18c14b4d9",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "dc48ea94938f2474",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "77a65dde1f365a69",
+        "type": "ui_group",
+        "name": "ID11",
+        "tab": "ff0b39a18c14b4d9",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "841201d34c934188",
+        "type": "ui_group",
+        "name": "ID:10",
+        "tab": "ff0b39a18c14b4d9",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fbecc02391b41c6e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "ckckds.synology.me",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "789e07b8c1b504ed",
+        "type": "global-config",
+        "name": "global-config",
+        "env": []
+    },
+    {
+        "id": "3918123fd48af60d",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "COM3",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "2a966a773ae7de56",
+        "type": "modbus-client",
+        "name": "",
+        "clienttype": "serial",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyAMA3",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "586623a81eda7945",
+        "type": "serial-port",
+        "name": "Display",
+        "serialport": "/dev/ttyS0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "e74f1cb432d05daf",
+        "type": "modbus-write",
+        "z": "d1d73a0f44810f30",
+        "name": "ID:11 On/Off ",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "11",
+        "dataType": "Coil",
+        "adr": "10010",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 530,
+        "y": 560,
+        "wires": [
+            [
+                "cd287974e193c780"
+            ],
+            [
+                "eef70bb37cff4a70"
+            ]
+        ]
+    },
+    {
+        "id": "24065783299dc28b",
+        "type": "inject",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 640,
+        "wires": [
+            [
+                "5ee6b4ab7ce430f6"
+            ]
+        ]
+    },
+    {
+        "id": "5ee6b4ab7ce430f6",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "Off",
+        "func": "msg.payload = 0\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 640,
+        "wires": [
+            [
+                "e74f1cb432d05daf"
+            ]
+        ]
+    },
+    {
+        "id": "eef70bb37cff4a70",
+        "type": "modbus-response",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "registerShowMax": 20,
+        "x": 830,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "530836a4d1277d04",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "On",
+        "func": "msg.payload = 1\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 540,
+        "wires": [
+            [
+                "e74f1cb432d05daf"
+            ]
+        ]
+    },
+    {
+        "id": "342387cb8596b7ba",
+        "type": "inject",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 540,
+        "wires": [
+            [
+                "530836a4d1277d04"
+            ]
+        ]
+    },
+    {
+        "id": "5cb7644f9f7e662b",
+        "type": "inject",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 780,
+        "wires": [
+            [
+                "45f2afda72d8e3cb"
+            ]
+        ]
+    },
+    {
+        "id": "45f2afda72d8e3cb",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "Temp",
+        "func": "msg.payload = 444\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 780,
+        "wires": [
+            [
+                "735a2e6ae67ab0c0"
+            ]
+        ]
+    },
+    {
+        "id": "735a2e6ae67ab0c0",
+        "type": "modbus-write",
+        "z": "d1d73a0f44810f30",
+        "name": "ID:11 Set Temp FC6",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "11",
+        "dataType": "HoldingRegister",
+        "adr": "3000",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 560,
+        "y": 780,
+        "wires": [
+            [
+                "cd287974e193c780"
+            ],
+            [
+                "eef70bb37cff4a70"
+            ]
+        ]
+    },
+    {
+        "id": "f0925ae8c1a3f83f",
+        "type": "comment",
+        "z": "d1d73a0f44810f30",
+        "name": "On/Off",
+        "info": "",
+        "x": 130,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "e908354dd25fd673",
+        "type": "comment",
+        "z": "d1d73a0f44810f30",
+        "name": "Set Temp",
+        "info": "",
+        "x": 140,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "134055aaeeaf06ee",
+        "type": "comment",
+        "z": "d1d73a0f44810f30",
+        "name": "Set Time",
+        "info": "",
+        "x": 140,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "2d25dac24c6560cc",
+        "type": "inject",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 920,
+        "wires": [
+            [
+                "8464bb7fd1298616"
+            ]
+        ]
+    },
+    {
+        "id": "8464bb7fd1298616",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "9997",
+        "func": "msg.payload = 9997\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 920,
+        "wires": [
+            [
+                "d15b65495cee8a28"
+            ]
+        ]
+    },
+    {
+        "id": "d15b65495cee8a28",
+        "type": "modbus-write",
+        "z": "d1d73a0f44810f30",
+        "name": "ID:11 Set Temp FC6",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "11",
+        "dataType": "HoldingRegister",
+        "adr": "3050",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 560,
+        "y": 940,
+        "wires": [
+            [
+                "cd287974e193c780"
+            ],
+            [
+                "eef70bb37cff4a70"
+            ]
+        ]
+    },
+    {
+        "id": "483fc90894e66185",
+        "type": "inject",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 960,
+        "wires": [
+            [
+                "bda30339208cd286"
+            ]
+        ]
+    },
+    {
+        "id": "bda30339208cd286",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "9998",
+        "func": "msg.payload = 9998\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 960,
+        "wires": [
+            [
+                "d15b65495cee8a28"
+            ]
+        ]
+    },
+    {
+        "id": "1957075c65eaf436",
+        "type": "modbus-read",
+        "z": "d1d73a0f44810f30",
+        "name": "ID11 Check Real TimeTemp",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": false,
+        "unitid": "11",
+        "dataType": "HoldingRegister",
+        "adr": "18504",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "m",
+        "delayOnStart": true,
+        "startDelayTime": "2",
+        "server": "bb5d62ae67f43b22",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 200,
+        "y": 260,
+        "wires": [
+            [
+                "1fdca1138bef65d4",
+                "94f9d0d0995bbdc0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "dc8a8a62f8f3d0c0",
+        "type": "modbus-read",
+        "z": "d1d73a0f44810f30",
+        "name": "ID11 Check Set Temp",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "11",
+        "dataType": "HoldingRegister",
+        "adr": "18505",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "m",
+        "delayOnStart": true,
+        "startDelayTime": "3",
+        "server": "bb5d62ae67f43b22",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 180,
+        "y": 320,
+        "wires": [
+            [
+                "1fdca1138bef65d4",
+                "b74b36903d9f7725"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "fcc9f40a2b592a39",
+        "type": "file",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "filename": "C:\\Users\\snowm\\Desktop\\LabC\\id11rTemp.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 810,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "82b067342244871b",
+        "type": "file",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "filename": "C:\\Users\\snowm\\Desktop\\LabC\\id11sTemp.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 820,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dadbfeef56634a8d",
+        "type": "fs-ops-mkdir",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "path": "",
+        "pathType": "str",
+        "dirname": "msg.payload.dateFolder",
+        "dirnameType": "msg",
+        "recursive": false,
+        "mode": "777",
+        "fullpath": "directory",
+        "fullpathType": "msg",
+        "x": 1540,
+        "y": 100,
+        "wires": [
+            [
+                "5fe829ffe6004084",
+                "2f2d08f48a9e6b28",
+                "8f314233e30b3163",
+                "76b2719dc40ee27d",
+                "ebd7167ac1dcef8d"
+            ]
+        ]
+    },
+    {
+        "id": "1077e3ecba4c8b02",
+        "type": "inject",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1140,
+        "y": 100,
+        "wires": [
+            [
+                "80ab17603e8f2c93"
+            ]
+        ]
+    },
+    {
+        "id": "5fe829ffe6004084",
+        "type": "fs-ops-move",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "sourcePath": "",
+        "sourcePathType": "str",
+        "sourceFilename": "payload.files.id10r.sourceFile",
+        "sourceFilenameType": "msg",
+        "destPath": "payload.dateFolder",
+        "destPathType": "msg",
+        "destFilename": "payload.files.id10r.destFile",
+        "destFilenameType": "msg",
+        "link": false,
+        "x": 1740,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "88caa00a49ef75c4",
+        "type": "ui_text_input",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "label": "SetTemp ID:11",
+        "tooltip": "",
+        "group": "77a65dde1f365a69",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": "500",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 160,
+        "y": 740,
+        "wires": [
+            [
+                "d2cfcf32e92e4f07"
+            ]
+        ]
+    },
+    {
+        "id": "1fdca1138bef65d4",
+        "type": "debug",
+        "z": "d1d73a0f44810f30",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "79793017208466ae",
+        "type": "ui_text_input",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "label": "SetTime ID:11",
+        "tooltip": "",
+        "group": "77a65dde1f365a69",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": "500",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 160,
+        "y": 880,
+        "wires": [
+            [
+                "d15b65495cee8a28"
+            ]
+        ]
+    },
+    {
+        "id": "d2cfcf32e92e4f07",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "x10",
+        "func": "// Function node code\n// Assumes that msg.payload contains a number or a string that can be converted to a number\n\n// Check if payload is a number or can be converted to a number\nif (!isNaN(msg.payload)) {\n    // Multiply the payload by 10\n    msg.payload = Number(msg.payload) * 10;\n} else {\n    // If payload is not a number, return an error message\n    node.error(\"Payload is not a number\", msg);\n    return null; // Stop the flow, no message will be sent to the next node\n}\n\n// Pass the message to the next connected node in the flow\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 740,
+        "wires": [
+            [
+                "735a2e6ae67ab0c0"
+            ]
+        ]
+    },
+    {
+        "id": "b74b36903d9f7725",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "function 4",
+        "func": "// Create a new JavaScript Date object\nconst now = new Date();\n\n// Get the UTC time in milliseconds\nconst utcTime = now.getTime();\n\n// UTC offset for UTC+8 in milliseconds (8 hours * 60 minutes * 60 seconds * 1000 milliseconds)\nconst utcOffset = 8 * 60 * 60 * 1000;\n\n// Adjust the time for UTC+8\nconst utcPlus8Time = new Date(utcTime + utcOffset);\n\n// Format the date and time in a desired format\n// For example, YYYY-MM-DD HH:mm:ss\n// Note: toISOString always returns a timestamp in UTC time,\n// so we need to manually format the date to get the YYYY-MM-DD HH:mm:ss format\nconst pad = (num) => num.toString().padStart(2, '0');\nconst formattedDate = `${utcPlus8Time.getUTCFullYear()}-${pad(utcPlus8Time.getUTCMonth() + 1)}-${pad(utcPlus8Time.getUTCDate())} ${pad(utcPlus8Time.getUTCHours())}:${pad(utcPlus8Time.getUTCMinutes())}:${pad(utcPlus8Time.getUTCSeconds())}`;\n\n// Assuming the Modbus payload is an object and you want to add the date/time as a property\n// Clone the original payload to avoid any side-effects\nconst newPayload = Object.assign({}, msg.payload);\n\n// Add the timestamp to the payload\nnewPayload.timestamp = formattedDate;\n\n// Set the new payload to the outgoing message\nmsg.payload = newPayload;\n\n// Return the message object to be passed to the next node\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 320,
+        "wires": [
+            [
+                "82b067342244871b"
+            ]
+        ]
+    },
+    {
+        "id": "94f9d0d0995bbdc0",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "function 5",
+        "func": "// Create a new JavaScript Date object\nconst now = new Date();\n\n// Get the UTC time in milliseconds\nconst utcTime = now.getTime();\n\n// UTC offset for UTC+8 in milliseconds (8 hours * 60 minutes * 60 seconds * 1000 milliseconds)\nconst utcOffset = 8 * 60 * 60 * 1000;\n\n// Adjust the time for UTC+8\nconst utcPlus8Time = new Date(utcTime + utcOffset);\n\n// Format the date and time in a desired format\n// For example, YYYY-MM-DD HH:mm:ss\nconst pad = (num) => num.toString().padStart(2, '0');\nconst formattedDate = `${utcPlus8Time.getUTCFullYear()}-${pad(utcPlus8Time.getUTCMonth() + 1)}-${pad(utcPlus8Time.getUTCDate())} ${pad(utcPlus8Time.getUTCHours())}:${pad(utcPlus8Time.getUTCMinutes())}:${pad(utcPlus8Time.getUTCSeconds())}`;\n\n// Assuming the Modbus payload is an object and you want to add the date/time as a property\n// Clone the original payload to avoid any side-effects\nconst newPayload = Object.assign({}, msg.payload);\n\n// Remove the key \"0\" from the payload if it exists\n// delete newPayload[\"0\"];\n\n// Add the timestamp to the payload\nnewPayload.timestamp = formattedDate;\n\n// Set the new payload to the outgoing message\nmsg.payload = newPayload;\n\n// Return the message object to be passed to the next node\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 240,
+        "wires": [
+            [
+                "fcc9f40a2b592a39"
+            ]
+        ]
+    },
+    {
+        "id": "9eff9b5315750f66",
+        "type": "ui_button",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "group": "77a65dde1f365a69",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "ID11 On",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 500,
+        "wires": [
+            [
+                "e74f1cb432d05daf"
+            ]
+        ]
+    },
+    {
+        "id": "e8c15f6aad96ac7b",
+        "type": "ui_button",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "group": "77a65dde1f365a69",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "ID:11 Off",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 600,
+        "wires": [
+            [
+                "e74f1cb432d05daf"
+            ]
+        ]
+    },
+    {
+        "id": "93e20be6234109d0",
+        "type": "modbus-write",
+        "z": "d1d73a0f44810f30",
+        "name": "ID:10 On/Off ",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "10",
+        "dataType": "Coil",
+        "adr": "10010",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 530,
+        "y": 1120,
+        "wires": [
+            [
+                "cd287974e193c780"
+            ],
+            [
+                "eef70bb37cff4a70"
+            ]
+        ]
+    },
+    {
+        "id": "14ce1c342ef3dd96",
+        "type": "inject",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1200,
+        "wires": [
+            [
+                "887b466937a03096"
+            ]
+        ]
+    },
+    {
+        "id": "887b466937a03096",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "Off",
+        "func": "msg.payload = 0\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1200,
+        "wires": [
+            [
+                "93e20be6234109d0"
+            ]
+        ]
+    },
+    {
+        "id": "b18fea9b0787a512",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "On",
+        "func": "msg.payload = 1\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1100,
+        "wires": [
+            [
+                "93e20be6234109d0"
+            ]
+        ]
+    },
+    {
+        "id": "ca7338a0e88bf185",
+        "type": "inject",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1100,
+        "wires": [
+            [
+                "b18fea9b0787a512"
+            ]
+        ]
+    },
+    {
+        "id": "95a0b7083c3d0e40",
+        "type": "inject",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1340,
+        "wires": [
+            [
+                "2933ba88a5c595da"
+            ]
+        ]
+    },
+    {
+        "id": "2933ba88a5c595da",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "Temp",
+        "func": "msg.payload = 444\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1340,
+        "wires": [
+            [
+                "1d05224bca3e2624"
+            ]
+        ]
+    },
+    {
+        "id": "1d05224bca3e2624",
+        "type": "modbus-write",
+        "z": "d1d73a0f44810f30",
+        "name": "ID:10 Set Temp FC6",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "10",
+        "dataType": "HoldingRegister",
+        "adr": "3000",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 560,
+        "y": 1340,
+        "wires": [
+            [
+                "cd287974e193c780"
+            ],
+            [
+                "eef70bb37cff4a70"
+            ]
+        ]
+    },
+    {
+        "id": "593998df4d9ba0ef",
+        "type": "comment",
+        "z": "d1d73a0f44810f30",
+        "name": "On/Off",
+        "info": "",
+        "x": 130,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "b37ec7fc5623876b",
+        "type": "comment",
+        "z": "d1d73a0f44810f30",
+        "name": "Set Temp",
+        "info": "",
+        "x": 140,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "3ec3f5077941a69f",
+        "type": "comment",
+        "z": "d1d73a0f44810f30",
+        "name": "Set Time",
+        "info": "",
+        "x": 140,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "1e89d9726796e1da",
+        "type": "inject",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1480,
+        "wires": [
+            [
+                "9a7da2bcaa47a829"
+            ]
+        ]
+    },
+    {
+        "id": "9a7da2bcaa47a829",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "9997",
+        "func": "msg.payload = 9997\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1480,
+        "wires": [
+            [
+                "9ccdb1d0400f64e8"
+            ]
+        ]
+    },
+    {
+        "id": "9ccdb1d0400f64e8",
+        "type": "modbus-write",
+        "z": "d1d73a0f44810f30",
+        "name": "ID:10 Set Temp FC6",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "10",
+        "dataType": "HoldingRegister",
+        "adr": "3050",
+        "quantity": "1",
+        "server": "bb5d62ae67f43b22",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 560,
+        "y": 1460,
+        "wires": [
+            [
+                "cd287974e193c780"
+            ],
+            [
+                "eef70bb37cff4a70"
+            ]
+        ]
+    },
+    {
+        "id": "4d7d5dfbb875ccd4",
+        "type": "inject",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1520,
+        "wires": [
+            [
+                "868ecbf2cbfb2c33"
+            ]
+        ]
+    },
+    {
+        "id": "868ecbf2cbfb2c33",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "9998",
+        "func": "msg.payload = 9998\nreturn msg",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1520,
+        "wires": [
+            [
+                "9ccdb1d0400f64e8"
+            ]
+        ]
+    },
+    {
+        "id": "93ba9eca9e27a759",
+        "type": "ui_text_input",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "label": "SetTemp ID:10",
+        "tooltip": "",
+        "group": "841201d34c934188",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": "500",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 160,
+        "y": 1300,
+        "wires": [
+            [
+                "540f036dfdc4642c"
+            ]
+        ]
+    },
+    {
+        "id": "519094c4e31e24da",
+        "type": "ui_text_input",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "label": "SetTime ID:10",
+        "tooltip": "",
+        "group": "841201d34c934188",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": "500",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 160,
+        "y": 1440,
+        "wires": [
+            [
+                "9ccdb1d0400f64e8"
+            ]
+        ]
+    },
+    {
+        "id": "540f036dfdc4642c",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "x10",
+        "func": "// Function node code\n// Assumes that msg.payload contains a number or a string that can be converted to a number\n\n// Check if payload is a number or can be converted to a number\nif (!isNaN(msg.payload)) {\n    // Multiply the payload by 10\n    msg.payload = Number(msg.payload) * 10;\n} else {\n    // If payload is not a number, return an error message\n    node.error(\"Payload is not a number\", msg);\n    return null; // Stop the flow, no message will be sent to the next node\n}\n\n// Pass the message to the next connected node in the flow\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1300,
+        "wires": [
+            [
+                "1d05224bca3e2624"
+            ]
+        ]
+    },
+    {
+        "id": "f5a95164545d55f6",
+        "type": "ui_button",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "group": "841201d34c934188",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "ID10 On",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 1060,
+        "wires": [
+            [
+                "93e20be6234109d0"
+            ]
+        ]
+    },
+    {
+        "id": "5e4c5e3bec01a397",
+        "type": "ui_button",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "group": "841201d34c934188",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "ID:10 Off",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 1160,
+        "wires": [
+            [
+                "93e20be6234109d0"
+            ]
+        ]
+    },
+    {
+        "id": "39ce3bd222cd97f6",
+        "type": "modbus-read",
+        "z": "d1d73a0f44810f30",
+        "name": "ID10 Check Real TimeTemp",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": false,
+        "unitid": "10",
+        "dataType": "HoldingRegister",
+        "adr": "18504",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "m",
+        "delayOnStart": true,
+        "startDelayTime": "",
+        "server": "bb5d62ae67f43b22",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 200,
+        "y": 120,
+        "wires": [
+            [
+                "0bbefa0cc37ff061",
+                "f08391d572c33792"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "28411ec88e91be73",
+        "type": "modbus-read",
+        "z": "d1d73a0f44810f30",
+        "name": "ID10 Check Set Temp",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "10",
+        "dataType": "HoldingRegister",
+        "adr": "18505",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "m",
+        "delayOnStart": true,
+        "startDelayTime": "1",
+        "server": "bb5d62ae67f43b22",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 180,
+        "y": 180,
+        "wires": [
+            [
+                "0bbefa0cc37ff061",
+                "8406dc38c4cb4907"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0c060a96e647cfe7",
+        "type": "file",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "filename": "C:\\Users\\snowm\\Desktop\\LabC\\id10rTemp.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 800,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5000305170c56ef3",
+        "type": "file",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "filename": "C:\\Users\\snowm\\Desktop\\LabC\\id10sTemp.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 820,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0bbefa0cc37ff061",
+        "type": "debug",
+        "z": "d1d73a0f44810f30",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "8406dc38c4cb4907",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "function 6",
+        "func": "// Create a new JavaScript Date object\nconst now = new Date();\n\n// Get the UTC time in milliseconds\nconst utcTime = now.getTime();\n\n// UTC offset for UTC+8 in milliseconds (8 hours * 60 minutes * 60 seconds * 1000 milliseconds)\nconst utcOffset = 8 * 60 * 60 * 1000;\n\n// Adjust the time for UTC+8\nconst utcPlus8Time = new Date(utcTime + utcOffset);\n\n// Format the date and time in a desired format\n// For example, YYYY-MM-DD HH:mm:ss\n// Note: toISOString always returns a timestamp in UTC time,\n// so we need to manually format the date to get the YYYY-MM-DD HH:mm:ss format\nconst pad = (num) => num.toString().padStart(2, '0');\nconst formattedDate = `${utcPlus8Time.getUTCFullYear()}-${pad(utcPlus8Time.getUTCMonth() + 1)}-${pad(utcPlus8Time.getUTCDate())} ${pad(utcPlus8Time.getUTCHours())}:${pad(utcPlus8Time.getUTCMinutes())}:${pad(utcPlus8Time.getUTCSeconds())}`;\n\n// Assuming the Modbus payload is an object and you want to add the date/time as a property\n// Clone the original payload to avoid any side-effects\nconst newPayload = Object.assign({}, msg.payload);\n\n// Add the timestamp to the payload\nnewPayload.timestamp = formattedDate;\n\n// Set the new payload to the outgoing message\nmsg.payload = newPayload;\n\n// Return the message object to be passed to the next node\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 180,
+        "wires": [
+            [
+                "5000305170c56ef3"
+            ]
+        ]
+    },
+    {
+        "id": "f08391d572c33792",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "function 7",
+        "func": "// Create a new JavaScript Date object\nconst now = new Date();\n\n// Get the UTC time in milliseconds\nconst utcTime = now.getTime();\n\n// UTC offset for UTC+8 in milliseconds (8 hours * 60 minutes * 60 seconds * 1000 milliseconds)\nconst utcOffset = 8 * 60 * 60 * 1000;\n\n// Adjust the time for UTC+8\nconst utcPlus8Time = new Date(utcTime + utcOffset);\n\n// Format the date and time in a desired format\n// For example, YYYY-MM-DD HH:mm:ss\nconst pad = (num) => num.toString().padStart(2, '0');\nconst formattedDate = `${utcPlus8Time.getUTCFullYear()}-${pad(utcPlus8Time.getUTCMonth() + 1)}-${pad(utcPlus8Time.getUTCDate())} ${pad(utcPlus8Time.getUTCHours())}:${pad(utcPlus8Time.getUTCMinutes())}:${pad(utcPlus8Time.getUTCSeconds())}`;\n\n// Assuming the Modbus payload is an object and you want to add the date/time as a property\n// Clone the original payload to avoid any side-effects\nconst newPayload = Object.assign({}, msg.payload);\n\n// Remove the key \"0\" from the payload if it exists\n// delete newPayload[\"0\"];\n\n// Add the timestamp to the payload\nnewPayload.timestamp = formattedDate;\n\n// Set the new payload to the outgoing message\nmsg.payload = newPayload;\n\n// Return the message object to be passed to the next node\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 100,
+        "wires": [
+            [
+                "0c060a96e647cfe7"
+            ]
+        ]
+    },
+    {
+        "id": "80ab17603e8f2c93",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "function 8",
+        "func": "// Function node code\n// Calculate yesterday's date\nlet yesterday = new Date();\nyesterday.setDate(yesterday.getDate() - 1);\n\n// Format the date as YYYYMMDD\nlet folderName = yesterday.toISOString().split('T')[0].replace(/-/g, '');\n\n// Set up the base directory\nlet baseDir = `C:\\\\Users\\\\snowm\\\\Desktop\\\\LabC`;\n\n// Function to format the file names based on identifier\nfunction formatFileName(identifier, folderName) {\n    return `LabC${identifier}${folderName}.txt`;\n}\n\n// Set the payload to include the paths needed for all files\nmsg.payload = {\n    dateFolder: `${baseDir}\\\\${folderName}`,\n    files: {\n        id10r: {\n            sourceFile: `${baseDir}\\\\id10rTemp.txt`,\n            destFile: formatFileName('id10r', folderName)\n        },\n        id10s: {\n            sourceFile: `${baseDir}\\\\id10sTemp.txt`,\n            destFile: formatFileName('id10s', folderName)\n        },\n        id11r: {\n            sourceFile: `${baseDir}\\\\id11rTemp.txt`,\n            destFile: formatFileName('id11r', folderName)\n        },\n        id11s: {\n            sourceFile: `${baseDir}\\\\id11sTemp.txt`,\n            destFile: formatFileName('id11s', folderName)\n        },\n        log: {\n            sourceFile: `${baseDir}\\\\Log.txt`,\n            destFile: formatFileName('log', folderName)\n        }\n    }\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 100,
+        "wires": [
+            [
+                "dadbfeef56634a8d"
+            ]
+        ]
+    },
+    {
+        "id": "76b2719dc40ee27d",
+        "type": "fs-ops-move",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "sourcePath": "",
+        "sourcePathType": "str",
+        "sourceFilename": "payload.files.id11r.sourceFile",
+        "sourceFilenameType": "msg",
+        "destPath": "payload.dateFolder",
+        "destPathType": "msg",
+        "destFilename": "payload.files.id11r.destFile",
+        "destFilenameType": "msg",
+        "link": false,
+        "x": 1740,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2f2d08f48a9e6b28",
+        "type": "fs-ops-move",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "sourcePath": "",
+        "sourcePathType": "str",
+        "sourceFilename": "payload.files.id10s.sourceFile",
+        "sourceFilenameType": "msg",
+        "destPath": "payload.dateFolder",
+        "destPathType": "msg",
+        "destFilename": "payload.files.id10s.destFile",
+        "destFilenameType": "msg",
+        "link": false,
+        "x": 1740,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f314233e30b3163",
+        "type": "fs-ops-move",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "sourcePath": "",
+        "sourcePathType": "str",
+        "sourceFilename": "payload.files.id11s.sourceFile",
+        "sourceFilenameType": "msg",
+        "destPath": "payload.dateFolder",
+        "destPathType": "msg",
+        "destFilename": "payload.files.id11s.destFile",
+        "destFilenameType": "msg",
+        "link": false,
+        "x": 1740,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2ac29b08ea09dd80",
+        "type": "file",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "filename": "C:\\Users\\snowm\\Desktop\\LabC\\Log.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1310,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ebd7167ac1dcef8d",
+        "type": "fs-ops-move",
+        "z": "d1d73a0f44810f30",
+        "name": "",
+        "sourcePath": "",
+        "sourcePathType": "str",
+        "sourceFilename": "payload.files.log.sourceFile",
+        "sourceFilenameType": "msg",
+        "destPath": "payload.dateFolder",
+        "destPathType": "msg",
+        "destFilename": "payload.files.log.destFile",
+        "destFilenameType": "msg",
+        "link": false,
+        "x": 1740,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cd287974e193c780",
+        "type": "function",
+        "z": "d1d73a0f44810f30",
+        "name": "function 9",
+        "func": "// Function node code\nlet date = new Date();\n// Adjust for UTC+8\nlet utcPlus8Timestamp = new Date(date.getTime() + (8 * 60 * 60 * 1000));\n// Format the date\nlet dateString = utcPlus8Timestamp.toISOString().replace('T', ' ').slice(0, -5); // Remove milliseconds\n\n// Check if payload is an object and stringify if necessary\nlet payloadString = (typeof msg.payload === 'object') ? JSON.stringify(msg.payload) : msg.payload;\n\n// Append the timestamp to the payload\nmsg.payload = dateString + \" \" + payloadString;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 940,
+        "wires": [
+            [
+                "2ac29b08ea09dd80"
+            ]
+        ]
+    },
+    {
+        "id": "f6g7h8i9.0abcd",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Load Calibration",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 530,
+        "y": 160,
+        "wires": [
+            [
+                "8c6e5d4f3b2a1098"
+            ]
+        ]
+    },
+    {
+        "id": "0c5a4317eeb1bded",
+        "type": "debug",
+        "z": "fc9da1d89d861f4d",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1460,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "259ff94e33e55494",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF CO2 1.2",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2CorrectionFactor",
+        "payload": "1.2",
+        "payloadType": "num",
+        "x": 550,
+        "y": 240,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "7367be9cc689f9aa",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF Temp 0.9",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "tempCorrectionFactor",
+        "payload": "0.9",
+        "payloadType": "num",
+        "x": 550,
+        "y": 340,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "20a8bcdb758782e1",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF RH 1.2",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "rhCorrectionFactor",
+        "payload": "1.2",
+        "payloadType": "num",
+        "x": 560,
+        "y": 440,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "fc4c8c6f06ea8ccc",
+        "type": "function",
+        "z": "fc9da1d89d861f4d",
+        "name": "Update JSON",
+        "func": "let calibrationData = global.get('calibrationData') || {};\ncalibrationData[msg.topic] = msg.payload;\nglobal.set('calibrationData', calibrationData);\n\nreturn { payload: calibrationData };",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 520,
+        "wires": [
+            [
+                "9d95920b7555fa86",
+                "0c5a4317eeb1bded"
+            ]
+        ]
+    },
+    {
+        "id": "9d95920b7555fa86",
+        "type": "file",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "filename": "C:\\Users\\snowm\\Desktop\\calibration\\calibration.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1370,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "caa1d3c6aa0c113f",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF CO2 0.8",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2CorrectionFactor",
+        "payload": "0.8",
+        "payloadType": "num",
+        "x": 550,
+        "y": 280,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "d8fe1d4df4600f4e",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF Temp 1.1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "tempCorrectionFactor",
+        "payload": "1.1",
+        "payloadType": "num",
+        "x": 550,
+        "y": 380,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "b3bfa16836ddea27",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF RH 0.95",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "rhCorrectionFactor",
+        "payload": "0.95",
+        "payloadType": "num",
+        "x": 550,
+        "y": 480,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "8c6e5d4f3b2a1098",
+        "type": "file in",
+        "z": "fc9da1d89d861f4d",
+        "name": "Read Calibration File",
+        "filename": "C:\\Users\\snowm\\Desktop\\calibration\\calibration.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 810,
+        "y": 160,
+        "wires": [
+            [
+                "9d8c7b6a5e4f3012"
+            ]
+        ]
+    },
+    {
+        "id": "9d8c7b6a5e4f3012",
+        "type": "json",
+        "z": "fc9da1d89d861f4d",
+        "name": "Parse JSON",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1030,
+        "y": 160,
+        "wires": [
+            [
+                "1f2e3d4c5b6a7890"
+            ]
+        ]
+    },
+    {
+        "id": "1f2e3d4c5b6a7890",
+        "type": "function",
+        "z": "fc9da1d89d861f4d",
+        "name": "Restore Calibration",
+        "func": "global.set('calibrationData', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1250,
+        "y": 160,
+        "wires": [
+            [
+                "0c5a4317eeb1bded"
+            ]
+        ]
+    },
+    {
+        "id": "7da3e46d7409a028",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Calibration Correction Factor",
+        "info": "co2CorrectionFactor\ntempCorrectionFactor\nrhCorrectionFactor",
+        "x": 900,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "159a44013f82951e",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift CO2 121",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2DriftFactor",
+        "payload": "121",
+        "payloadType": "num",
+        "x": 550,
+        "y": 560,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "2364accb7eaf4f93",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift CO2 0",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2DriftFactor",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 540,
+        "y": 600,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "1bbfda10b014118c",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift Temp 1.1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "tempDriftFactor",
+        "payload": "1.1",
+        "payloadType": "num",
+        "x": 550,
+        "y": 660,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "76945fe06817b4e7",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift Temp 1.1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "tempDriftFactor",
+        "payload": "0.2",
+        "payloadType": "num",
+        "x": 550,
+        "y": 700,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "1396c9448403ffd1",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift RH -5",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "rhDriftFactor",
+        "payload": "-5",
+        "payloadType": "num",
+        "x": 560,
+        "y": 760,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "803fe8508043a1ad",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift RH 11",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "rhDriftFactor",
+        "payload": "11",
+        "payloadType": "num",
+        "x": 560,
+        "y": 800,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "bf40017db5d5558f",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "calibrationData",
+        "payloadType": "global",
+        "x": 520,
+        "y": 960,
+        "wires": [
+            [
+                "fb4bce3a2428d817"
+            ]
+        ]
+    },
+    {
+        "id": "fb4bce3a2428d817",
+        "type": "debug",
+        "z": "fc9da1d89d861f4d",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "0d5d45a2a06c56b4",
+        "type": "function",
+        "z": "fc9da1d89d861f4d",
+        "name": "Default Calibration Value",
+        "func": "let calibrationData = {\n    \"co2CorrectionFactor\": 1,\n    \"tempCorrectionFactor\": 1,\n    \"rhCorrectionFactor\": 1,\n    \"co2DriftFactor\": 0,\n    \"tempDriftFactor\": 0,\n    \"rhDriftFactor\": 0\n};\n\nglobal.set(\"calibrationData\", calibrationData);\n\nreturn { payload: calibrationData };",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 860,
+        "wires": [
+            [
+                "9d95920b7555fa86"
+            ]
+        ]
+    },
+    {
+        "id": "c3fb5a28c770766f",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 560,
+        "y": 860,
+        "wires": [
+            [
+                "0d5d45a2a06c56b4"
+            ]
+        ]
+    },
+    {
+        "id": "bf1e4c294a2d8937",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Reset the Cal Value",
+        "info": "",
+        "x": 310,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "522af21f058ab476",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Check Cal Value",
+        "info": "",
+        "x": 300,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "8bb8d53f3be9edf2",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "restore Cal Value when Boot",
+        "info": "",
+        "x": 280,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "87bd706a.aec93",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Create an HTTP Endpoint",
+        "info": "The `HTTP In` and `HTTP Response` pair of nodes are the starting point for all HTTP endpoints you create.\n\nAny flow that starts with an `HTTP In` node must have a path to an `HTTP Response` node otherwise requests will eventually timeout.\n\nThe `HTTP Response` node uses the `payload` property of messages it receives as the body of the response. Other properties can be used to further customize the response - they are covered in other recipes.\n\nThe `Template` node provides a convenient way to embed a body of content into a flow. It may be desirable to maintain such static content outside of the flow.\n\nSee Node-RED cookbook [item](https://cookbook.nodered.org/http/create-an-http-endpoint) for details.",
+        "x": 510,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "7f10afe.b1faa5",
+        "type": "http in",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "url": "/get-calibration",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 550,
+        "y": 1120,
+        "wires": [
+            [
+                "1b8bb810a2c9c69c"
+            ]
+        ]
+    },
+    {
+        "id": "d5ce67fc.e6e608",
+        "type": "http response",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 990,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "5a89ce70.db6d5",
+        "type": "http request",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:1880/get-calibration",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 670,
+        "y": 1260,
+        "wires": [
+            [
+                "18b48ed8.1072e1"
+            ]
+        ]
+    },
+    {
+        "id": "31f7aabb.3fbe06",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 520,
+        "y": 1260,
+        "wires": [
+            [
+                "5a89ce70.db6d5"
+            ]
+        ]
+    },
+    {
+        "id": "18b48ed8.1072e1",
+        "type": "debug",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "3c61c12c.5abaae",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Send HTTP request: http://localhost:1880/get-calibration",
+        "info": "`http request` node can be used to make an **HTTP GET** request.\n\nSee Node-RED cookbook [item](https://cookbook.nodered.org/http/simple-get-request) for details.",
+        "x": 610,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "83e766b1.154438",
+        "type": "http request",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 670,
+        "y": 1480,
+        "wires": [
+            [
+                "188bc18.5487a3f"
+            ]
+        ]
+    },
+    {
+        "id": "89c4d7a7.f8d798",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "url",
+                "v": "http://localhost:1880/hello",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 520,
+        "y": 1480,
+        "wires": [
+            [
+                "83e766b1.154438"
+            ]
+        ]
+    },
+    {
+        "id": "188bc18.5487a3f",
+        "type": "debug",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "a65364a3.c72a58",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Set URL in HTTP request node setting panel",
+        "info": "`http request` node can be used to make an **HTTP GET** request.\n\nSee Node-RED cookbook [item](https://cookbook.nodered.org/http/simple-get-request) for details.",
+        "x": 770,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "47396a8e.6804f4",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Set URL via url property of input message of HTTP request node",
+        "info": "Target URL of `http request` node can be specified via `url` property of input message.\n\nSee Node-RED cookbook [item](https://cookbook.nodered.org/http/set-request-url) for details.",
+        "x": 830,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "1b8bb810a2c9c69c",
+        "type": "function",
+        "z": "fc9da1d89d861f4d",
+        "name": "function 10",
+        "func": "let calibrationData = global.get(\"calibrationData\") || \"No calibration data set.\";\nmsg.payload = calibrationData;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 1120,
+        "wires": [
+            [
+                "d5ce67fc.e6e608"
+            ]
+        ]
+    },
+    {
+        "id": "df5c35ccc0d96b04",
+        "type": "link in",
+        "z": "fc9da1d89d861f4d",
+        "name": "to update cal file",
+        "links": [
+            "8b07ec7295a3089b"
+        ],
+        "x": 865,
+        "y": 340,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "dabaab72396b1c81",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "f078e593c2640307",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1234",
+        "payloadType": "num",
+        "x": 310,
+        "y": 340,
+        "wires": [
+            [
+                "cb5443af0119be6c"
+            ]
+        ]
+    },
+    {
+        "id": "dd189c2ab121c18d",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1000",
+        "payloadType": "num",
+        "x": 310,
+        "y": 380,
+        "wires": [
+            [
+                "cb5443af0119be6c",
+                "acf168fbdacb3564"
+            ]
+        ]
+    },
+    {
+        "id": "b48f8a6b6381251c",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "calibrationData",
+        "payloadType": "global",
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "29615c4cd9ac788d"
+            ]
+        ]
+    },
+    {
+        "id": "29615c4cd9ac788d",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "a09a88822367a594",
+        "type": "comment",
+        "z": "8feaf45e2d04640c",
+        "name": "Check Cal Value",
+        "info": "",
+        "x": 140,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "512a2dcb54c4633c",
+        "type": "comment",
+        "z": "8feaf45e2d04640c",
+        "name": "CO2 Example",
+        "info": "",
+        "x": 150,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f1202bf491323b62",
+        "type": "delay",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 680,
+        "y": 460,
+        "wires": [
+            [
+                "7cb36f06b0fada6f"
+            ]
+        ]
+    },
+    {
+        "id": "01a0a9ae62fd2796",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 460,
+        "wires": [
+            [
+                "fa3dc33e5dad7257"
+            ]
+        ]
+    },
+    {
+        "id": "fa3dc33e5dad7257",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Counter start",
+        "func": "flow.set(\"counter\", 0); // Initialize counter\nreturn {payload: \"start\"};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 460,
+        "wires": [
+            [
+                "f1202bf491323b62"
+            ]
+        ]
+    },
+    {
+        "id": "7cb36f06b0fada6f",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Counter",
+        "func": "let count = flow.get(\"counter\") || 0;\ncount += 1;\nflow.set(\"counter\", count);\n\nif (count < 51) {\n    return msg; // send message to delay node again\n} else {\n    return null; // stop sending messages\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 460,
+        "wires": [
+            [
+                "f1202bf491323b62",
+                "58e7e36b41c6c206",
+                "4ab0aa61ead27202",
+                "1f7e0b1737250d26"
+            ]
+        ]
+    },
+    {
+        "id": "1f7e0b1737250d26",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "400-1800",
+        "func": "// Generate a random number between 400 and 1500\nconst min = 400;\nconst max = 1800;\nconst randomValue = (Math.random() * (max - min + 1) + min);\n\n// Set the payload to the random number\nmsg.payload = randomValue;\n\n// Return the message object\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e9cc2361da0bcfd",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "eb474ec4939d52c7",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Check co2AvgValue",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "co2AvgValue",
+        "payloadType": "flow",
+        "x": 250,
+        "y": 840,
+        "wires": [
+            [
+                "1e9cc2361da0bcfd"
+            ]
+        ]
+    },
+    {
+        "id": "start",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Interval 5s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "start",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 540,
+        "wires": [
+            [
+                "read",
+                "c3cb2aae64cf0b08"
+            ]
+        ]
+    },
+    {
+        "id": "read",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Read and Store to array",
+        "func": "flow.set(\"co2AvgValue\", null);\nlet co2Array = flow.get('co2Array') || [];\nco2Array.push(flow.get('co2CorrectedValue'));\nflow.set('co2Array', co2Array);\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 540,
+        "wires": [
+            [
+                "1e9cc2361da0bcfd"
+            ]
+        ]
+    },
+    {
+        "id": "end",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "End",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "end",
+        "payload": "",
+        "payloadType": "date",
+        "x": 590,
+        "y": 680,
+        "wires": [
+            [
+                "average"
+            ]
+        ]
+    },
+    {
+        "id": "average",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Calculate Average",
+        "func": "let co2Array = flow.get('co2Array') || [];\nvar sum = co2Array.reduce((a, b) => a + b, 0);\nvar avg = (sum / co2Array.length) || 0;\n\nflow.set(\"co2AvgValue\", avg);\nmsg.payload = avg;\nflow.set('co2Array', []);\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 600,
+        "wires": [
+            [
+                "1e9cc2361da0bcfd"
+            ]
+        ]
+    },
+    {
+        "id": "ad2810799664bc7c",
+        "type": "comment",
+        "z": "8feaf45e2d04640c",
+        "name": "Ouput a series data",
+        "info": "",
+        "x": 130,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "58e7e36b41c6c206",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "2 Random Number",
+        "func": "// Extract min and max values for A and B from the incoming payload\nconst minA = 0;\nconst maxA = 50;\nconst minB = 0;\nconst maxB = 20;\n\n// Function to generate a random number within a given range\nfunction generateRandom(min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\n// Generate random numbers for A and B\nconst randomA = generateRandom(minA, maxA);\nconst randomB = generateRandom(minB, maxB);\n\n// Calculate the difference A - B\nconst difference = randomA - randomB;\n\n// Prepare output message\nmsg.payload = \n   // randomA: randomA,\n   // randomB: randomB,\n    difference\n;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ab0aa61ead27202",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "0-100",
+        "func": "// Generate a random number between 400 and 1500\nconst min = 0;\nconst max = 100;\nconst randomValue = (Math.random() * (max - min + 1) + min);\n\n// Set the payload to the random number\nmsg.payload = randomValue;\n\n// Return the message object\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 400,
+        "wires": [
+            [
+                "66a088de92e066fd"
+            ]
+        ]
+    },
+    {
+        "id": "66a088de92e066fd",
+        "type": "range",
+        "z": "8feaf45e2d04640c",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "800",
+        "maxout": "1300",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "",
+        "x": 1250,
+        "y": 400,
+        "wires": [
+            [
+                "d9593d3d7f8ba17e",
+                "cb5443af0119be6c"
+            ]
+        ]
+    },
+    {
+        "id": "d9593d3d7f8ba17e",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 9",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1440,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e7b30c7434a06f03",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Cal co2NewCorrectionFactor",
+        "func": "// Retrieve the calibration data from global context\nconst co2CorrectionFactor = global.get(\"calibrationData.co2CorrectionFactor\");\n\n// Retrieve the average CO2 value from flow context\nconst co2AvgValue = flow.get(\"co2AvgValue\");\n\n// Check if both values are available\nif (co2CorrectionFactor === undefined || co2AvgValue === undefined) {\n    node.error(\"Required data is missing\");\n    return null; // Stop execution if data is missing\n}\n\n// Perform the calculation\nlet co2NewCorrectionFactor;\nif (co2AvgValue !== 0) { // Ensure not dividing by zero\n    co2NewCorrectionFactor = co2CorrectionFactor * (1000 / co2AvgValue);\n} else {\n    node.error(\"Average CO2 value is zero, division by zero is not allowed\");\n    return null; // Stop execution to avoid division by zero\n}\n\n// Assign the result to msg.payload\nmsg.payload = co2NewCorrectionFactor;\nflow.set(\"co2NewCorrectionFactor\", co2NewCorrectionFactor);\n\n// Return the message object to the next node\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 1000,
+        "wires": [
+            [
+                "108846d765b6b407"
+            ]
+        ]
+    },
+    {
+        "id": "b532091d31a3538f",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 360,
+        "y": 1000,
+        "wires": [
+            [
+                "e7b30c7434a06f03"
+            ]
+        ]
+    },
+    {
+        "id": "108846d765b6b407",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "e29131ad64309bb5",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Check co2Raw",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "co2Raw",
+        "payloadType": "flow",
+        "x": 260,
+        "y": 880,
+        "wires": [
+            [
+                "1e9cc2361da0bcfd"
+            ]
+        ]
+    },
+    {
+        "id": "78c8ba7489b9e317",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Update co2NewCorrectionFactor",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2CorrectionFactor",
+        "payload": "co2NewCorrectionFactor",
+        "payloadType": "flow",
+        "x": 290,
+        "y": 1060,
+        "wires": [
+            [
+                "108846d765b6b407",
+                "8b07ec7295a3089b"
+            ]
+        ]
+    },
+    {
+        "id": "8b07ec7295a3089b",
+        "type": "link out",
+        "z": "8feaf45e2d04640c",
+        "name": "Go to Cal factor",
+        "mode": "link",
+        "links": [
+            "df5c35ccc0d96b04"
+        ],
+        "x": 705,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "bcf0074a68d1cb83",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Update co2DriftFactor",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2DriftFactor",
+        "payload": "co2AvgValue",
+        "payloadType": "flow",
+        "x": 260,
+        "y": 1120,
+        "wires": [
+            [
+                "108846d765b6b407",
+                "8b07ec7295a3089b"
+            ]
+        ]
+    },
+    {
+        "id": "b43e0077c45d5341",
+        "type": "mqtt out",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "topic": "Sensor\\CO2",
+        "qos": "2",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fbecc02391b41c6e",
+        "x": 1030,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c3cb2aae64cf0b08",
+        "type": "delay",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 580,
+        "wires": [
+            [
+                "average"
+            ]
+        ]
+    },
+    {
+        "id": "33207e574697d50a",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Interval 10s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "start",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 600,
+        "wires": [
+            [
+                "5711ad99f6f1d135",
+                "read"
+            ]
+        ]
+    },
+    {
+        "id": "5711ad99f6f1d135",
+        "type": "delay",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 620,
+        "wires": [
+            [
+                "average"
+            ]
+        ]
+    },
+    {
+        "id": "ec18bdacc532a9a0",
+        "type": "comment",
+        "z": "8feaf45e2d04640c",
+        "name": "4238affe-08a5-475c-9fc0-f9b4ba04e4ec",
+        "info": "",
+        "x": 210,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "cb5443af0119be6c",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "CO2 output w/Date&Time",
+        "func": "// GUID = 4238affe-08a5-475c-9fc0-f9b4ba04e4ec\n\n// Get the current date and time\nvar now = new Date();\nvar datetime = now.getFullYear() +\n    (\"0\" + (now.getMonth() + 1)).slice(-2) +\n    (\"0\" + now.getDate()).slice(-2) + \"-\" +\n    (\"0\" + now.getHours()).slice(-2) +\n    (\"0\" + now.getMinutes()).slice(-2) +\n    (\"0\" + now.getSeconds()).slice(-2);\n\n// Assume msg.payload is where the Modbus data is stored.\nvar co2Raw = msg.payload; // Adjust indexing based on actual payload structure.\nflow.set(\"co2Raw\", co2Raw);\n\n// Retrieve drift and correction factors from global context\nvar co2DriftFactor = global.get(\"calibrationData.co2DriftFactor\") || 0; // Default to 0 if undefined\nvar co2CorrectionFactor = global.get(\"calibrationData.co2CorrectionFactor\") || 1; // Default to 1 if undefined\n\n// Calculate the CO2 value adjusted for drift.\nvar co2MValue = co2Raw - co2DriftFactor;\n\n// Apply correction factor to the adjusted CO2 value.\nvar co2CorrectedValue = co2MValue * co2CorrectionFactor;\n\n// Round the corrected CO2 value to the nearest integer.\nvar co2CorrectedValue = Math.round(co2CorrectedValue);\n\nflow.set(\"co2CorrectedValue\", co2CorrectedValue);\n\n// Store the calculated values in msg.payload for further use.\nmsg.payload = {\n    GUID: \"4238affe-08a5-475c-9fc0-f9b4ba04e4ec\",\n    Datetime: datetime,\n    CO2: co2CorrectedValue\n};\n\n// Return the updated message object.\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 360,
+        "wires": [
+            [
+                "1bbbf3bdd8e04940"
+            ]
+        ]
+    },
+    {
+        "id": "1bbbf3bdd8e04940",
+        "type": "json",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 790,
+        "y": 360,
+        "wires": [
+            [
+                "b43e0077c45d5341",
+                "dabaab72396b1c81"
+            ]
+        ]
+    },
+    {
+        "id": "47f3cb8ae4bfddd0",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Interval 5min",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "start",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 660,
+        "wires": [
+            [
+                "33af240e3e79a728",
+                "read"
+            ]
+        ]
+    },
+    {
+        "id": "33af240e3e79a728",
+        "type": "delay",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 660,
+        "wires": [
+            [
+                "average"
+            ]
+        ]
+    },
+    {
+        "id": "acf168fbdacb3564",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "CO2 output w/Date&Time",
+        "func": "// GUID = 4238affe-08a5-475c-9fc0-f9b4ba04e4ec\n\n// Get the current date and time\nvar now = new Date();\nvar datetime = now.getFullYear() +\n    (\"0\" + (now.getMonth() + 1)).slice(-2) +\n    (\"0\" + now.getDate()).slice(-2) + \"-\" +\n    (\"0\" + now.getHours()).slice(-2) +\n    (\"0\" + now.getMinutes()).slice(-2) +\n    (\"0\" + now.getSeconds()).slice(-2);\n\n// Assume msg.payload is where the Modbus data is stored.\nvar co2Raw = msg.payload; // Adjust indexing based on actual payload structure.\nflow.set(\"co2Raw\", co2Raw);\n\n// Retrieve drift and correction factors from global context\nvar co2DriftFactor = global.get(\"calibrationData.co2DriftFactor\") || 0; // Default to 0 if undefined\nvar co2CorrectionFactor = global.get(\"calibrationData.co2CorrectionFactor\") || 1; // Default to 1 if undefined\n\n// Calculate the CO2 value adjusted for drift.\nvar co2MValue = co2Raw - co2DriftFactor;\n\n// Apply correction factor to the adjusted CO2 value.\nvar co2CorrectedValue = co2MValue * co2CorrectionFactor;\n\n// Round the corrected CO2 value to the nearest integer.\nvar co2CorrectedValue = Math.round(co2CorrectedValue);\n\nflow.set(\"co2CorrectedValue\", co2CorrectedValue);\n\n// Store the calculated values in msg.payload for further use.\nmsg.payload = {\n    GUID: \"4238affe-08a5-475c-9fc0-f9b4ba04e4ec\",\n    Datetime: datetime,\n    CO2: co2CorrectedValue,\n    Temp: 24.5,\n    PM10:75\n};\n\n// Return the updated message object.\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 400,
+        "wires": [
+            [
+                "1bbbf3bdd8e04940"
+            ]
+        ]
+    },
+    {
+        "id": "8a355300ac5c024b",
+        "type": "inject",
+        "z": "2be737f5567913bb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 760,
+        "wires": [
+            [
+                "d7caec96c52c5253"
+            ]
+        ]
+    },
+    {
+        "id": "ff6a7e6b67beee64",
+        "type": "modbus-response",
+        "z": "2be737f5567913bb",
+        "name": "",
+        "registerShowMax": 20,
+        "x": 530,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "d7caec96c52c5253",
+        "type": "modbus-getter",
+        "z": "2be737f5567913bb",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "logIOActivities": false,
+        "unitid": "254",
+        "dataType": "HoldingRegister",
+        "adr": "11",
+        "quantity": "1",
+        "server": "2a966a773ae7de56",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 320,
+        "y": 760,
+        "wires": [
+            [
+                "ff6a7e6b67beee64",
+                "36305d869b203934"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f6cf947859e61e20",
+        "type": "serial out",
+        "z": "2be737f5567913bb",
+        "name": "",
+        "serial": "586623a81eda7945",
+        "x": 300,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "12189f71488e579f",
+        "type": "function",
+        "z": "2be737f5567913bb",
+        "name": "Encode and Append Hex",
+        "func": "    var headBuf = new Buffer(\"co2.val=\", 'utf8');\n    var textBuf = Buffer.from(msg.payload, 'utf8');\n    var postFixBuf = new Buffer(\"FFFFFF\", 'hex');\n \n\n    // Concatenate the buffers\nmsg.payload = Buffer.concat([headBuf,textBuf, postFixBuf]);\n    return msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 760,
+        "wires": [
+            [
+                "bc7bdeb18384cede"
+            ]
+        ]
+    },
+    {
+        "id": "d65799057a62489a",
+        "type": "debug",
+        "z": "2be737f5567913bb",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 310,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "99d39b73a5db126b",
+        "type": "inject",
+        "z": "2be737f5567913bb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1200",
+        "payloadType": "str",
+        "x": 670,
+        "y": 580,
+        "wires": [
+            [
+                "12189f71488e579f"
+            ]
+        ]
+    },
+    {
+        "id": "b62448fb64387928",
+        "type": "inject",
+        "z": "2be737f5567913bb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "3400",
+        "payloadType": "str",
+        "x": 650,
+        "y": 620,
+        "wires": [
+            [
+                "12189f71488e579f"
+            ]
+        ]
+    },
+    {
+        "id": "36305d869b203934",
+        "type": "function",
+        "z": "2be737f5567913bb",
+        "name": "Condition array to string",
+        "func": "// Check if payload is an array and convert it to string\nif (Array.isArray(msg.payload)) {\n    msg.payload = msg.payload.join(\", \"); // Join array elements with a comma and space\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 760,
+        "wires": [
+            [
+                "12189f71488e579f"
+            ]
+        ]
+    },
+    {
+        "id": "e577be17084c92c2",
+        "type": "serial in",
+        "z": "2be737f5567913bb",
+        "name": "",
+        "serial": "3918123fd48af60d",
+        "x": 170,
+        "y": 960,
+        "wires": [
+            [
+                "41d4257fadce86f3",
+                "7264ce619d845eb9"
+            ]
+        ]
+    },
+    {
+        "id": "41d4257fadce86f3",
+        "type": "function",
+        "z": "2be737f5567913bb",
+        "d": true,
+        "name": "function 1",
+        "func": "// Function to convert two bytes into a 16-bit integer\nfunction bytesToInt(highByte, lowByte) {\n    return (highByte << 8) | lowByte;\n}\n\n// Buffer to hold the incoming serial data\nlet buffer = Buffer.from(msg.payload);\n\n// Check if buffer length is as expected\nif (buffer.length !== 32) {\n    node.error(\"Unexpected buffer length: \" + buffer.length);\n    return null;  // Stops further processing\n}\n\n// Object to hold our processed data\nlet dataPoints = {};\n\n// Process each data point\nfor (let i = 0; i < 12; i++) {\n    let index = 8 + (i * 2);  // Calculate the starting index for each data point\n    if (index + 1 < buffer.length) {\n        let highByte = buffer[index];\n        let lowByte = buffer[index + 1];\n        dataPoints['data' + (i + 1)] = bytesToInt(highByte, lowByte);\n    }\n}\n\n// Set the processed data points to the output payload\nmsg.payload = dataPoints;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7264ce619d845eb9",
+        "type": "function",
+        "z": "2be737f5567913bb",
+        "name": "function 2",
+        "func": "function bytesToInt(highByte, lowByte) {\n    return (highByte << 8) | lowByte;\n}\n\nlet buffer = Buffer.from(msg.payload);\nif (buffer.length !== 32) {\n    node.error(\"Unexpected buffer length: \" + buffer.length);\n    return null;  // Stops further processing\n}\n\nlet outputs = Array(12).fill(null);  // Create an array with 12 null elements for 12 outputs\n\nfor (let i = 0; i < 12; i++) {\n    let index = 8 + (i * 2);\n    if (index + 1 < buffer.length) {\n        let highByte = buffer[index];\n        let lowByte = buffer[index + 1];\n        let dataPoint = bytesToInt(highByte, lowByte);\n        outputs[i] = { payload: dataPoint };\n    }\n}\n\nreturn outputs;  // Outputs an array where each element corresponds to a separate output port",
+        "outputs": 12,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 960,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [
+                "4c993b708a859d7c"
+            ],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "9898acc4b949d3a4",
+        "type": "function",
+        "z": "2be737f5567913bb",
+        "name": "Encode and Append Hex",
+        "func": "    var headBuf = new Buffer(\"pm10.val=\", 'utf8');\n    var textBuf = Buffer.from(msg.payload, 'utf8');\n    var postFixBuf = new Buffer(\"FFFFFF\", 'hex');\n \n\n    // Concatenate the buffers\nmsg.payload = Buffer.concat([headBuf,textBuf, postFixBuf]);\n    return msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 960,
+        "wires": [
+            [
+                "d69631d0582f04a0"
+            ]
+        ]
+    },
+    {
+        "id": "4c993b708a859d7c",
+        "type": "function",
+        "z": "2be737f5567913bb",
+        "name": "function 3",
+        "func": "// Check if payload is a number and convert it to string\nif (typeof msg.payload === \"number\") {\n    msg.payload = msg.payload.toString(); // Convert the number to a string\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 960,
+        "wires": [
+            [
+                "9898acc4b949d3a4"
+            ]
+        ]
+    },
+    {
+        "id": "6d045ca2b0d93e49",
+        "type": "inject",
+        "z": "2be737f5567913bb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 1140,
+        "wires": [
+            [
+                "af60abcbef1d506c"
+            ]
+        ]
+    },
+    {
+        "id": "dfc23a96082fd343",
+        "type": "function",
+        "z": "2be737f5567913bb",
+        "name": "Encode and Append Hex",
+        "func": "    var headBuf = new Buffer(\"date.txt=\", 'utf8');\n    var textBuf = Buffer.from(msg.payload, 'utf8');\n    var postFixBuf = new Buffer(\"FFFFFF\", 'hex');\n \n\n    // Concatenate the buffers\nmsg.payload = Buffer.concat([headBuf,textBuf, postFixBuf]);\n    return msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 1140,
+        "wires": [
+            [
+                "d5182b378fcd53bb"
+            ]
+        ]
+    },
+    {
+        "id": "af60abcbef1d506c",
+        "type": "function",
+        "z": "2be737f5567913bb",
+        "name": "Generate Date&Time",
+        "func": "// Create a new Date object\nlet now = new Date();\n\n// Format the date and time as \"YYYY-MM-DD hh:mm:ss\"\nlet formattedDate = now.getFullYear() + \"-\" +\n    (\"0\" + (now.getMonth() + 1)).slice(-2) + \"-\" +\n    (\"0\" + now.getDate()).slice(-2) + \" \" +\n    (\"0\" + now.getHours()).slice(-2) + \":\" +\n    (\"0\" + now.getMinutes()).slice(-2) + \":\" +\n    (\"0\" + now.getSeconds()).slice(-2);\n\n// Encapsulate the formatted date and time in quotation marks\nmsg.payload = '\"' + formattedDate + '\"';\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 1140,
+        "wires": [
+            [
+                "dfc23a96082fd343"
+            ]
+        ]
+    },
+    {
+        "id": "83a17f39a3502430",
+        "type": "comment",
+        "z": "2be737f5567913bb",
+        "name": "CO2 Sensor",
+        "info": "",
+        "x": 270,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "cd48579f8c4a36ef",
+        "type": "comment",
+        "z": "2be737f5567913bb",
+        "name": "PM10 Sensor",
+        "info": "",
+        "x": 110,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "1b477e4526ec8bd8",
+        "type": "comment",
+        "z": "2be737f5567913bb",
+        "name": "Date & Time",
+        "info": "",
+        "x": 150,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "bc7bdeb18384cede",
+        "type": "link out",
+        "z": "2be737f5567913bb",
+        "name": "co2ToHMI",
+        "mode": "link",
+        "links": [
+            "c8d8b281ecdbdbc6"
+        ],
+        "x": 1045,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "c8d8b281ecdbdbc6",
+        "type": "link in",
+        "z": "2be737f5567913bb",
+        "name": "send to HMI",
+        "links": [
+            "bc7bdeb18384cede",
+            "d69631d0582f04a0",
+            "d5182b378fcd53bb"
+        ],
+        "x": 145,
+        "y": 1280,
+        "wires": [
+            [
+                "f6cf947859e61e20",
+                "d65799057a62489a"
+            ]
+        ]
+    },
+    {
+        "id": "d69631d0582f04a0",
+        "type": "link out",
+        "z": "2be737f5567913bb",
+        "name": "pmToHMI",
+        "mode": "link",
+        "links": [
+            "c8d8b281ecdbdbc6"
+        ],
+        "x": 1035,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "d5182b378fcd53bb",
+        "type": "link out",
+        "z": "2be737f5567913bb",
+        "name": "DateToHMI",
+        "mode": "link",
+        "links": [
+            "c8d8b281ecdbdbc6"
+        ],
+        "x": 785,
+        "y": 1140,
+        "wires": []
+    }
+]

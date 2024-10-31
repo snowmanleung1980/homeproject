@@ -1,0 +1,197 @@
+[
+    {
+        "id": "10fc63c9aa3c31a4",
+        "type": "tab",
+        "label": "流程1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "beb13b30f7c5975e",
+        "type": "inject",
+        "z": "10fc63c9aa3c31a4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 120,
+        "wires": [
+            [
+                "2e4c513accf7fc16"
+            ]
+        ]
+    },
+    {
+        "id": "2e4c513accf7fc16",
+        "type": "mqtt out",
+        "z": "10fc63c9aa3c31a4",
+        "name": "",
+        "topic": "test",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f2ba91ef1d96ffd9",
+        "x": 590,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "6365fb6b9ca6c190",
+        "type": "debug",
+        "z": "10fc63c9aa3c31a4",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "0500e05f90d4f910",
+        "type": "serial in",
+        "z": "10fc63c9aa3c31a4",
+        "name": "",
+        "serial": "ac832e5fc844ed1f",
+        "x": 200,
+        "y": 360,
+        "wires": [
+            [
+                "6365fb6b9ca6c190"
+            ]
+        ]
+    },
+    {
+        "id": "258e9055a1fa6812",
+        "type": "serial out",
+        "z": "10fc63c9aa3c31a4",
+        "name": "",
+        "serial": "ac832e5fc844ed1f",
+        "x": 600,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "9735195ebdd81b5c",
+        "type": "inject",
+        "z": "10fc63c9aa3c31a4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "AT+CSQ",
+        "payloadType": "str",
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "7dce2062d0e092ca"
+            ]
+        ]
+    },
+    {
+        "id": "7dce2062d0e092ca",
+        "type": "function",
+        "z": "10fc63c9aa3c31a4",
+        "name": "function 1",
+        "func": "msg.payload += Buffer.from(\"0D\", \"hex\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 260,
+        "wires": [
+            [
+                "258e9055a1fa6812"
+            ]
+        ]
+    },
+    {
+        "id": "f2ba91ef1d96ffd9",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "ckckds.synology.me",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ac832e5fc844ed1f",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "/dev/ttyS0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    }
+]

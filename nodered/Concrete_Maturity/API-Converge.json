@@ -1,0 +1,467 @@
+[
+    {
+        "id": "9332daebd83e960f",
+        "type": "tab",
+        "label": "API-Converge",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7478f332d48ca6b7",
+        "type": "inject",
+        "z": "9332daebd83e960f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 180,
+        "wires": [
+            [
+                "26db988c01036f4a"
+            ]
+        ]
+    },
+    {
+        "id": "26db988c01036f4a",
+        "type": "http request",
+        "z": "9332daebd83e960f",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.converge.io/integration/digitalbuild/devices?siteId=674",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "PRIVATE-TOKEN",
+                "valueType": "other",
+                "valueValue": "cpat-6NGJld0g52DlXVJ2LYDvOnd35aj2yLsO6w1L"
+            }
+        ],
+        "x": 370,
+        "y": 180,
+        "wires": [
+            [
+                "4e1e45deabace831"
+            ]
+        ]
+    },
+    {
+        "id": "95156daded8de0e9",
+        "type": "debug",
+        "z": "9332daebd83e960f",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "4e1e45deabace831",
+        "type": "function",
+        "z": "9332daebd83e960f",
+        "name": "extract id",
+        "func": "// Assuming the input payload is an array of objects\nlet items = msg.payload;\n\n// Extract all \"id\" values\nlet ids = items.map(item => item.id);\n\n// Set the extracted ids as the new payload\nmsg.payload = ids;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 180,
+        "wires": [
+            [
+                "95156daded8de0e9"
+            ]
+        ]
+    },
+    {
+        "id": "10dbc9738a2bf5f1",
+        "type": "comment",
+        "z": "9332daebd83e960f",
+        "name": "get device",
+        "info": "",
+        "x": 120,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "6db6042cbd1dc823",
+        "type": "inject",
+        "z": "9332daebd83e960f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "2fa704fa4777c5ad"
+            ]
+        ]
+    },
+    {
+        "id": "2fa704fa4777c5ad",
+        "type": "http request",
+        "z": "9332daebd83e960f",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.converge.io/integration/digitalbuild/pours?siteId=674",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "PRIVATE-TOKEN",
+                "valueType": "other",
+                "valueValue": "cpat-6NGJld0g52DlXVJ2LYDvOnd35aj2yLsO6w1L"
+            }
+        ],
+        "x": 370,
+        "y": 320,
+        "wires": [
+            [
+                "13f446d54cabf448"
+            ]
+        ]
+    },
+    {
+        "id": "13f446d54cabf448",
+        "type": "function",
+        "z": "9332daebd83e960f",
+        "name": "extract id",
+        "func": "// Assuming the input payload is an array of objects\nlet items = msg.payload;\n\n// Extract all \"id\" values\nlet ids = items.map(item => item.id);\n\n// Set the extracted ids as the new payload\nmsg.payload = ids;\n\n// Store the result in the global variable \"convergepour\"\nglobal.set(\"convergepour\", msg.payload);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 320,
+        "wires": [
+            [
+                "95156daded8de0e9"
+            ]
+        ]
+    },
+    {
+        "id": "c1c61c3f9e05e9de",
+        "type": "comment",
+        "z": "9332daebd83e960f",
+        "name": "get pour",
+        "info": "",
+        "x": 120,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "e08f7623fd883c0b",
+        "type": "inject",
+        "z": "9332daebd83e960f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 440,
+        "wires": [
+            [
+                "afa828bd47fa7f45"
+            ]
+        ]
+    },
+    {
+        "id": "afa828bd47fa7f45",
+        "type": "http request",
+        "z": "9332daebd83e960f",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.converge.io/integration/digitalbuild/pours/10025/data?siteId=674&metricId=2",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "PRIVATE-TOKEN",
+                "valueType": "other",
+                "valueValue": "cpat-6NGJld0g52DlXVJ2LYDvOnd35aj2yLsO6w1L"
+            }
+        ],
+        "x": 370,
+        "y": 440,
+        "wires": [
+            [
+                "bc5f80e727d337ab",
+                "29fa127294d600be"
+            ]
+        ]
+    },
+    {
+        "id": "52c0561405260a15",
+        "type": "comment",
+        "z": "9332daebd83e960f",
+        "name": "10025",
+        "info": "",
+        "x": 110,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "bc5f80e727d337ab",
+        "type": "function",
+        "z": "9332daebd83e960f",
+        "name": "Extract the lastest record",
+        "func": "let jsonData = msg.payload;\nlet latestData = {};\n\nfor (let arrayName in jsonData) {\n    if (jsonData.hasOwnProperty(arrayName)) {\n        let dataArray = jsonData[arrayName];\n        // Ensure dataArray is an array and contains elements\n        if (Array.isArray(dataArray) && dataArray.length > 0) {\n            // Use reduce to find the latest entry\n            let latestEntry = dataArray.reduce((latest, current) => {\n                return new Date(current.timestamp) > new Date(latest.timestamp) ? current : latest;\n            });\n\n            latestData[arrayName] = {\n                timestamp: latestEntry.timestamp,\n                temperature: latestEntry.temperature\n            };\n        }\n    }\n}\n\nmsg.payload = latestData;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 440,
+        "wires": [
+            [
+                "95156daded8de0e9"
+            ]
+        ]
+    },
+    {
+        "id": "29e05e1e6afe7ec7",
+        "type": "inject",
+        "z": "9332daebd83e960f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "convergepour",
+        "payloadType": "global",
+        "x": 750,
+        "y": 120,
+        "wires": [
+            [
+                "95156daded8de0e9"
+            ]
+        ]
+    },
+    {
+        "id": "9f6c84c078ccd301",
+        "type": "inject",
+        "z": "9332daebd83e960f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 130,
+        "y": 540,
+        "wires": [
+            [
+                "bfe49792858c143a"
+            ]
+        ]
+    },
+    {
+        "id": "41c313bea12a4720",
+        "type": "http request",
+        "z": "9332daebd83e960f",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "msg.payload",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "PRIVATE-TOKEN",
+                "valueType": "other",
+                "valueValue": "cpat-6NGJld0g52DlXVJ2LYDvOnd35aj2yLsO6w1L"
+            }
+        ],
+        "x": 450,
+        "y": 540,
+        "wires": [
+            [
+                "f2f5c838faf47a64"
+            ]
+        ]
+    },
+    {
+        "id": "e443d47ec40e92a2",
+        "type": "comment",
+        "z": "9332daebd83e960f",
+        "name": "get pour",
+        "info": "",
+        "x": 120,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "f2f5c838faf47a64",
+        "type": "function",
+        "z": "9332daebd83e960f",
+        "name": "Extract the lastest record",
+        "func": "\n// Get the input message payload\nvar data = msg.payload;\n\n// Initialize variables for latest timestamp and temperature\nvar latestTimestamp = 0;\nvar latestTemperature = 0;\n\n// Loop through the data array\nfor (var i = 0; i < data[\"CA-45E9B/0\"].length; i++) {\n    // If the current item's time is greater than the latest timestamp, update the variables\n    if (data[\"CA-45E9B/0\"][i].time > latestTimestamp) {\n        latestTimestamp = data[\"CA-45E9B/0\"][i].time;\n        latestTemperature = data[\"CA-45E9B/0\"][i].value;\n    }\n}\n\n// Set the output message payload to an object containing the latest timestamp and temperature\nmsg.payload = {\"timestamp\": latestTimestamp, \"temperature\": latestTemperature};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 540,
+        "wires": [
+            [
+                "95156daded8de0e9"
+            ]
+        ]
+    },
+    {
+        "id": "bfe49792858c143a",
+        "type": "function",
+        "z": "9332daebd83e960f",
+        "name": "function 11",
+        "func": "\n// Get the site ID and metric ID from the global variables\nlet siteId = global.get(\"siteId\");\nlet metricId = global.get(\"metricId\");\n\n// Build the URL using the variables\nlet url = `https://api.converge.io/integration/digitalbuild/pours/${siteId}/data?siteId=${siteId}&metricId=${metricId}`;\n\n// Set the built URL as the new payload\nmsg.payload = url;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 540,
+        "wires": [
+            [
+                "41c313bea12a4720"
+            ]
+        ]
+    },
+    {
+        "id": "29fa127294d600be",
+        "type": "debug",
+        "z": "9332daebd83e960f",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "2a3cccefc3bc90db",
+        "type": "split",
+        "z": "9332daebd83e960f",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 710,
+        "y": 380,
+        "wires": [
+            [
+                "29fa127294d600be"
+            ]
+        ]
+    }
+]

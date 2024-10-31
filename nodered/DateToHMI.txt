@@ -1,0 +1,72 @@
+[
+    {
+        "id": "1543734153b196bb",
+        "type": "inject",
+        "z": "6636d9a8afad4fb6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 270,
+        "y": 440,
+        "wires": [
+            [
+                "1f3c02cc649e595c"
+            ]
+        ]
+    },
+    {
+        "id": "da9e2dd55320df6e",
+        "type": "function",
+        "z": "6636d9a8afad4fb6",
+        "name": "Encode and Append Hex",
+        "func": "    var headBuf = new Buffer(\"date.txt=\", 'utf8');\n    var textBuf = Buffer.from(msg.payload, 'utf8');\n    var postFixBuf = new Buffer(\"FFFFFF\", 'hex');\n \n\n    // Concatenate the buffers\nmsg.payload = Buffer.concat([headBuf,textBuf, postFixBuf]);\n    return msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 440,
+        "wires": [
+            [
+                "8dc2f91b9d3bffba",
+                "4"
+            ]
+        ]
+    },
+    {
+        "id": "1f3c02cc649e595c",
+        "type": "function",
+        "z": "6636d9a8afad4fb6",
+        "name": "Generate Date&Time",
+        "func": "// Create a new Date object\nlet now = new Date();\n\n// Format the date and time as \"YYYY-MM-DD hh:mm:ss\"\nlet formattedDate = now.getFullYear() + \"-\" +\n    (\"0\" + (now.getMonth() + 1)).slice(-2) + \"-\" +\n    (\"0\" + now.getDate()).slice(-2) + \" \" +\n    (\"0\" + now.getHours()).slice(-2) + \":\" +\n    (\"0\" + now.getMinutes()).slice(-2) + \":\" +\n    (\"0\" + now.getSeconds()).slice(-2);\n\n// Encapsulate the formatted date and time in quotation marks\nmsg.payload = '\"' + formattedDate + '\"';\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 440,
+        "wires": [
+            [
+                "da9e2dd55320df6e"
+            ]
+        ]
+    }
+]

@@ -1,0 +1,3899 @@
+[
+    {
+        "id": "fc9da1d89d861f4d",
+        "type": "tab",
+        "label": "Calibration",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e601b94df7aae738",
+        "type": "tab",
+        "label": "Renew-UI",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8feaf45e2d04640c",
+        "type": "tab",
+        "label": "Reading",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6f808568dd22cb3c",
+        "type": "tab",
+        "label": "流程3",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "19402a1dfd9f95b2",
+        "type": "group",
+        "z": "e601b94df7aae738",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "bb1889076e7e0c6c",
+            "0b287ce4218be965",
+            "4e9c626f7bafa3d3",
+            "9141334520136e9a",
+            "e52b019ea04168f7",
+            "1ad9f276edfebb71",
+            "31e1d74504d85050"
+        ],
+        "x": 54,
+        "y": 79,
+        "w": 872,
+        "h": 202
+    },
+    {
+        "id": "1ed97e722fc0db92",
+        "type": "group",
+        "z": "e601b94df7aae738",
+        "name": "",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "1543734153b196bb",
+            "dbb5a35a5f57e4b2",
+            "338c4ea7439535b3",
+            "f92e7148e57d03ab",
+            "453ae5cfc21bd9b4",
+            "c7feeebbfd129548",
+            "e2ecd6543dfc165c",
+            "0fe12cf03935e77f",
+            "02152a05b18a1b96",
+            "5006ee78cca90987",
+            "953243b0f3d481e4",
+            "5936f5f99012f4b6"
+        ],
+        "x": 54,
+        "y": 319,
+        "w": 872,
+        "h": 377
+    },
+    {
+        "id": "e37d9f8ae7664b8e",
+        "type": "group",
+        "z": "e601b94df7aae738",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "8dc2f91b9d3bffba",
+            "3",
+            "d330d0daeded5519",
+            "0a44c8247d13c038",
+            "4473a2424d3e96c4",
+            "0dbe3058c9d42173",
+            "05fff06095ec976f",
+            "942fa8bc0afd9568",
+            "9061447e6e547f5d",
+            "edbe7727a611e2e7",
+            "2d9a0bc6afcfa7b8",
+            "eb6a6612671f9cd9",
+            "d4d7c4247c423b44",
+            "74f07eb72fda06b5",
+            "a902c8be766cca52",
+            "7cf345522865f910",
+            "4ae79215b86ebac5"
+        ],
+        "x": 34,
+        "y": 739,
+        "w": 1492,
+        "h": 362
+    },
+    {
+        "id": "8fd3feef97e4f349",
+        "type": "group",
+        "z": "e601b94df7aae738",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "inject_startup",
+            "function_date_folder",
+            "exec_check_create_folder",
+            "14eab00086737fe4",
+            "9b05e429ec168b3a",
+            "22cfab73f98efd1b",
+            "d1d3bd547a9620aa",
+            "2fc974935bad7a35"
+        ],
+        "x": 994,
+        "y": 79,
+        "w": 692,
+        "h": 282
+    },
+    {
+        "id": "57e011f3d33b72ba",
+        "type": "group",
+        "z": "e601b94df7aae738",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "1dfe1a2bb255a27c",
+            "e1675da4b3b209e9",
+            "363cb6cd53f019fc",
+            "9e8fe0bd58f84439",
+            "5da7d18787e855d9"
+        ],
+        "x": 34,
+        "y": 1139,
+        "w": 712,
+        "h": 122
+    },
+    {
+        "id": "0c5fde92e9694da5",
+        "type": "modbus-client",
+        "name": "",
+        "clienttype": "serial",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyAMA3",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "61c8620de6d6e86b",
+        "type": "serial-port",
+        "name": "Display",
+        "serialport": "/dev/ttyS0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "3918123fd48af60d",
+        "type": "serial-port",
+        "name": "PM",
+        "serialport": "/dev/ttyAMA2",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "0x42 0x4D",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "100",
+        "bin": "bin",
+        "out": "interbyte",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "fbecc02391b41c6e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "ckckds.synology.me",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "84344b9c8919edb2",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "b63d1f91.68095",
+        "type": "ui_tab",
+        "name": "Files",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "06bbd7f74ab319f7",
+        "type": "ui_group",
+        "name": "File Browser",
+        "tab": "b63d1f91.68095",
+        "order": 1,
+        "disp": true,
+        "width": "18",
+        "collapse": false
+    },
+    {
+        "id": "f6g7h8i9.0abcd",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Load Calibration",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 530,
+        "y": 160,
+        "wires": [
+            [
+                "8c6e5d4f3b2a1098"
+            ]
+        ]
+    },
+    {
+        "id": "0c5a4317eeb1bded",
+        "type": "debug",
+        "z": "fc9da1d89d861f4d",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1460,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "259ff94e33e55494",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF CO2 12",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2CorrectionFactor",
+        "payload": "12",
+        "payloadType": "num",
+        "x": 550,
+        "y": 240,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "7367be9cc689f9aa",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF pm10 12",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "pm10CorrectionFactor",
+        "payload": "12",
+        "payloadType": "num",
+        "x": 550,
+        "y": 400,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "fc4c8c6f06ea8ccc",
+        "type": "function",
+        "z": "fc9da1d89d861f4d",
+        "name": "Update JSON",
+        "func": "let calibrationData = global.get('calibrationData') || {};\ncalibrationData[msg.topic] = msg.payload;\nglobal.set('calibrationData', calibrationData);\n\nreturn { payload: calibrationData };",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 520,
+        "wires": [
+            [
+                "9d95920b7555fa86",
+                "0c5a4317eeb1bded"
+            ]
+        ]
+    },
+    {
+        "id": "9d95920b7555fa86",
+        "type": "file",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "filename": "/home/rpi/calibration/calibration.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1320,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "caa1d3c6aa0c113f",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF CO2 0.1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2CorrectionFactor",
+        "payload": "0.1",
+        "payloadType": "num",
+        "x": 550,
+        "y": 300,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "d8fe1d4df4600f4e",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF pm10 0.1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "pm10CorrectionFactor",
+        "payload": "0.1",
+        "payloadType": "num",
+        "x": 550,
+        "y": 440,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "8c6e5d4f3b2a1098",
+        "type": "file in",
+        "z": "fc9da1d89d861f4d",
+        "name": "Read Calibration File",
+        "filename": "/home/rpi/calibration/calibration.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 810,
+        "y": 160,
+        "wires": [
+            [
+                "9d8c7b6a5e4f3012"
+            ]
+        ]
+    },
+    {
+        "id": "9d8c7b6a5e4f3012",
+        "type": "json",
+        "z": "fc9da1d89d861f4d",
+        "name": "Parse JSON",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1030,
+        "y": 160,
+        "wires": [
+            [
+                "1f2e3d4c5b6a7890"
+            ]
+        ]
+    },
+    {
+        "id": "1f2e3d4c5b6a7890",
+        "type": "function",
+        "z": "fc9da1d89d861f4d",
+        "name": "Restore Calibration",
+        "func": "global.set('calibrationData', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1250,
+        "y": 160,
+        "wires": [
+            [
+                "0c5a4317eeb1bded"
+            ]
+        ]
+    },
+    {
+        "id": "7da3e46d7409a028",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Calibration Correction Factor",
+        "info": "co2CorrectionFactor\ntempCorrectionFactor\nrhCorrectionFactor",
+        "x": 900,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "159a44013f82951e",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift CO2 121",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2DriftFactor",
+        "payload": "121",
+        "payloadType": "num",
+        "x": 470,
+        "y": 540,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "2364accb7eaf4f93",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift CO2 0",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2DriftFactor",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 460,
+        "y": 580,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "1bbfda10b014118c",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift pm10 200",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "pm10DriftFactor",
+        "payload": "200",
+        "payloadType": "num",
+        "x": 460,
+        "y": 700,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "76945fe06817b4e7",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift pm10 0",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "pm10DriftFactor",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 450,
+        "y": 740,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "bf40017db5d5558f",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "calibrationData",
+        "payloadType": "global",
+        "x": 520,
+        "y": 960,
+        "wires": [
+            [
+                "fb4bce3a2428d817"
+            ]
+        ]
+    },
+    {
+        "id": "fb4bce3a2428d817",
+        "type": "debug",
+        "z": "fc9da1d89d861f4d",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "0d5d45a2a06c56b4",
+        "type": "function",
+        "z": "fc9da1d89d861f4d",
+        "name": "Default Calibration Value",
+        "func": "let calibrationData = {\n    \"co2CorrectionFactor\": 1,\n    \"pm10CorrectionFactor\": 1,\n    \"co2DriftFactor\": 0,\n    \"pm10DriftFactor\": 0,\n};\n\nglobal.set(\"calibrationData\", calibrationData);\n\nreturn { payload: calibrationData };",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 860,
+        "wires": [
+            [
+                "9d95920b7555fa86"
+            ]
+        ]
+    },
+    {
+        "id": "c3fb5a28c770766f",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 560,
+        "y": 860,
+        "wires": [
+            [
+                "0d5d45a2a06c56b4"
+            ]
+        ]
+    },
+    {
+        "id": "bf1e4c294a2d8937",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Reset the Cal Value",
+        "info": "",
+        "x": 310,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "522af21f058ab476",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "Check Cal Value",
+        "info": "",
+        "x": 300,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "8bb8d53f3be9edf2",
+        "type": "comment",
+        "z": "fc9da1d89d861f4d",
+        "name": "restore Cal Value when Boot",
+        "info": "",
+        "x": 280,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "df5c35ccc0d96b04",
+        "type": "link in",
+        "z": "fc9da1d89d861f4d",
+        "name": "to update cal file",
+        "links": [
+            "8b07ec7295a3089b",
+            "8fb3f16f8903aad4"
+        ],
+        "x": 865,
+        "y": 340,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "d1e159e770420c02",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF CO2 1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2CorrectionFactor",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 340,
+        "y": 280,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "1f6a7f5e4a3f15d0",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "CF pm10 1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "pm10CorrectionFactor",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 360,
+        "y": 420,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "f1473be482123553",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "Drift pm10 -100",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "pm10DriftFactor",
+        "payload": "-100",
+        "payloadType": "num",
+        "x": 460,
+        "y": 780,
+        "wires": [
+            [
+                "fc4c8c6f06ea8ccc"
+            ]
+        ]
+    },
+    {
+        "id": "f223aa15903c566f",
+        "type": "inject",
+        "z": "fc9da1d89d861f4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 480,
+        "y": 1040,
+        "wires": [
+            [
+                "a9bdd1d252a7cffd"
+            ]
+        ]
+    },
+    {
+        "id": "a9bdd1d252a7cffd",
+        "type": "exec",
+        "z": "fc9da1d89d861f4d",
+        "command": "sudo shutdown now",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 840,
+        "y": 1040,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1543734153b196bb",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "g": "1ed97e722fc0db92",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 420,
+        "wires": [
+            [
+                "338c4ea7439535b3"
+            ]
+        ]
+    },
+    {
+        "id": "dbb5a35a5f57e4b2",
+        "type": "modbus-response",
+        "z": "e601b94df7aae738",
+        "g": "1ed97e722fc0db92",
+        "name": "",
+        "registerShowMax": 20,
+        "x": 670,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "338c4ea7439535b3",
+        "type": "modbus-getter",
+        "z": "e601b94df7aae738",
+        "g": "1ed97e722fc0db92",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "logIOActivities": false,
+        "unitid": "254",
+        "dataType": "HoldingRegister",
+        "adr": "11",
+        "quantity": "1",
+        "server": "0c5fde92e9694da5",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 360,
+        "y": 420,
+        "wires": [
+            [
+                "dbb5a35a5f57e4b2",
+                "02152a05b18a1b96",
+                "5936f5f99012f4b6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8dc2f91b9d3bffba",
+        "type": "serial out",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "",
+        "serial": "61c8620de6d6e86b",
+        "x": 1420,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "3",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "Encode and Append Hex",
+        "func": "    var headBufc = new Buffer(\"co2.val=\", 'utf8');\n    var textBufc = Buffer.from(msg.payload, 'utf8');\n    var postFixBufc = new Buffer(\"FFFFFF\", 'hex');\n \n\n    // Concatenate the buffers\nmsg.payload = Buffer.concat([headBufc,textBufc, postFixBufc]);\n    return msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 840,
+        "wires": [
+            [
+                "8dc2f91b9d3bffba",
+                "2d9a0bc6afcfa7b8"
+            ]
+        ]
+    },
+    {
+        "id": "d330d0daeded5519",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1200",
+        "payloadType": "str",
+        "x": 1070,
+        "y": 780,
+        "wires": [
+            [
+                "3"
+            ]
+        ]
+    },
+    {
+        "id": "0a44c8247d13c038",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "3400",
+        "payloadType": "str",
+        "x": 1250,
+        "y": 780,
+        "wires": [
+            [
+                "3"
+            ]
+        ]
+    },
+    {
+        "id": "4473a2424d3e96c4",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "d": true,
+        "g": "e37d9f8ae7664b8e",
+        "name": "Condition to string, cal the Corr cal &save to flow variable",
+        "func": "var co2Raw = flow.get(\"co2Raw\");\n\n// Retrieve drift and correction factors from global context\nvar co2DriftFactor = global.get(\"calibrationData.co2DriftFactor\") || 0; // Default to 0 if undefined\nvar co2CorrectionFactor = global.get(\"calibrationData.co2CorrectionFactor\") || 1; // Default to 1 if undefined\n\n// Calculate the CO2 value adjusted for drift.\nvar co2MValue = co2Raw - co2DriftFactor;\n\n// Apply correction factor to the adjusted CO2 value.\nvar co2CorrectedValue = co2MValue * co2CorrectionFactor;\n\n// Round the corrected CO2 value to the nearest integer.\nvar co2CorrectedValue = Math.round(co2CorrectedValue);\n\nflow.set(\"co2CorrectedValue\", co2CorrectedValue);\n\nmsg.payload = co2CorrectedValue\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f92e7148e57d03ab",
+        "type": "serial in",
+        "z": "e601b94df7aae738",
+        "g": "1ed97e722fc0db92",
+        "name": "",
+        "serial": "3918123fd48af60d",
+        "x": 150,
+        "y": 580,
+        "wires": [
+            [
+                "453ae5cfc21bd9b4",
+                "c7feeebbfd129548"
+            ]
+        ]
+    },
+    {
+        "id": "453ae5cfc21bd9b4",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "d": true,
+        "g": "1ed97e722fc0db92",
+        "name": "function 1",
+        "func": "// Function to convert two bytes into a 16-bit integer\nfunction bytesToInt(highByte, lowByte) {\n    return (highByte << 8) | lowByte;\n}\n\n// Buffer to hold the incoming serial data\nlet buffer = Buffer.from(msg.payload);\n\n// Check if buffer length is as expected\nif (buffer.length !== 32) {\n    node.error(\"Unexpected buffer length: \" + buffer.length);\n    return null;  // Stops further processing\n}\n\n// Object to hold our processed data\nlet dataPoints = {};\n\n// Process each data point\nfor (let i = 0; i < 12; i++) {\n    let index = 8 + (i * 2);  // Calculate the starting index for each data point\n    if (index + 1 < buffer.length) {\n        let highByte = buffer[index];\n        let lowByte = buffer[index + 1];\n        dataPoints['data' + (i + 1)] = bytesToInt(highByte, lowByte);\n    }\n}\n\n// Set the processed data points to the output payload\nmsg.payload = dataPoints;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c7feeebbfd129548",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "g": "1ed97e722fc0db92",
+        "name": "function 2",
+        "func": "function bytesToInt(highByte, lowByte) {\n    return (highByte << 8) | lowByte;\n}\n\nlet buffer = Buffer.from(msg.payload);\nif (buffer.length !== 32) {\n    node.error(\"Unexpected buffer length: \" + buffer.length);\n    return null;  // Stops further processing\n}\n\nlet outputs = Array(12).fill(null);  // Create an array with 12 null elements for 12 outputs\n\nfor (let i = 0; i < 12; i++) {\n    let index = 8 + (i * 2);\n    if (index + 1 < buffer.length) {\n        let highByte = buffer[index];\n        let lowByte = buffer[index + 1];\n        let dataPoint = bytesToInt(highByte, lowByte);\n        outputs[i] = { payload: dataPoint };\n    }\n}\n\nreturn outputs;  // Outputs an array where each element corresponds to a separate output port",
+        "outputs": 12,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 580,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [
+                "e2ecd6543dfc165c",
+                "5006ee78cca90987"
+            ],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "0dbe3058c9d42173",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "Encode and Append Hex",
+        "func": "    var headBufp = new Buffer(\"pm10.val=\", 'utf8');\n    var textBufp = Buffer.from(msg.payload, 'utf8');\n    var postFixBufp = new Buffer(\"FFFFFF\", 'hex');\n \n\n    // Concatenate the buffers\nmsg.payload = Buffer.concat([headBufp,textBufp, postFixBufp]);\n    return msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 900,
+        "wires": [
+            [
+                "8dc2f91b9d3bffba",
+                "2d9a0bc6afcfa7b8"
+            ]
+        ]
+    },
+    {
+        "id": "e2ecd6543dfc165c",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "d": true,
+        "g": "1ed97e722fc0db92",
+        "name": "Convert to String",
+        "func": "// Check if payload is a number and convert it to string\nif (typeof msg.payload === \"number\") {\n    msg.payload = msg.payload.toString(); // Convert the number to a string\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "05fff06095ec976f",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 1060,
+        "wires": [
+            [
+                "9061447e6e547f5d"
+            ]
+        ]
+    },
+    {
+        "id": "942fa8bc0afd9568",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "Encode and Append Hex",
+        "func": "    var headBuft = new Buffer(\"date.txt=\", 'utf8');\n    var textBuft = Buffer.from(msg.payload, 'utf8');\n    var postFixBuft = new Buffer(\"FFFFFF\", 'hex');\n \n\n    // Concatenate the buffers\nmsg.payload = Buffer.concat([headBuft,textBuft, postFixBuft]);\n    return msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 1060,
+        "wires": [
+            [
+                "8dc2f91b9d3bffba",
+                "2d9a0bc6afcfa7b8"
+            ]
+        ]
+    },
+    {
+        "id": "9061447e6e547f5d",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "Generate Date&Time",
+        "func": "// Create a new Date object\nlet now = new Date();\n\n// Format the date and time as \"YYYY-MM-DD hh:mm:ss\"\nlet formattedDate = now.getFullYear() + \"-\" +\n    (\"0\" + (now.getMonth() + 1)).slice(-2) + \"-\" +\n    (\"0\" + now.getDate()).slice(-2) + \" \" +\n    (\"0\" + now.getHours()).slice(-2) + \":\" +\n    (\"0\" + now.getMinutes()).slice(-2) + \":\" +\n    (\"0\" + now.getSeconds()).slice(-2);\n\n// Encapsulate the formatted date and time in quotation marks\nmsg.payload = '\"' + formattedDate + '\"';\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 1060,
+        "wires": [
+            [
+                "942fa8bc0afd9568"
+            ]
+        ]
+    },
+    {
+        "id": "0fe12cf03935e77f",
+        "type": "comment",
+        "z": "e601b94df7aae738",
+        "g": "1ed97e722fc0db92",
+        "name": "PM10 Sensor",
+        "info": "",
+        "x": 170,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "edbe7727a611e2e7",
+        "type": "comment",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "Date & Time",
+        "info": "",
+        "x": 130,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "2d9a0bc6afcfa7b8",
+        "type": "debug",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1420,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "02152a05b18a1b96",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "d": true,
+        "g": "1ed97e722fc0db92",
+        "name": "CO2 output w/Date&Time",
+        "func": "// GUID = 4238affe-08a5-475c-9fc0-f9b4ba04e4ec\n\n// Get the current date and time\nvar now = new Date();\nvar datetime = now.getFullYear() +\n    (\"0\" + (now.getMonth() + 1)).slice(-2) +\n    (\"0\" + now.getDate()).slice(-2) + \"-\" +\n    (\"0\" + now.getHours()).slice(-2) +\n    (\"0\" + now.getMinutes()).slice(-2) +\n    (\"0\" + now.getSeconds()).slice(-2);\n\n// Assume msg.payload is where the Modbus data is stored.\nvar co2Raw = msg.payload; // Adjust indexing based on actual payload structure.\nflow.set(\"co2Raw\", co2Raw);\n\n// Retrieve drift and correction factors from global context\nvar co2DriftFactor = global.get(\"calibrationData.co2DriftFactor\") || 0; // Default to 0 if undefined\nvar co2CorrectionFactor = global.get(\"calibrationData.co2CorrectionFactor\") || 1; // Default to 1 if undefined\n\n// Calculate the CO2 value adjusted for drift.\nvar co2MValue = co2Raw - co2DriftFactor;\n\n// Apply correction factor to the adjusted CO2 value.\nvar co2CorrectedValue = co2MValue * co2CorrectionFactor;\n\n// Round the corrected CO2 value to the nearest integer.\nvar co2CorrectedValue = Math.round(co2CorrectedValue);\n\nflow.set(\"co2CorrectedValue\", co2CorrectedValue);\n\n// Store the calculated values in msg.payload for further use.\nmsg.payload = {\n    GUID: \"4238affe-08a5-475c-9fc0-f9b4ba04e4ec\",\n    Datetime: datetime,\n    CO2: co2CorrectedValue\n};\n\n// Return the updated message object.\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5006ee78cca90987",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "g": "1ed97e722fc0db92",
+        "name": "Convert to String &/10",
+        "func": "// Check if the payload is a number\nif (typeof msg.payload === 'number') {\n    // Divide the payload by 10 and round up to the nearest whole number\n    msg.payload = Math.ceil(msg.payload / 10);\n\n    // Convert the rounded payload to a string\n    msg.payload = msg.payload.toString();\n} else {\n    // Log an error or assign a default value if the payload is not a number\n    node.error('Payload is not a number');\n    msg.payload = 'Error: Not a number';\n}\nflow.set(\"pm10Raw\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bb1889076e7e0c6c",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "d": true,
+        "g": "19402a1dfd9f95b2",
+        "name": "CO2 output w/Date&Time",
+        "func": "// GUID = 4238affe-08a5-475c-9fc0-f9b4ba04e4ec\n\n// Get the current date and time\nvar PM10m = flow.get(\"PM10m\");\n\nvar now = new Date();\nvar datetime = now.getFullYear() +\n    (\"0\" + (now.getMonth() + 1)).slice(-2) +\n    (\"0\" + now.getDate()).slice(-2) + \"-\" +\n    (\"0\" + now.getHours()).slice(-2) +\n    (\"0\" + now.getMinutes()).slice(-2) +\n    (\"0\" + now.getSeconds()).slice(-2);\n\n// Assume msg.payload is where the Modbus data is stored.\nvar co2Raw = msg.payload; // Adjust indexing based on actual payload structure.\nflow.set(\"co2Raw\", co2Raw);\n\n// Retrieve drift and correction factors from global context\nvar co2DriftFactor = global.get(\"calibrationData.co2DriftFactor\") || 0; // Default to 0 if undefined\nvar co2CorrectionFactor = global.get(\"calibrationData.co2CorrectionFactor\") || 1; // Default to 1 if undefined\n\n// Calculate the CO2 value adjusted for drift.\nvar co2MValue = co2Raw - co2DriftFactor;\n\n// Apply correction factor to the adjusted CO2 value.\nvar co2CorrectedValue = co2MValue * co2CorrectionFactor;\n\n// Round the corrected CO2 value to the nearest integer.\nvar co2CorrectedValue = Math.round(co2CorrectedValue);\n\nflow.set(\"co2CorrectedValue\", co2CorrectedValue);\n\n// Store the calculated values in msg.payload for further use.\nmsg.payload = {\n    GUID: \"4238affe-08a5-475c-9fc0-f9b4ba04e4ec\",\n    Datetime: datetime,\n    CO2: co2CorrectedValue\n};\n\n// Return the updated message object.\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 240,
+        "wires": [
+            [
+                "0b287ce4218be965"
+            ]
+        ]
+    },
+    {
+        "id": "0b287ce4218be965",
+        "type": "json",
+        "z": "e601b94df7aae738",
+        "g": "19402a1dfd9f95b2",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 670,
+        "y": 180,
+        "wires": [
+            [
+                "4e9c626f7bafa3d3",
+                "2fc974935bad7a35"
+            ]
+        ]
+    },
+    {
+        "id": "4e9c626f7bafa3d3",
+        "type": "mqtt out",
+        "z": "e601b94df7aae738",
+        "g": "19402a1dfd9f95b2",
+        "name": "",
+        "topic": "Sensor\\CO2",
+        "qos": "2",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fbecc02391b41c6e",
+        "x": 830,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9141334520136e9a",
+        "type": "comment",
+        "z": "e601b94df7aae738",
+        "g": "19402a1dfd9f95b2",
+        "name": "GUID: 4238affe-08a5-475c-9fc0-f9b4ba04e4ec",
+        "info": "",
+        "x": 260,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "e52b019ea04168f7",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "d": true,
+        "g": "19402a1dfd9f95b2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 180,
+        "wires": [
+            [
+                "1ad9f276edfebb71"
+            ]
+        ]
+    },
+    {
+        "id": "1ad9f276edfebb71",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "g": "19402a1dfd9f95b2",
+        "name": "flow get varibale, date, time, guid",
+        "func": "var co2CorrectedValue = flow.get(\"co2CorrectedValue\");\nvar pm10CorrectedValue = flow.get(\"pm10CorrectedValue\");\n// GUID = 4238affe-08a5-475c-9fc0-f9b4ba04e4ec\n\n// Get the current date and time\nvar PM10m = flow.get(\"PM10m\");\n\nvar now = new Date();\nvar datetime = now.getFullYear() +\n    (\"0\" + (now.getMonth() + 1)).slice(-2) +\n    (\"0\" + now.getDate()).slice(-2) + \"-\" +\n    (\"0\" + now.getHours()).slice(-2) +\n    (\"0\" + now.getMinutes()).slice(-2) +\n    (\"0\" + now.getSeconds()).slice(-2);\n\n// Store the calculated values in msg.payload for further use.\nmsg.payload = {\n    GUID: \"4238affe-08a5-475c-9fc0-f9b4ba04e4ec\",\n    Datetime: datetime,\n    CO2: co2CorrectedValue,\n    PM10: pm10CorrectedValue\n};\n\n// Return the updated message object.\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 180,
+        "wires": [
+            [
+                "0b287ce4218be965"
+            ]
+        ]
+    },
+    {
+        "id": "953243b0f3d481e4",
+        "type": "comment",
+        "z": "e601b94df7aae738",
+        "g": "1ed97e722fc0db92",
+        "name": "CO2 Sensor",
+        "info": "",
+        "x": 170,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "5936f5f99012f4b6",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "g": "1ed97e722fc0db92",
+        "name": "Condition to string &save to flow variable",
+        "func": "// Check if payload is an array and convert it to string\nif (Array.isArray(msg.payload)) {\n    msg.payload = msg.payload.join(\", \"); // Join array elements with a comma and space\n}\n\nvar co2Raw = msg.payload; // Adjust indexing based on actual payload structure.\nflow.set(\"co2Raw\", co2Raw);\n\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eb6a6612671f9cd9",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 820,
+        "wires": [
+            [
+                "4473a2424d3e96c4",
+                "d4d7c4247c423b44"
+            ]
+        ]
+    },
+    {
+        "id": "d4d7c4247c423b44",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "cal the Corr cal &save to flow variable",
+        "func": "// Retrieve the raw CO2 value from the flow context.\nvar co2Raw = flow.get(\"co2Raw\");\n\n// Retrieve drift and correction factors from global context, with defaults.\nvar co2DriftFactor = global.get(\"calibrationData.co2DriftFactor\") || 0; // Default to 0 if not defined.\nvar co2CorrectionFactor = global.get(\"calibrationData.co2CorrectionFactor\") || 1; // Default to 1 if not defined.\n\n// Calculate the CO2 value adjusted for drift.\nvar co2AdjustedValue = co2Raw - co2DriftFactor;\n\n// Apply the correction factor to the adjusted CO2 value.\nvar co2CorrectedValue = co2AdjustedValue * co2CorrectionFactor;\n\n// Round the corrected CO2 value to the nearest integer.\nco2CorrectedValue = Math.round(co2CorrectedValue);\n\n// Store the corrected CO2 value back into the flow context.\nflow.set(\"co2CorrectedValue\", co2CorrectedValue);\n\n// Update the message payload to the corrected CO2 value.\nmsg.payload = co2CorrectedValue.toString();\n\n// Return the updated message object.\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 840,
+        "wires": [
+            [
+                "3"
+            ]
+        ]
+    },
+    {
+        "id": "74f07eb72fda06b5",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 900,
+        "wires": [
+            [
+                "a902c8be766cca52"
+            ]
+        ]
+    },
+    {
+        "id": "a902c8be766cca52",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "cal the Corr cal &save to flow variable",
+        "func": "// Retrieve the raw CO2 value from the flow context.\nvar pm10Raw = flow.get(\"pm10Raw\");\n\n// Retrieve drift and correction factors from global context, with defaults.\nvar pm10DriftFactor = global.get(\"calibrationData.pm10DriftFactor\") || 0; // Default to 0 if not defined.\nvar pm10CorrectionFactor = global.get(\"calibrationData.pm10CorrectionFactor\") || 1; // Default to 1 if not defined.\n\n// Calculate the CO2 value adjusted for drift.\nvar pm10AdjustedValue = pm10Raw - pm10DriftFactor;\n\n// Apply the correction factor to the adjusted CO2 value.\nvar pm10CorrectedValue = pm10AdjustedValue * pm10CorrectionFactor;\n\n// Round the corrected CO2 value to the nearest integer.\npm10CorrectedValue = Math.round(pm10CorrectedValue);\n\n// Store the corrected CO2 value back into the flow context.\nflow.set(\"pm10CorrectedValue\", pm10CorrectedValue);\n\n// Update the message payload to the corrected CO2 value.\nmsg.payload = pm10CorrectedValue.toString();\n\n// Return the updated message object.\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 900,
+        "wires": [
+            [
+                "0dbe3058c9d42173"
+            ]
+        ]
+    },
+    {
+        "id": "7cf345522865f910",
+        "type": "comment",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "CO2",
+        "info": "",
+        "x": 110,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "4ae79215b86ebac5",
+        "type": "comment",
+        "z": "e601b94df7aae738",
+        "g": "e37d9f8ae7664b8e",
+        "name": "PM10",
+        "info": "",
+        "x": 110,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "530ded2cc6244352",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "name": "Cal co2NewCorrectionFactor",
+        "func": "// Retrieve the calibration data from global context\nconst co2CorrectionFactor = global.get(\"calibrationData.co2CorrectionFactor\");\n\n// Retrieve the average CO2 value from flow context\nconst co2AvgValue = flow.get(\"co2AvgValue\");\n\n// Check if both values are available\nif (co2CorrectionFactor === undefined || co2AvgValue === undefined) {\n    node.error(\"Required data is missing\");\n    return null; // Stop execution if data is missing\n}\n\n// Perform the calculation\nlet co2NewCorrectionFactor;\nif (co2AvgValue !== 0) { // Ensure not dividing by zero\n    co2NewCorrectionFactor = co2CorrectionFactor * (1000 / co2AvgValue);\n} else {\n    node.error(\"Average CO2 value is zero, division by zero is not allowed\");\n    return null; // Stop execution to avoid division by zero\n}\n\n// Assign the result to msg.payload\nmsg.payload = co2NewCorrectionFactor;\nflow.set(\"co2NewCorrectionFactor\", co2NewCorrectionFactor);\n\n// Return the message object to the next node\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 500,
+        "wires": [
+            [
+                "697382f182e7668e"
+            ]
+        ]
+    },
+    {
+        "id": "dd64a15c35da72e1",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1120,
+        "y": 500,
+        "wires": [
+            [
+                "530ded2cc6244352"
+            ]
+        ]
+    },
+    {
+        "id": "697382f182e7668e",
+        "type": "debug",
+        "z": "e601b94df7aae738",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1780,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "476f769dfd1120bd",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "name": "Update co2NewCorrectionFactor",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2CorrectionFactor",
+        "payload": "co2NewCorrectionFactor",
+        "payloadType": "flow",
+        "x": 1190,
+        "y": 560,
+        "wires": [
+            [
+                "697382f182e7668e",
+                "8fb3f16f8903aad4"
+            ]
+        ]
+    },
+    {
+        "id": "8fb3f16f8903aad4",
+        "type": "link out",
+        "z": "e601b94df7aae738",
+        "name": "Go to Cal factor",
+        "mode": "link",
+        "links": [
+            "df5c35ccc0d96b04"
+        ],
+        "x": 1605,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "2030736c99cfd067",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "name": "Update co2DriftFactor",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2DriftFactor",
+        "payload": "co2AvgValue",
+        "payloadType": "flow",
+        "x": 1160,
+        "y": 620,
+        "wires": [
+            [
+                "697382f182e7668e",
+                "8fb3f16f8903aad4"
+            ]
+        ]
+    },
+    {
+        "id": "1dfe1a2bb255a27c",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "d": true,
+        "g": "57e011f3d33b72ba",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 1220,
+        "wires": [
+            [
+                "9e8fe0bd58f84439"
+            ]
+        ]
+    },
+    {
+        "id": "e1675da4b3b209e9",
+        "type": "debug",
+        "z": "e601b94df7aae738",
+        "g": "57e011f3d33b72ba",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "363cb6cd53f019fc",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "d": true,
+        "g": "57e011f3d33b72ba",
+        "name": "Rolling Avg(CO2)",
+        "func": "// Clear the array when the flow starts\nflow.set('co2Values', []);\n\n// Retrieve the length of time for the rolling average\nlet timeLength = flow.get('timeLength') || 10; // Default to 10 seconds\n\n// Retrieve or initialize the array of values\nvar co2Values = flow.get('co2Values') || [];\n\n// Retrieve the latest CO2 corrected value from the flow context\nvar co2CorrectedValue = flow.get('co2CorrectedValue');\n\n// Add the new value to the array\nco2Values.push(co2CorrectedValue);\n\n// If the array length exceeds the time length, remove the oldest value\nif (co2Values.length > timeLength) {\n    co2Values.shift();\n}\n\n// Calculate the rolling average\nvar sum = co2Values.reduce((acc, val) => acc + val, 0);\nvar co2AvgValue = sum / co2Values.length;\nco2AvgValue = Math.round(co2AvgValue);\n\n// Store the updated array back to the flow context\nflow.set('co2Values', co2Values);\n\n// Store the rolling average in the flow context\nflow.set('co2AvgValue', co2AvgValue);\n\n// Set the rolling average to the message payload\nmsg.payload = co2AvgValue;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 1180,
+        "wires": [
+            [
+                "e1675da4b3b209e9"
+            ]
+        ]
+    },
+    {
+        "id": "9e8fe0bd58f84439",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "g": "57e011f3d33b72ba",
+        "name": "Rolling Avg(CO2, PM10)",
+        "func": "// Clear the arrays when the flow starts\nflow.set('co2Values', []);\nflow.set('pm10Values', []);\n\n// Retrieve the length of time for the rolling average\nlet timeLength = flow.get('timeLength') || 10; // Default to 10 seconds\n\n// Retrieve or initialize the array of values for CO2\nvar co2Values = flow.get('co2Values') || [];\n// Retrieve the latest CO2 corrected value from the flow context\nvar co2CorrectedValue = flow.get('co2CorrectedValue');\n// Add the new CO2 value to the array\nco2Values.push(co2CorrectedValue);\n// If the array length exceeds the time length, remove the oldest value\nif (co2Values.length > timeLength) {\n    co2Values.shift();\n}\n// Calculate the rolling average for CO2\nvar co2Sum = co2Values.reduce((acc, val) => acc + val, 0);\nvar co2AvgValue = co2Sum / co2Values.length;\nco2AvgValue = Math.round(co2AvgValue);\n// Store the updated CO2 array back to the flow context\nflow.set('co2Values', co2Values);\n// Store the rolling average for CO2 in the flow context\nflow.set('co2AvgValue', co2AvgValue);\n\n// Retrieve or initialize the array of values for PM10\nvar pm10Values = flow.get('pm10Values') || [];\n// Retrieve the latest PM10 corrected value from the flow context\nvar pm10CorrectedValue = flow.get('pm10CorrectedValue');\n// Add the new PM10 value to the array\npm10Values.push(pm10CorrectedValue);\n// If the array length exceeds the time length, remove the oldest value\nif (pm10Values.length > timeLength) {\n    pm10Values.shift();\n}\n// Calculate the rolling average for PM10\nvar pm10Sum = pm10Values.reduce((acc, val) => acc + val, 0);\nvar pm10AvgValue = pm10Sum / pm10Values.length;\npm10AvgValue = Math.round(pm10AvgValue);\n// Store the updated PM10 array back to the flow context\nflow.set('pm10Values', pm10Values);\n// Store the rolling average for PM10 in the flow context\nflow.set('pm10AvgValue', pm10AvgValue);\n\n// Set the rolling averages to the message payload\nmsg.payload = {\n    co2AvgValue: co2AvgValue,\n    pm10AvgValue: pm10AvgValue\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 1220,
+        "wires": [
+            [
+                "e1675da4b3b209e9"
+            ]
+        ]
+    },
+    {
+        "id": "31e1d74504d85050",
+        "type": "comment",
+        "z": "e601b94df7aae738",
+        "g": "19402a1dfd9f95b2",
+        "name": "RealTime(1s) data MQTT",
+        "info": "",
+        "x": 590,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "inject_startup",
+        "type": "inject",
+        "z": "e601b94df7aae738",
+        "d": true,
+        "g": "8fd3feef97e4f349",
+        "name": "Startup Trigger",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 00 * * *",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1120,
+        "y": 180,
+        "wires": [
+            [
+                "function_date_folder"
+            ]
+        ]
+    },
+    {
+        "id": "function_date_folder",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "g": "8fd3feef97e4f349",
+        "name": "Generate Folder Name",
+        "func": "const today = new Date();\nconst year = today.getFullYear().toString().substring(2); // last two digits of the year\nconst month = (today.getMonth() + 1).toString().padStart(2, '0'); // months are 0-based\nconst day = today.getDate().toString().padStart(2, '0');\nconst folderName = `/home/rpi/data/${year}${month}${day}`;\n\n// Store the folder path in a flow variable\nflow.set('todayFolderPath', folderName);\nmsg.folderPath = folderName;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 180,
+        "wires": [
+            [
+                "exec_check_create_folder"
+            ]
+        ]
+    },
+    {
+        "id": "exec_check_create_folder",
+        "type": "exec",
+        "z": "e601b94df7aae738",
+        "g": "8fd3feef97e4f349",
+        "command": "mkdir -p",
+        "addpay": "folderPath",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Check and Create Folder",
+        "x": 1550,
+        "y": 180,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "14eab00086737fe4",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "d": true,
+        "g": "8fd3feef97e4f349",
+        "name": "Get Folder Path",
+        "func": "// Retrieve the folder path from the flow variable\nconst folderPath = flow.get('todayFolderPath');\nconst today = new Date();\nconst year = today.getFullYear().toString().substring(2); // last two digits of the year\nconst month = (today.getMonth() + 1).toString().padStart(2, '0'); // months are 0-based\nconst day = today.getDate().toString().padStart(2, '0');\nconst fileName = `${year}${month}${day}.json`;\nmsg.filename = `${folderPath}/${fileName}`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1400,
+        "y": 260,
+        "wires": [
+            [
+                "9b05e429ec168b3a"
+            ]
+        ]
+    },
+    {
+        "id": "9b05e429ec168b3a",
+        "type": "file",
+        "z": "e601b94df7aae738",
+        "g": "8fd3feef97e4f349",
+        "name": "Write File",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 1600,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "22cfab73f98efd1b",
+        "type": "comment",
+        "z": "e601b94df7aae738",
+        "g": "8fd3feef97e4f349",
+        "name": "Save to file",
+        "info": "",
+        "x": 1080,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d1d3bd547a9620aa",
+        "type": "file",
+        "z": "e601b94df7aae738",
+        "g": "8fd3feef97e4f349",
+        "name": "Write File",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 1300,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2fc974935bad7a35",
+        "type": "function",
+        "z": "e601b94df7aae738",
+        "g": "8fd3feef97e4f349",
+        "name": "Get Folder Path",
+        "func": "// Retrieve the folder path from the flow variable\nconst folderPath = \"/home/rpi/data\";\nconst today = new Date();\nconst year = today.getFullYear().toString().substring(2); // last two digits of the year\nconst month = (today.getMonth() + 1).toString().padStart(2, '0'); // months are 0-based\nconst day = today.getDate().toString().padStart(2, '0');\nconst fileName = `${year}${month}${day}.json`;\nmsg.filename = `${folderPath}/${fileName}`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 320,
+        "wires": [
+            [
+                "d1d3bd547a9620aa"
+            ]
+        ]
+    },
+    {
+        "id": "5da7d18787e855d9",
+        "type": "comment",
+        "z": "e601b94df7aae738",
+        "g": "57e011f3d33b72ba",
+        "name": "Rolling Average",
+        "info": "",
+        "x": 140,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "dabaab72396b1c81",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "f078e593c2640307",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1234",
+        "payloadType": "num",
+        "x": 330,
+        "y": 340,
+        "wires": [
+            [
+                "cb5443af0119be6c"
+            ]
+        ]
+    },
+    {
+        "id": "dd189c2ab121c18d",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1000",
+        "payloadType": "num",
+        "x": 330,
+        "y": 380,
+        "wires": [
+            [
+                "cb5443af0119be6c",
+                "acf168fbdacb3564"
+            ]
+        ]
+    },
+    {
+        "id": "b48f8a6b6381251c",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "calibrationData",
+        "payloadType": "global",
+        "x": 420,
+        "y": 100,
+        "wires": [
+            [
+                "29615c4cd9ac788d"
+            ]
+        ]
+    },
+    {
+        "id": "29615c4cd9ac788d",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "a09a88822367a594",
+        "type": "comment",
+        "z": "8feaf45e2d04640c",
+        "name": "Check Cal Value",
+        "info": "",
+        "x": 180,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "512a2dcb54c4633c",
+        "type": "comment",
+        "z": "8feaf45e2d04640c",
+        "name": "CO2 Example",
+        "info": "",
+        "x": 150,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f1202bf491323b62",
+        "type": "delay",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 680,
+        "y": 460,
+        "wires": [
+            [
+                "7cb36f06b0fada6f"
+            ]
+        ]
+    },
+    {
+        "id": "01a0a9ae62fd2796",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 460,
+        "wires": [
+            [
+                "fa3dc33e5dad7257"
+            ]
+        ]
+    },
+    {
+        "id": "fa3dc33e5dad7257",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Counter start",
+        "func": "flow.set(\"counter\", 0); // Initialize counter\nreturn {payload: \"start\"};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 460,
+        "wires": [
+            [
+                "f1202bf491323b62"
+            ]
+        ]
+    },
+    {
+        "id": "7cb36f06b0fada6f",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Counter",
+        "func": "let count = flow.get(\"counter\") || 0;\ncount += 1;\nflow.set(\"counter\", count);\n\nif (count < 10) {\n    return msg; // send message to delay node again\n} else {\n    return null; // stop sending messages\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 460,
+        "wires": [
+            [
+                "f1202bf491323b62",
+                "58e7e36b41c6c206",
+                "4ab0aa61ead27202",
+                "1f7e0b1737250d26"
+            ]
+        ]
+    },
+    {
+        "id": "1f7e0b1737250d26",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "400-1800",
+        "func": "// Generate a random number between 400 and 1500\nconst min = 400;\nconst max = 1800;\nconst randomValue = (Math.random() * (max - min + 1) + min);\n\n// Set the payload to the random number\nmsg.payload = randomValue;\n\n// Return the message object\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ad2810799664bc7c",
+        "type": "comment",
+        "z": "8feaf45e2d04640c",
+        "name": "Ouput a series data",
+        "info": "",
+        "x": 130,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "58e7e36b41c6c206",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "2 Random Number",
+        "func": "// Extract min and max values for A and B from the incoming payload\nconst minA = 0;\nconst maxA = 50;\nconst minB = 0;\nconst maxB = 20;\n\n// Function to generate a random number within a given range\nfunction generateRandom(min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n}\n\n// Generate random numbers for A and B\nconst randomA = generateRandom(minA, maxA);\nconst randomB = generateRandom(minB, maxB);\n\n// Calculate the difference A - B\nconst difference = randomA - randomB;\n\n// Prepare output message\nmsg.payload = \n   // randomA: randomA,\n   // randomB: randomB,\n    difference\n;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ab0aa61ead27202",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "0-100",
+        "func": "// Generate a random number between 400 and 1500\nconst min = 0;\nconst max = 100;\nconst randomValue = (Math.random() * (max - min + 1) + min);\n\n// Set the payload to the random number\nmsg.payload = randomValue;\n\n// Return the message object\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1070,
+        "y": 400,
+        "wires": [
+            [
+                "66a088de92e066fd"
+            ]
+        ]
+    },
+    {
+        "id": "66a088de92e066fd",
+        "type": "range",
+        "z": "8feaf45e2d04640c",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "800",
+        "maxout": "1300",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "",
+        "x": 1250,
+        "y": 400,
+        "wires": [
+            [
+                "d9593d3d7f8ba17e",
+                "cb5443af0119be6c"
+            ]
+        ]
+    },
+    {
+        "id": "d9593d3d7f8ba17e",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 9",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1440,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b43e0077c45d5341",
+        "type": "mqtt out",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "topic": "Sensor\\CO2",
+        "qos": "2",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fbecc02391b41c6e",
+        "x": 1050,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "ec18bdacc532a9a0",
+        "type": "comment",
+        "z": "8feaf45e2d04640c",
+        "name": "GUID: 4238affe-08a5-475c-9fc0-f9b4ba04e4ec",
+        "info": "",
+        "x": 240,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "cb5443af0119be6c",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "CO2 output w/Date&Time",
+        "func": "// GUID = 4238affe-08a5-475c-9fc0-f9b4ba04e4ec\n\n// Get the current date and time\nvar now = new Date();\nvar datetime = now.getFullYear() +\n    (\"0\" + (now.getMonth() + 1)).slice(-2) +\n    (\"0\" + now.getDate()).slice(-2) + \"-\" +\n    (\"0\" + now.getHours()).slice(-2) +\n    (\"0\" + now.getMinutes()).slice(-2) +\n    (\"0\" + now.getSeconds()).slice(-2);\n\n// Assume msg.payload is where the Modbus data is stored.\nvar co2Raw = msg.payload; // Adjust indexing based on actual payload structure.\nflow.set(\"co2Raw\", co2Raw);\n\n// Retrieve drift and correction factors from global context\nvar co2DriftFactor = global.get(\"calibrationData.co2DriftFactor\") || 0; // Default to 0 if undefined\nvar co2CorrectionFactor = global.get(\"calibrationData.co2CorrectionFactor\") || 1; // Default to 1 if undefined\n\n// Calculate the CO2 value adjusted for drift.\nvar co2MValue = co2Raw - co2DriftFactor;\n\n// Apply correction factor to the adjusted CO2 value.\nvar co2CorrectedValue = co2MValue * co2CorrectionFactor;\n\n// Round the corrected CO2 value to the nearest integer.\nvar co2CorrectedValue = Math.round(co2CorrectedValue);\n\nflow.set(\"co2CorrectedValue\", co2CorrectedValue);\n\n// Store the calculated values in msg.payload for further use.\nmsg.payload = {\n    GUID: \"4238affe-08a5-475c-9fc0-f9b4ba04e4ec\",\n    Datetime: datetime,\n    CO2: co2CorrectedValue\n};\n\n// Return the updated message object.\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 360,
+        "wires": [
+            [
+                "1bbbf3bdd8e04940"
+            ]
+        ]
+    },
+    {
+        "id": "1bbbf3bdd8e04940",
+        "type": "json",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 810,
+        "y": 360,
+        "wires": [
+            [
+                "b43e0077c45d5341",
+                "dabaab72396b1c81"
+            ]
+        ]
+    },
+    {
+        "id": "acf168fbdacb3564",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "CO2 output w/Date&Time",
+        "func": "// GUID = 4238affe-08a5-475c-9fc0-f9b4ba04e4ec\n\n// Get the current date and time\nvar now = new Date();\nvar datetime = now.getFullYear() +\n    (\"0\" + (now.getMonth() + 1)).slice(-2) +\n    (\"0\" + now.getDate()).slice(-2) + \"-\" +\n    (\"0\" + now.getHours()).slice(-2) +\n    (\"0\" + now.getMinutes()).slice(-2) +\n    (\"0\" + now.getSeconds()).slice(-2);\n\n// Assume msg.payload is where the Modbus data is stored.\nvar co2Raw = msg.payload; // Adjust indexing based on actual payload structure.\nflow.set(\"co2Raw\", co2Raw);\n\n// Retrieve drift and correction factors from global context\nvar co2DriftFactor = global.get(\"calibrationData.co2DriftFactor\") || 0; // Default to 0 if undefined\nvar co2CorrectionFactor = global.get(\"calibrationData.co2CorrectionFactor\") || 1; // Default to 1 if undefined\n\n// Calculate the CO2 value adjusted for drift.\nvar co2MValue = co2Raw - co2DriftFactor;\n\n// Apply correction factor to the adjusted CO2 value.\nvar co2CorrectedValue = co2MValue * co2CorrectionFactor;\n\n// Round the corrected CO2 value to the nearest integer.\nvar co2CorrectedValue = Math.round(co2CorrectedValue);\n\nflow.set(\"co2CorrectedValue\", co2CorrectedValue);\n\n// Store the calculated values in msg.payload for further use.\nmsg.payload = {\n    GUID: \"4238affe-08a5-475c-9fc0-f9b4ba04e4ec\",\n    Datetime: datetime,\n    CO2: co2CorrectedValue,\n    Temp: 24.5,\n    PM10:75\n};\n\n// Return the updated message object.\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 420,
+        "wires": [
+            [
+                "1bbbf3bdd8e04940"
+            ]
+        ]
+    },
+    {
+        "id": "1e9cc2361da0bcfd",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "eb474ec4939d52c7",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Check co2AvgValue",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "co2AvgValue",
+        "payloadType": "flow",
+        "x": 250,
+        "y": 840,
+        "wires": [
+            [
+                "1e9cc2361da0bcfd"
+            ]
+        ]
+    },
+    {
+        "id": "start",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Interval 5s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "start",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 640,
+        "wires": [
+            [
+                "read",
+                "c3cb2aae64cf0b08"
+            ]
+        ]
+    },
+    {
+        "id": "read",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Read and Store to array",
+        "func": "flow.set(\"co2AvgValue\", null);\nlet co2Array = flow.get('co2Array') || [];\nco2Array.push(flow.get('co2CorrectedValue'));\nflow.set('co2Array', co2Array);\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 580,
+        "wires": [
+            [
+                "1e9cc2361da0bcfd"
+            ]
+        ]
+    },
+    {
+        "id": "end",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "End",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "end",
+        "payload": "",
+        "payloadType": "date",
+        "x": 730,
+        "y": 800,
+        "wires": [
+            [
+                "average"
+            ]
+        ]
+    },
+    {
+        "id": "average",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Calculate Average",
+        "func": "let co2Array = flow.get('co2Array') || [];\nvar sum = co2Array.reduce((a, b) => a + b, 0);\nvar avg = (sum / co2Array.length) || 0;\n\nflow.set(\"co2AvgValue\", avg);\nmsg.payload = avg;\nflow.set('co2Array', []);\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 720,
+        "wires": [
+            [
+                "1e9cc2361da0bcfd"
+            ]
+        ]
+    },
+    {
+        "id": "e7b30c7434a06f03",
+        "type": "function",
+        "z": "8feaf45e2d04640c",
+        "name": "Cal co2NewCorrectionFactor",
+        "func": "// Retrieve the calibration data from global context\nconst co2CorrectionFactor = global.get(\"calibrationData.co2CorrectionFactor\");\n\n// Retrieve the average CO2 value from flow context\nconst co2AvgValue = flow.get(\"co2AvgValue\");\n\n// Check if both values are available\nif (co2CorrectionFactor === undefined || co2AvgValue === undefined) {\n    node.error(\"Required data is missing\");\n    return null; // Stop execution if data is missing\n}\n\n// Perform the calculation\nlet co2NewCorrectionFactor;\nif (co2AvgValue !== 0) { // Ensure not dividing by zero\n    co2NewCorrectionFactor = co2CorrectionFactor * (1000 / co2AvgValue);\n} else {\n    node.error(\"Average CO2 value is zero, division by zero is not allowed\");\n    return null; // Stop execution to avoid division by zero\n}\n\n// Assign the result to msg.payload\nmsg.payload = co2NewCorrectionFactor;\nflow.set(\"co2NewCorrectionFactor\", co2NewCorrectionFactor);\n\n// Return the message object to the next node\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 1000,
+        "wires": [
+            [
+                "108846d765b6b407"
+            ]
+        ]
+    },
+    {
+        "id": "b532091d31a3538f",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 1000,
+        "wires": [
+            [
+                "e7b30c7434a06f03"
+            ]
+        ]
+    },
+    {
+        "id": "108846d765b6b407",
+        "type": "debug",
+        "z": "8feaf45e2d04640c",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "e29131ad64309bb5",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Check co2Raw",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "co2Raw",
+        "payloadType": "flow",
+        "x": 240,
+        "y": 880,
+        "wires": [
+            [
+                "1e9cc2361da0bcfd"
+            ]
+        ]
+    },
+    {
+        "id": "78c8ba7489b9e317",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Update co2NewCorrectionFactor",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2CorrectionFactor",
+        "payload": "co2NewCorrectionFactor",
+        "payloadType": "flow",
+        "x": 290,
+        "y": 1060,
+        "wires": [
+            [
+                "108846d765b6b407",
+                "8b07ec7295a3089b"
+            ]
+        ]
+    },
+    {
+        "id": "8b07ec7295a3089b",
+        "type": "link out",
+        "z": "8feaf45e2d04640c",
+        "name": "Go to Cal factor",
+        "mode": "link",
+        "links": [
+            "df5c35ccc0d96b04"
+        ],
+        "x": 705,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "bcf0074a68d1cb83",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Update co2DriftFactor",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "co2DriftFactor",
+        "payload": "co2AvgValue",
+        "payloadType": "flow",
+        "x": 260,
+        "y": 1120,
+        "wires": [
+            [
+                "108846d765b6b407",
+                "8b07ec7295a3089b"
+            ]
+        ]
+    },
+    {
+        "id": "c3cb2aae64cf0b08",
+        "type": "delay",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 480,
+        "y": 660,
+        "wires": [
+            [
+                "average"
+            ]
+        ]
+    },
+    {
+        "id": "33207e574697d50a",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Interval 10s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "start",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 700,
+        "wires": [
+            [
+                "read",
+                "5711ad99f6f1d135"
+            ]
+        ]
+    },
+    {
+        "id": "5711ad99f6f1d135",
+        "type": "delay",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 480,
+        "y": 720,
+        "wires": [
+            [
+                "average"
+            ]
+        ]
+    },
+    {
+        "id": "47f3cb8ae4bfddd0",
+        "type": "inject",
+        "z": "8feaf45e2d04640c",
+        "name": "Interval 5min",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "start",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 760,
+        "wires": [
+            [
+                "read",
+                "33af240e3e79a728"
+            ]
+        ]
+    },
+    {
+        "id": "33af240e3e79a728",
+        "type": "delay",
+        "z": "8feaf45e2d04640c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 480,
+        "y": 780,
+        "wires": [
+            [
+                "average"
+            ]
+        ]
+    },
+    {
+        "id": "f7b4fa77f7097b44",
+        "type": "comment",
+        "z": "6f808568dd22cb3c",
+        "name": "File Browser",
+        "info": "1) Update the default folder in the Init node\n2) Update the default folder in the Reset node as well\n3) You can duplicate the Reset nodes and use them as saved shortcuts\n4) Check the Convert Timestamps function node if you want to see your dates in a different format. I just used the Javascript toISOString format.\n5) The Graph button can read any CSV file which have any number of values, but the first column always contains a timestamp column with javascript timestamp of the data point.",
+        "x": 210,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "36e3146b18f2bd43",
+        "type": "fs-file-lister",
+        "z": "6f808568dd22cb3c",
+        "name": "Files",
+        "start": "/home/rpi",
+        "pattern": "*.*",
+        "folders": "*",
+        "hidden": false,
+        "lstype": "files",
+        "path": true,
+        "single": true,
+        "depth": 0,
+        "stat": true,
+        "showWarnings": false,
+        "x": 610,
+        "y": 220,
+        "wires": [
+            [
+                "518a686a417a3698",
+                "4500bfc1d0475813"
+            ]
+        ]
+    },
+    {
+        "id": "bd8371fd8b27eef0",
+        "type": "inject",
+        "z": "6f808568dd22cb3c",
+        "name": "Init",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "change",
+        "payload": "/home/rpi",
+        "payloadType": "str",
+        "x": 210,
+        "y": 180,
+        "wires": [
+            [
+                "9c7aada9e40c65c0"
+            ]
+        ]
+    },
+    {
+        "id": "77d6a47aa8b3ab08",
+        "type": "ui_button",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "group": "06bbd7f74ab319f7",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "refresh",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "refresh",
+        "x": 200,
+        "y": 220,
+        "wires": [
+            [
+                "9c7aada9e40c65c0"
+            ]
+        ]
+    },
+    {
+        "id": "a32359aa0bc04254",
+        "type": "ui_dropdown",
+        "z": "6f808568dd22cb3c",
+        "name": "File Selector",
+        "label": "",
+        "tooltip": "",
+        "place": "Select a file",
+        "group": "06bbd7f74ab319f7",
+        "order": 9,
+        "width": "5",
+        "height": "1",
+        "passthru": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "x": 1010,
+        "y": 220,
+        "wires": [
+            [
+                "ec4033c7e46fc0de"
+            ]
+        ]
+    },
+    {
+        "id": "518a686a417a3698",
+        "type": "function",
+        "z": "6f808568dd22cb3c",
+        "name": "Format data",
+        "func": "// format the data for the dropdown\nmsg.options = [];\nfor (var i=0; i<msg.payload.length; i++) {\n    // This is a file\n    obj = {};\n    obj [msg.payload[i].name.replace(/^.*(\\\\|\\/|\\:)/, '')]=msg.payload[i].name;\n    msg.options.push(obj);\n}\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 810,
+        "y": 220,
+        "wires": [
+            [
+                "a32359aa0bc04254"
+            ]
+        ]
+    },
+    {
+        "id": "f45c11611e9d9fa6",
+        "type": "ui_template",
+        "z": "6f808568dd22cb3c",
+        "group": "06bbd7f74ab319f7",
+        "name": "",
+        "order": 6,
+        "width": "18",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\" height=\"400\" style=\"height: 400px;\"><br/>\n</div>\n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 1200,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c0f777c47c5c68b",
+        "type": "template",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<table width=\"100%\">\n    <tr><th>File Name</th><th>Size</th><th>Created</th><th>Changed</th></tr>\n    {{#payload}}\n        <tr>\n            <td><a href=\"/download?filename={{name}}\" target=\"blank\">{{fname}}</a></td>\n            <td>{{stat.size}}</td>\n            <td>{{stat.created}}</td>\n            <td>{{stat.changed}}</td>\n        </tr>\n    {{/payload}}\n</table>\n",
+        "output": "str",
+        "x": 1040,
+        "y": 280,
+        "wires": [
+            [
+                "f45c11611e9d9fa6"
+            ]
+        ]
+    },
+    {
+        "id": "4500bfc1d0475813",
+        "type": "function",
+        "z": "6f808568dd22cb3c",
+        "name": "Convert timestamps",
+        "func": "for (var i=0; i<msg.payload.length; i++) {\n    msg.payload[i].stat.created = msg.payload[i].stat.created.toISOString().slice(0, 19).replace('T', ' ');\n    msg.payload[i].stat.changed = msg.payload[i].stat.changed.toISOString().slice(0, 19).replace('T', ' ');\n    msg.payload[i].stat.accessed = msg.payload[i].stat.accessed.toISOString().slice(0, 19).replace('T', ' ');\n    msg.payload[i].stat.statusChanged = msg.payload[i].stat.statusChanged.toISOString().slice(0, 19).replace('T', ' ');\n    msg.payload[i].fname = msg.payload[i].name.replace(/^.*(\\\\|\\/|\\:)/, '');\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 840,
+        "y": 280,
+        "wires": [
+            [
+                "2c0f777c47c5c68b"
+            ]
+        ]
+    },
+    {
+        "id": "4d6477a81bec1658",
+        "type": "ui_button",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "group": "06bbd7f74ab319f7",
+        "order": 10,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Delete",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "delete",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 230,
+        "y": 380,
+        "wires": [
+            [
+                "e0af8d697b98a482"
+            ]
+        ]
+    },
+    {
+        "id": "7a0a67363c74ec20",
+        "type": "function",
+        "z": "6f808568dd22cb3c",
+        "name": "Get filename",
+        "func": "// Get the filename from the flow context\nlet filename = flow.get(\"fileselected\");\n\n// check, if the filename is undefined that means it does not exist yet, nothing is selected yet\n// return: do not output anything\nif (filename===undefined) {\n    return;\n}\n\n// return the filename to the file-in node to delete\nmsg.filename = filename;\n\nif (msg.filename.replace(/^.*(\\\\|\\/|\\:)/, '')[0]!==\".\") {\n    // Only do this if this is a file, we don't delete folders\n    // and delete the context/selection as we are deleting the file as well\n    flow.set(\"fileselected\");\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 430,
+        "y": 440,
+        "wires": [
+            [
+                "5c1b43af192f4d38"
+            ]
+        ]
+    },
+    {
+        "id": "5c1b43af192f4d38",
+        "type": "file",
+        "z": "6f808568dd22cb3c",
+        "name": "Delete file",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "delete",
+        "encoding": "none",
+        "x": 640,
+        "y": 440,
+        "wires": [
+            [
+                "36e3146b18f2bd43",
+                "67160edca66a8d50"
+            ]
+        ]
+    },
+    {
+        "id": "b4dd2712ccb98b5b",
+        "type": "http in",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "url": "/download",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 240,
+        "y": 580,
+        "wires": [
+            [
+                "f3d56d25197952e3"
+            ]
+        ]
+    },
+    {
+        "id": "08dd55c30ddcb076",
+        "type": "http response",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1030,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "f3d56d25197952e3",
+        "type": "function",
+        "z": "6f808568dd22cb3c",
+        "name": "Get the file name",
+        "func": "msg.filename = msg.req.query.filename;\nmsg.contentdisposition = \"attachment; filename=\\\"\" + msg.req.query.filename.replace(/^.*(\\\\|\\/|\\:)/, '') + \"\\\"\";\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 490,
+        "y": 580,
+        "wires": [
+            [
+                "9e3245eb2ae34e60"
+            ]
+        ],
+        "outputLabels": [
+            "Folder selected",
+            "File selected"
+        ]
+    },
+    {
+        "id": "9e3245eb2ae34e60",
+        "type": "file in",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "filename": "",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 680,
+        "y": 580,
+        "wires": [
+            [
+                "c1b55c9064f12421"
+            ]
+        ]
+    },
+    {
+        "id": "c1b55c9064f12421",
+        "type": "change",
+        "z": "6f808568dd22cb3c",
+        "name": "Set Headers",
+        "rules": [
+            {
+                "t": "set",
+                "p": "headers",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "headers.content-type",
+                "pt": "msg",
+                "to": "text/csv",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "headers.Content-Disposition",
+                "pt": "msg",
+                "to": "contentdisposition",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 580,
+        "wires": [
+            [
+                "08dd55c30ddcb076"
+            ]
+        ]
+    },
+    {
+        "id": "d5e502404c87ede0",
+        "type": "ui_button",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "group": "06bbd7f74ab319f7",
+        "order": 11,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Graph",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "show_chart",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 190,
+        "y": 700,
+        "wires": [
+            [
+                "0c9e29e34eab81ec"
+            ]
+        ]
+    },
+    {
+        "id": "0c9e29e34eab81ec",
+        "type": "function",
+        "z": "6f808568dd22cb3c",
+        "name": "Get filename",
+        "func": "// Get the filename from the flow context\nlet filename = flow.get(\"fileselected\");\n\n// check, if the filename is undefined that means it does not exist yet, nothing is selected yet\n// return: do not output anything\nif (filename===undefined) {\n    return;\n}\n\n// return the filename to the file-in node to delete\nmsg.filename = filename;\n\nif (msg.filename.replace(/^.*(\\\\|\\/|\\:)/, '')[0]!==\".\") {\n    // Only do this if this is a file, we don't delete folders\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 700,
+        "wires": [
+            [
+                "35565b78406e94b3"
+            ]
+        ]
+    },
+    {
+        "id": "35565b78406e94b3",
+        "type": "file in",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "filename": "",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 540,
+        "y": 700,
+        "wires": [
+            [
+                "f24834918917e00d"
+            ]
+        ]
+    },
+    {
+        "id": "f24834918917e00d",
+        "type": "csv",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "x": 690,
+        "y": 700,
+        "wires": [
+            [
+                "7d22376de1f994fc"
+            ]
+        ]
+    },
+    {
+        "id": "16c7924f35ec0924",
+        "type": "debug",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1110,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "7d22376de1f994fc",
+        "type": "function",
+        "z": "6f808568dd22cb3c",
+        "name": "Format data for chart",
+        "func": "var chart = [{\n    \"series\":[],\n    \"data\":[],\n    \"labels\":[msg.filename]\n}];\n\n\n/*\nvar pressure = [];\nvar out2 = [];\n\nfor (var i=0; i<msg.payload.length; i++) {\n    pressure.push({\"x\":msg.payload[i].timestamp, \"y\":msg.payload[i].pressure});\n    out2.push({\"x\":msg.payload[i].timestamp, \"y\":msg.payload[i].out2*200});\n\n}\nchart[0].data.push(pressure);\nchart[0].data.push(out2);\n*/\n\nlet columns = 0;\n\nfor(var series in msg.payload[0]) {\n    if(series!==\"timestamp\") {\n        chart[0].series.push(series);\n        chart[0].data.push([]);\n        columns++;\n    }\n}\n\n\nfor (var j=0; j<msg.payload.length; j++) {\n   for(var i=0;i<columns;i++) {\n       chart[0].data[i].push({\"x\":msg.payload[j].timestamp, \"y\":msg.payload[j][chart[0].series[i]]});\n   } \n}\n\n\n\n\nmsg.payload = chart;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 900,
+        "y": 700,
+        "wires": [
+            [
+                "9590c74fdb390d75",
+                "16c7924f35ec0924"
+            ]
+        ]
+    },
+    {
+        "id": "9590c74fdb390d75",
+        "type": "ui_chart",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "group": "06bbd7f74ab319f7",
+        "order": 12,
+        "width": "18",
+        "height": "6",
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "x": 1100,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fe10436c0d5fcb3f",
+        "type": "ui_toast",
+        "z": "6f808568dd22cb3c",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": false,
+        "outputs": 1,
+        "ok": "Yes",
+        "cancel": "No",
+        "raw": false,
+        "topic": "",
+        "name": "Confirmation",
+        "x": 610,
+        "y": 380,
+        "wires": [
+            [
+                "2fcbbc498343ccd1"
+            ]
+        ]
+    },
+    {
+        "id": "e0af8d697b98a482",
+        "type": "change",
+        "z": "6f808568dd22cb3c",
+        "name": "Set message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Delete confirmation",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Are you sure you want to delete this file?",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 380,
+        "wires": [
+            [
+                "fe10436c0d5fcb3f"
+            ]
+        ]
+    },
+    {
+        "id": "2fcbbc498343ccd1",
+        "type": "switch",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Yes",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 810,
+        "y": 380,
+        "wires": [
+            [
+                "7a0a67363c74ec20"
+            ]
+        ]
+    },
+    {
+        "id": "9c7aada9e40c65c0",
+        "type": "function",
+        "z": "6f808568dd22cb3c",
+        "name": "Folder handling",
+        "func": "let folder = context.get(\"folder\");\nif (folder===undefined) {\n    folder=\"/\";\n    context.set(\"folder\", folder);\n}\n\nlet hidden = context.get(\"hidden\");\nif (hidden===undefined) {\n    hidden=false;\n    context.set(\"hidden\", hidden);\n}\n\nif (msg.topic===\"up\") {\n    var the_arr = folder.split('/');\n    the_arr.pop();\n    folder=the_arr.join('/'); \n    context.set(\"folder\", folder);\n}\nif (msg.topic===\"change\") {\n    folder=msg.payload;    \n    context.set(\"folder\", folder);\n}\nif (msg.topic===\"hidden\") {\n    hidden=msg.payload;    \n    context.set(\"hidden\", hidden);\n}\n\nmsg.payload = {\"start\":folder, \"hidden\": hidden};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 400,
+        "y": 280,
+        "wires": [
+            [
+                "36e3146b18f2bd43",
+                "2a52b764bc287f98",
+                "67160edca66a8d50"
+            ]
+        ]
+    },
+    {
+        "id": "2a52b764bc287f98",
+        "type": "ui_text",
+        "z": "6f808568dd22cb3c",
+        "group": "06bbd7f74ab319f7",
+        "order": 4,
+        "width": "9",
+        "height": "1",
+        "name": "",
+        "label": "Folder:",
+        "format": "{{msg.payload.start}}",
+        "layout": "row-left",
+        "x": 600,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "1594e257230461c0",
+        "type": "ui_button",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "group": "06bbd7f74ab319f7",
+        "order": 3,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Up",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "arrow_upwards",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "up",
+        "x": 210,
+        "y": 300,
+        "wires": [
+            [
+                "9c7aada9e40c65c0"
+            ]
+        ]
+    },
+    {
+        "id": "72662e7e7a8ee634",
+        "type": "ui_button",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "group": "06bbd7f74ab319f7",
+        "order": 8,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Open",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "folder_open",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 230,
+        "y": 500,
+        "wires": [
+            [
+                "c7e41642ebf25d08"
+            ]
+        ]
+    },
+    {
+        "id": "c7e41642ebf25d08",
+        "type": "function",
+        "z": "6f808568dd22cb3c",
+        "name": "Change folder",
+        "func": "// Get the filename from the flow context\nlet folderselected = flow.get(\"folderselected\");\n\n// check, if the filename is undefined that means it does not exist yet, nothing is selected yet\n// return: do not output anything\nif (folderselected===undefined) {\n    return;\n}\n\nmsg.topic = \"change\";\nmsg.payload = folderselected;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 500,
+        "wires": [
+            [
+                "9c7aada9e40c65c0"
+            ]
+        ]
+    },
+    {
+        "id": "cf4d6e4bdc0b9aa8",
+        "type": "ui_button",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "group": "06bbd7f74ab319f7",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Reset",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "autorenew",
+        "payload": "/home/rpi",
+        "payloadType": "str",
+        "topic": "change",
+        "topicType": "str",
+        "x": 210,
+        "y": 260,
+        "wires": [
+            [
+                "9c7aada9e40c65c0"
+            ]
+        ]
+    },
+    {
+        "id": "67160edca66a8d50",
+        "type": "fs-file-lister",
+        "z": "6f808568dd22cb3c",
+        "name": "Folders",
+        "start": "/home/rpi",
+        "pattern": "*.*",
+        "folders": "*",
+        "hidden": false,
+        "lstype": "directories",
+        "path": true,
+        "single": true,
+        "depth": 0,
+        "stat": true,
+        "showWarnings": false,
+        "x": 620,
+        "y": 320,
+        "wires": [
+            [
+                "f56715d0c261bdb4"
+            ]
+        ]
+    },
+    {
+        "id": "91456974fe706b2c",
+        "type": "ui_dropdown",
+        "z": "6f808568dd22cb3c",
+        "name": "Folder Selector",
+        "label": "",
+        "tooltip": "",
+        "place": "Select a folder",
+        "group": "06bbd7f74ab319f7",
+        "order": 7,
+        "width": "5",
+        "height": "1",
+        "passthru": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "x": 1020,
+        "y": 320,
+        "wires": [
+            [
+                "5113d61e64c8bedb"
+            ]
+        ]
+    },
+    {
+        "id": "f56715d0c261bdb4",
+        "type": "function",
+        "z": "6f808568dd22cb3c",
+        "name": "Format data",
+        "func": "// format the data for the dropdown\nmsg.options = [];\nfor (var i=0; i<msg.payload.length; i++) {\n    // This is a foler\n    obj = {};\n    obj [\"[\"+msg.payload[i].name.replace(/^.*(\\\\|\\/|\\:)/, '')+\"]\"]=msg.payload[i].name;\n    msg.options.push(obj);\n}\nmsg.payload={};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 810,
+        "y": 320,
+        "wires": [
+            [
+                "91456974fe706b2c"
+            ]
+        ]
+    },
+    {
+        "id": "ec4033c7e46fc0de",
+        "type": "change",
+        "z": "6f808568dd22cb3c",
+        "name": "Save selection",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fileselected",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5113d61e64c8bedb",
+        "type": "change",
+        "z": "6f808568dd22cb3c",
+        "name": "Save selection",
+        "rules": [
+            {
+                "t": "set",
+                "p": "folderselected",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "01bbb17d38d53f01",
+        "type": "ui_switch",
+        "z": "6f808568dd22cb3c",
+        "name": "",
+        "label": "Hidden",
+        "tooltip": "Show hidden files or not",
+        "group": "06bbd7f74ab319f7",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "hidden",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "check_box",
+        "oncolor": "#000000",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "check_box_outline_blank",
+        "offcolor": "#000000",
+        "x": 200,
+        "y": 340,
+        "wires": [
+            [
+                "9c7aada9e40c65c0"
+            ]
+        ]
+    }
+]
